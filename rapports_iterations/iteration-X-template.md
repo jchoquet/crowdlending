@@ -39,11 +39,11 @@
 
 ## Prévisions de l'itération suivante  
 ### Évènements prévus  
-*Quels sont les évènements qui vont peut être impacté l'itération? Répertoriez ici les évènements que vous anticipez comme ayant un impact potentiel pour l'itération (absences, changement de cap, difficultés, etc.).*
+*Quels sont les évènements qui vont peut être impacter l'itération? Répertoriez ici les évènements que vous anticipez comme ayant un impact potentiel pour l'itération (absences, changement de cap, difficultés, etc.).*
 > Répondre ici
 
 ### Titre des éléments reportés  
-*Lister ici les éléments des itérations précédentes qui ont été reportées à l'itération suivante. Ces éléments ont dû être revus et corrigés par le PO N+1.*
+*Lister ici les éléments des itérations précédentes qui ont été reportés à l'itération suivante. Ces éléments ont dû être revus et corrigés par le PO N+1.*
 > Répondre ici
 
 ### Titre des nouveaux éléments  
@@ -52,14 +52,14 @@
 
 ## Confiance 
 ### Taux de confiance de l'équipe dans l'itération  
-*Remplir le tableau sachant que :D est une confiance total dans le fait de livrer les éléments de l'itération. Mettre le nombre de votes dans chacune des cases. Expliquer en cas de besoin.*
+*Remplir le tableau sachant que :D est une confiance totale dans le fait de livrer les éléments de l'itération. Mettre le nombre de votes dans chacune des cases. Expliquer en cas de besoin.*
 
 |          	| :( 	| :&#124; 	| :) 	| :D 	|
 |:--------:	|:----:	|:----:	    |:----:	|:----:	|
 | Equipe 7 	|  *0* 	|  *0* 	    |  *0* 	|  *0* 	|
 
 ### Taux de confiance de l'équipe pour la réalisation du projet 
-*Remplir le tableau sachant que :D est une confiance total dans le fait de livrer les éléments de l'itération. Mettre le nombre de votes dans chacune des cases. Expliquer en cas de besoin.*
+*Remplir le tableau sachant que :D est une confiance totale dans le fait de réaliser le projet. Mettre le nombre de votes dans chacune des cases. Expliquer en cas de besoin.*
 
 |          	| :( 	| :&#124; 	| :) 	| :D 	|
 |:--------:	|:----:	|:----:	    |:----:	|:----:	|
