@@ -9,16 +9,16 @@
 
 | Nom                     | Prénom                   | Email                   |
 | -------------           |-------------             |-------------            |
-| *NOM*                   | *Prénom*                 | *Email*                 |
-| *NOM*                   | *Prénom*                 | *Email*                 |
-| *NOM*                   | *Prénom*                 | *Email*                 |
-| *NOM*                   | *Prénom*                 | *Email*                 |
-| *NOM*                   | *Prénom*                 | *Email*                 |
-| *NOM*                   | *Prénom*                 | *Email*                 |
+| *Choquet*                   | *Julie*                 | *julie.choquet@ensiie.fr*                 |
+| *Khadir*                   | *Mehdi*                 | *mehdi.khadir@ensiie.fr*                 |
+| *Louet*                   | *Thibault*                 | *thibault.louet@ensiie.fr*                 |
+| *Mahrous*                   | *Anouar (Mohammed)*                 | *mohammed.mahrous@ensiie.fr*                 |
+| *Qian*                   | *Qiuhao*                 | *qiuhao.qian@ensiie.fr*                 |
+| *Rousse*                   | *Julien*                 | *julien.rousse@ensiie.fr*                 |
 
 ### Sujet : Exemple Outil de crowdlending
 
-*Reproduire ici le sujet choisi.*
+Outil de crowdlending
 
 ### Adresse du backlog
 
