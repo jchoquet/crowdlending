@@ -1,4 +1,4 @@
-# Groupe n°X
+# Groupe n°1
 
 ## Réservé au cours
 
