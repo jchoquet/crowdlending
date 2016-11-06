@@ -13,7 +13,7 @@ $MODELS_DIRECTORY = "../Models/";
 $CONTROLS_DIRECTORY = "../Controls/";
 $STYLES_DIRECTORY = "../Styles/";
 $SCRIPTS_DIRECTORY = "../Scripts/";
-//$IMAGES_DIRECTORY = "../Images/";
+$IMAGES_DIRECTORY = "../Images/";
 $TESTS_DIRECTORY = "../Tests/";
 
 $DB_TYPE = "mysql";
