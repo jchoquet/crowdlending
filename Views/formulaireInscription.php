@@ -19,13 +19,22 @@
             <div class="col-md-offset-2 col-md-3">
                 <div class="form-group">
                     <label for="Nom">Nom</label>
-                    <input type="text" class="form-control" id="nom" placeholder="Nom">
+                    <input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
                 </div>
             </div>
             <div class="col-md-offset-1 col-md-3">
                 <div class="form-group">
                     <label for="Prenom">Prénom</label>
-                    <input type="text" class="form-control" id="prenom" placeholder="Prénom">
+                    <input type="text" class="form-control" id="prenom" placeholder="Prénom" name="prenom">
+                </div>
+            </div>
+        </div>
+
+            <div class="row">
+            <div class="col-md-offset-2 col-md-7">
+                <div class="form-group">
+                    <label for="Email">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" id="email" placeholder="Nom d'utilisateur" name="username">
                 </div>
             </div>
         </div>
@@ -34,7 +43,7 @@
             <div class="col-md-offset-2 col-md-7">
                 <div class="form-group">
                     <label for="Email">Adresse email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter email">
+                    <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
                 </div>
             </div>
         </div>
@@ -43,7 +52,7 @@
             <div class="col-md-offset-2 col-md-3">
                 <div class="form-group">
                     <label for="Password">Mot de passe</label>
-                    <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+                    <input type="password" class="form-control" id="password" placeholder="Mot de passe" name="password">
                 </div>
             </div>
             <div class="col-md-offset-1 col-md-3">
@@ -56,9 +65,7 @@
 
         <div class="row">
             <div class="col-md-offset-2 col-md-7">
-                <div class="form-group">
                     <div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
-                </div>
             </div>
         </div>
 
@@ -66,13 +73,13 @@
             <div class="col-md-offset-2  col-md-3">
                 <div class="input-group">
                     <span class="input-group-addon glyphicon glyphicon-phone"> </span>
-                    <input type="text" class="form-control" id="tel" placeholder="Numéro de téléphone">
+                    <input type="text" class="form-control" id="tel" placeholder="Numéro de téléphone" name="phone">
                 </div>
             </div>
             <div class="col-md-offset-1  col-md-3">
                 <div class="input-group">
                     <span class="input-group-addon glyphicon glyphicon-globe"> </span>
-                    <input type="text" class="form-control" id="adresse" placeholder="Adresse">
+                    <input type="text" class="form-control" id="adresse" placeholder="Adresse" name="address">
                 </div>
             </div>
             <br/>
