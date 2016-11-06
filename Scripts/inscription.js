@@ -20,6 +20,22 @@ jQuery(document).ready(function()
             jQuery("#prenom").focus();
             return false;
         }
+        if (jQuery("#username").val() == "")
+        {
+            alert("Merci de saisir un nom d'utilisateur");
+            jQuery("#username").focus();
+            return false;
+        }
+        if(!userNameNotTooLong())
+        {
+            alert("Votre nom est trop long, il doit faire moins de 50 caractères de long");
+            jQuery("#username").focus();
+            return false;
+        }
+
+        //Check if the user name is not already taken
+        userNameNotExist();
+
         if (jQuery("#email").val() == "" || valideEmail(jQuery("#email").val()) )
         {
             alert("Merci de saisir votre adresse email correcte");
@@ -64,6 +80,38 @@ jQuery(document).ready(function()
         if (!valid)
             return true;
         return false;
+    }
+
+
+    /* If userName is lower than 50 caracter, return true.
+     * else return false*/
+    function userNameNotTooLong() {
+        var name = $('#username').val();
+        if(name.length >= 50)
+        {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+
+    /* If userName not existed, return true.
+     * else return false. */
+    function userNameNotExist() {
+        var name = $("#username").val();
+        var changeUrl = "nameVerify.php?action=check&name="+name;
+        $.get(changeUrl,function(str){
+            if(str == '1') {
+                return true;
+            }
+            else{
+                alert("Le nom d'utilisateur existe déjà");
+                jQuery("#username").focus();
+                return false;
+            }
+        })
     }
 
 });
