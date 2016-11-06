@@ -1,5 +1,8 @@
 <?php
-include "../ConnexionUser.php";
+
+include __DIR__ . '/../Models/Connexion.php';
+include __DIR__ . '/ConnexionUser.php';
+
 
 try
   {
@@ -7,7 +10,7 @@ try
 	/*  $DB = new PDO("pgsql:host=localhost;dbname=pima-proj", "postgres", "root");*/
 	$DB = new PDO($DB_TYPE . ":host=" . $DB_HOST . ";dbname=" . $DB_NAME . ";charset=" . $DB_CHARSET, $DB_USER, $DB_PASSWORD);
 
-	/* Si tous les champs sont renseignés */
+	/* Si tous les champs sont renseignÃ©s */
 	
 	if(isset($_POST['id']) && isset($_POST['mdp']))
 	{
