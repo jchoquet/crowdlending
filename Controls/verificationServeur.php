@@ -1,15 +1,16 @@
 <?php
+include "../Models/Connexion.php";
 //retourne 0 si tout les champs sont rempli
 //retourne 1 sinon
 function verifFullfill()
 {
-	$password = mysqli_real_escape_string(htmlspecialchars($_POST['password']));
-	$username = mysqli_real_escape_string(htmlspecialchars($_POST['username']));
-	$nom = mysqli_real_escape_string(htmlspecialchars($_POST['nom']));
-	$prenom = mysqli_real_escape_string(htmlspecialchars($_POST['prenom']));
-	$password2 = mysqli_real_escape_string(htmlspecialchars($_POST['passwordCheck']));
-	$phone = mysqli_real_escape_string(htmlspecialchars($_POST['phone']));
-	$address = mysqli_real_escape_string(htmlspecialchars($_POST['address']));
+	$password = $DB->quote(htmlspecialchars($_POST['password']));
+	$username = $DB->quote(htmlspecialchars($_POST['username']));
+	$nom = $DB->quote(htmlspecialchars($_POST['nom']));
+	$prenom = $DB->quote(htmlspecialchars($_POST['prenom']));
+	$password2 = $DB->quote(htmlspecialchars($_POST['passwordCheck']));
+	$phone = $DB->quote(htmlspecialchars($_POST['phone']));
+	$address = $DB->quote(htmlspecialchars($_POST['address']));
 	if($password == "" || $username == "" || $nom == "" || $prenom == "" || $password2 == "" || $phone == "" || $address == "")
 	{
 		return 1;
@@ -19,8 +20,8 @@ function verifFullfill()
 
 function verifPassword()
 {
-	$password = mysqli_real_escape_string(htmlspecialchars($_POST['password']));
-    $password2 = mysqli_real_escape_string(htmlspecialchars($_POST['passwordCheck']));
+	$password = $DB->quote(htmlspecialchars($_POST['password']));
+    $password2 = $DB->quote(htmlspecialchars($_POST['passwordCheck']));
 	return $password == $password2;
 }
 
@@ -29,8 +30,7 @@ function verifPassword()
 // retourn 2 si l'email est déja utilisé
 function verifEmail()
 {
-	global $DB;
-	$email = mysqli_real_escape_string(htmlspecialchars($_POST['email']));
+	$email = $DB->quote(htmlspecialchars($_POST['email']));
 	$domain = strstr($email, '@');
 	$user = strstr($email, '@', true);
 	$end = strstr($domain, '.');
@@ -56,7 +56,7 @@ function verifEmail()
 //retourn 1 si déjà présent dans la base
 function verifUsername()
 {
-	$username = mysqli_real_escape_string(htmlspecialchars($_POST['username']));
+	$username = $DB->quote(htmlspecialchars($_POST['username']));
 	$reponse = $DB->query('SELECT username FROM utilisateur');
 	while ($donnees = $reponse->fetch())
 	{
