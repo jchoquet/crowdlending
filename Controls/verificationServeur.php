@@ -2,7 +2,9 @@
 //retourne 0 si tout les champs sont remplis
 //retourne 1 sinon
 
-include( dirname(__FILE__) . '/../Models/Connexion.php');
+include __DIR__ . '/../Models/Connexion.php';
+
+
 function verifFullfill()
 {
     global $DB, $password, $username, $nom, $prenom, $password2, $phone, $address, $email;
@@ -31,7 +33,7 @@ function verifPassword()
 
 // retourne 0 si c'est OK
 // retourne 1 si le format c'est pas bon
-// retourn 2 si l'email est déja utilisé
+// retourne 2 si l'email est déja utilisé
 function verifEmail()
 {
     global $DB;
