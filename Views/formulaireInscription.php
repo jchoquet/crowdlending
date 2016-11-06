@@ -1,9 +1,20 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: mehdi
  * Date: 01/11/2016
  * Time: 22:38
+ *
+ * Ce fichier contient la vue du formulaire d'inscription sur le site. Utilisation de bootstrap.
+ * Les champs du formulaire sont les suivants:
+ * - Nom
+ * - Prénom
+ * - Nom d'utilisateur
+ * - Adresse email
+ * - Mot de passe
+ * - Vérification du mot de passe -> utilisé par le script jQuery et par le serveur pour vérifier le mdp
+ * - Téléphone
+ * - Adresse postale
+ *
  */
 ?>
 
