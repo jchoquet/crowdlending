@@ -1,5 +1,4 @@
 <?php
-include __DIR__ . '/Config.php';
 function connexionUser($db,$id)
   {
     $stmt = $db->prepare("SELECT hash_password FROM utilisateur WHERE identifiant=:id");
