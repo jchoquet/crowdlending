@@ -5,12 +5,13 @@
 include( dirname(__FILE__) . '/../Models/Connexion.php');
 function verifFullfill()
 {
-    global $DB;
+    global $DB, $password, $username, $nom, $prenom, $password2, $phone, $address, $email;
 	$password = $DB->quote(htmlspecialchars($_POST['password']));
 	$username = $DB->quote(htmlspecialchars($_POST['username']));
 	$nom = $DB->quote(htmlspecialchars($_POST['nom']));
 	$prenom = $DB->quote(htmlspecialchars($_POST['prenom']));
 	$password2 = $DB->quote(htmlspecialchars($_POST['passwordCheck']));
+    $email = $DB->quote(htmlspecialchars($_POST['email']));
 	$phone = $DB->quote(htmlspecialchars($_POST['phone']));
 	$address = $DB->quote(htmlspecialchars($_POST['address']));
 	if($password == "" || $username == "" || $nom == "" || $prenom == "" || $password2 == "" || $phone == "" || $address == "")
