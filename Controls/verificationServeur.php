@@ -29,7 +29,7 @@ function verifPassword()
 // retourn 2 si l'email est déja utilisé
 function verifEmail()
 {
-	global $DB
+	global $DB;
 	$email = mysql_real_escape_string(htmlspecialchars($_POST['email']));
 	$domain = strstr($email, '@');
 	$user = strstr($email, '@', true);
@@ -48,7 +48,7 @@ function verifEmail()
 	}
 	else
 	{
-		return 1
+		return 1;
 	}
 }
 
