@@ -8,15 +8,15 @@
     <metaname="description" lang="fr" content="" />
     <metaname="keywords" lang="fr" content="" />
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="../Styles/bootstrap.css">
 	<!-- jquery -->
-	<script src="js/jquery_library.js"></script>
+	<script src="../Sripts/jquery_library.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="js/bootstrap.js"></script>
+	<script src="../Scripts/bootstrap.js"></script>
 	<!-- fichier css perso -->
-	<link rel="stylesheet" href="css/connexion.css">
+	<link rel="stylesheet" href="../Styles/connexion.css">
 	<!-- fichier JS validation formulaire -->
-	<script src="js/validate_co1.js"></script>
+	<script src="../Scripts/validate_co1.js"></script>
 </head>
 <body>
 <?php include("formulaireConnexion.php"); ?>

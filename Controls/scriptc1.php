@@ -6,9 +6,6 @@ include __DIR__ . '/ConnexionUser.php';
 
 try
   {
-  
-	/*  $DB = new PDO("pgsql:host=localhost;dbname=pima-proj", "postgres", "root");*/
-	$DB = new PDO($DB_TYPE . ":host=" . $DB_HOST . ";dbname=" . $DB_NAME . ";charset=" . $DB_CHARSET, $DB_USER, $DB_PASSWORD);
 
 	/* Si tous les champs sont renseignés */
 	
