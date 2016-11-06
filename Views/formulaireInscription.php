@@ -8,7 +8,7 @@
 ?>
 
 <div class="container">
-    <form role="form" id="register" method="post" action="../Controls/verificationServeur.php">
+    <form role="form" id="register" method="post" action="../Controls/callVerifServ.php">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
                 <h1> Inscription <br/> <small> Merci de renseigner vos informations </small></h1>
@@ -33,8 +33,8 @@
             <div class="row">
             <div class="col-md-offset-2 col-md-7">
                 <div class="form-group">
-                    <label for="Email">Nom d'utilisateur</label>
-                    <input type="text" class="form-control" id="email" placeholder="Nom d'utilisateur" name="username">
+                    <label for="Username">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur" name="username">
                 </div>
             </div>
         </div>
