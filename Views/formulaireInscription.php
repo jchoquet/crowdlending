@@ -8,7 +8,7 @@
 ?>
 
 <div class="container">
-    <form role="form" id="register" method="post" action="SUCCESS">
+    <form role="form" id="register" method="post" action="../Controls/verificationServeur.php">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
                 <h1> Inscription <br/> <small> Merci de renseigner vos informations </small></h1>
@@ -58,7 +58,7 @@
             <div class="col-md-offset-1 col-md-3">
                 <div class="form-group">
                     <label for="Vpassword">Vérification mot de passe</label>
-                    <input type="password" class="form-control" id="vpassword" placeholder="Vérification mot de passe">
+                    <input type="password" class="form-control" id="vpassword" placeholder="Vérification mot de passe" name="passwordCheck">
                 </div>
             </div>
         </div>
