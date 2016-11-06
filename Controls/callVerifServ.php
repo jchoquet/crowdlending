@@ -14,6 +14,7 @@ if (verifFullfill()==0 && verifPassword() && verifEmail()==0 && verifUsername()=
     //A CHANGER AU PLUS VITE
     $hashpassword = $password;
 
+    //Enregistrement du nouvel utilisateur dans la BD
     $sql = $DB->prepare("INSERT INTO utilisateur (username, prenom, nom, email, hash_password) VALUES (:username, :prenom, :nom, :email, :hashpassword)");
     $sql->bindParam(':username', $username);
     $sql->bindParam(':prenom', $prenom);
