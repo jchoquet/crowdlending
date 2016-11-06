@@ -1,9 +1,11 @@
 <?php
-include "../Models/Connexion.php";
-//retourne 0 si tout les champs sont rempli
+//retourne 0 si tout les champs sont remplis
 //retourne 1 sinon
+
+include( dirname(__FILE__) . '/../Models/Connexion.php');
 function verifFullfill()
 {
+    global $DB;
 	$password = $DB->quote(htmlspecialchars($_POST['password']));
 	$username = $DB->quote(htmlspecialchars($_POST['username']));
 	$nom = $DB->quote(htmlspecialchars($_POST['nom']));
@@ -20,6 +22,7 @@ function verifFullfill()
 
 function verifPassword()
 {
+    global $DB;
 	$password = $DB->quote(htmlspecialchars($_POST['password']));
     $password2 = $DB->quote(htmlspecialchars($_POST['passwordCheck']));
 	return $password == $password2;
@@ -30,6 +33,7 @@ function verifPassword()
 // retourn 2 si l'email est déja utilisé
 function verifEmail()
 {
+    global $DB;
 	$email = $DB->quote(htmlspecialchars($_POST['email']));
 	$domain = strstr($email, '@');
 	$user = strstr($email, '@', true);
@@ -56,6 +60,7 @@ function verifEmail()
 //retourn 1 si déjà présent dans la base
 function verifUsername()
 {
+    global $DB;
 	$username = $DB->quote(htmlspecialchars($_POST['username']));
 	$reponse = $DB->query('SELECT username FROM utilisateur');
 	while ($donnees = $reponse->fetch())

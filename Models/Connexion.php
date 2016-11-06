@@ -6,7 +6,7 @@
  * Time: 11:18
  */
 
-include "../Config.php";
+include( dirname(__FILE__) . '/../Config.php');
 
 // On essaie de se connecter avec PDO à la base de données
 // en utilisant les paramètres du fichier "Config.php"
