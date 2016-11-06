@@ -6,7 +6,8 @@
  * Time: 11:18
  */
 
-include( dirname(__FILE__) . '/../Config.php');
+// On inclut "Config.php" de cette façon pour éviter des erreurs de double inclusion
+include __DIR__ . "/../Config.php";
 
 // On essaie de se connecter avec PDO à la base de données
 // en utilisant les paramètres du fichier "Config.php"
