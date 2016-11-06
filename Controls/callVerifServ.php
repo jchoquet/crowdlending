@@ -16,12 +16,14 @@ if (verifFullfill() == 0 && verifPassword() && verifEmail() == 0 && verifUsernam
     $hashpassword = $password;
 
     // Enregistrement du nouvel utilisateur dans la BD
-    $sql = $DB->prepare("INSERT INTO utilisateur (username, prenom, nom, email, hash_password) VALUES (:username, :prenom, :nom, :email, :hashpassword)");
+    $sql = $DB->prepare("INSERT INTO utilisateur (username, prenom, nom, email, hash_password, id_commune) VALUES (:username, :prenom, :nom, :email, :hashpassword, :id_commune)");
     $sql->bindParam(':username', $username);
     $sql->bindParam(':prenom', $prenom);
     $sql->bindParam(':nom', $nom);
     $sql->bindParam(':email', $email);
     $sql->bindParam(':hashpassword', $hashpassword);
+    $id_commune = $DB->query("SELECT id FROM commune WHERE nom=\'" . $address . "\'")->fetch()['id'];
+    $sql->bindParam(':id_commune', $id_commune);
     $sql->execute();
     header(__DIR__ . '/../index.php');
 }
