@@ -4,7 +4,7 @@
 				<form role="form" method="post" action="../Controls/scriptc1.php">
 				<div class="form-group">
 					<label for="identifiant">Identifiant</label>
-    				<input class="form-control" id="identifiantc" name="id" type="text" value="" required/>
+    				<input class="form-control" id="identifiantc" name="username" type="text" value="" required/>
     				<span class="errors" id="idcerror"></span> 
     			</div>
     			

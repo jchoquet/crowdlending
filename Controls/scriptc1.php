@@ -9,13 +9,14 @@ try
 
 	/* Si tous les champs sont renseignés */
 	
-	if(isset($_POST['id']) && isset($_POST['mdp']))
+	if(isset($_POST['username']) && isset($_POST['mdp']))
 	{
 
-		$id=$_POST['id'];
+		$id=getIdUser($_Post['username']);
+        echo $id;
 		$mdp=$_POST['mdp'];
 
-		$hash=connexionUser($DB,$id);
+		$hash=connexionUser($id);
 
 		if (password_verify($mdp, $hash)) 
 		{
