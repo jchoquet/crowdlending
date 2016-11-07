@@ -18,89 +18,99 @@
  */
 ?>
 
+<!-- CSS pour la page -->
+<link rel="stylesheet" href="../Styles/connexionFormulaire.css">
+
 <div class="container">
     <form role="form" id="register" method="post" action="../Controls/callVerifServ.php">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
-                <h1> Inscription <br/> <small> Merci de renseigner vos informations </small></h1>
+                <h1> Inscription <br/>
+                    <small> Merci de renseigner vos informations</small>
+                </h1>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-offset-2 col-md-3">
-                <div class="form-group">
-                    <label for="Nom">Nom</label>
+            <div class="col-md-offset-2 col-md-8" id="nomPrenom">
+                <div class="form-group col-md-4">
+                    <label for="Nom">Nom *</label>
                     <input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
                 </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <div class="form-group">
-                    <label for="Prenom">Prénom</label>
+                <div class="form-group col-md-4">
+                    <label for="Prenom">Prénom *</label>
                     <input type="text" class="form-control" id="prenom" placeholder="Prénom" name="prenom">
                 </div>
-            </div>
-        </div>
-
-            <div class="row">
-            <div class="col-md-offset-2 col-md-7">
-                <div class="form-group">
-                    <label for="Username">Nom d'utilisateur</label>
-                    <input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur" name="username">
+                <div class="form-group col-md-4">
+                    <label for="Username">Nom d'utilisateur *</label>
+                    <input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur"
+                           name="username">
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-offset-2 col-md-7">
+            <div class="col-md-offset-2 col-md-8">
                 <div class="form-group">
-                    <label for="Email">Adresse email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <label for="Email">Adresse email *</label>
+                    <input type="text" class="form-control" id="email" placeholder="Adresse email" name="email">
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-offset-2 col-md-3">
+            <div class="col-md-offset-2 col-md-4">
                 <div class="form-group">
-                    <label for="Password">Mot de passe</label>
-                    <input type="password" class="form-control" id="password" placeholder="Mot de passe" name="password">
+                    <label for="Password">Mot de passe *</label>
+                    <input type="password" class="form-control" id="password" placeholder="Mot de passe"
+                           name="password">
                 </div>
             </div>
-            <div class="col-md-offset-1 col-md-3">
+            <div class="col-md-4">
                 <div class="form-group">
-                    <label for="Vpassword">Vérification mot de passe</label>
-                    <input type="password" class="form-control" id="vpassword" placeholder="Vérification mot de passe" name="passwordCheck">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-offset-2 col-md-7">
-                    <div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-offset-2  col-md-3">
-                <div class="input-group">
-                    <span class="input-group-addon glyphicon glyphicon-phone"> </span>
+                    <label for="Phone">Téléphone</label>
                     <input type="text" class="form-control" id="tel" placeholder="Numéro de téléphone" name="phone">
                 </div>
             </div>
-            <div class="col-md-offset-1  col-md-3">
-                <div class="input-group">
-                    <span class="input-group-addon glyphicon glyphicon-globe"> </span>
-                    <input type="text" class="form-control" id="adresse" placeholder="Adresse" name="address">
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-4">
+                <div class="form-group">
+                    <label for="Vpassword">Vérification mot de passe *</label>
+                    <input type="password" class="form-control" id="vpassword" placeholder="Vérification mot de passe"
+                           name="passwordCheck">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="Address">Commune</label>
+                    <input type="text" class="form-control" id="adresse" placeholder="Commune" name="address">
                 </div>
             </div>
             <br/>
-            <div class="row">
-                <div class="col-md-offset-5  col-md-1">
-                    <button type="submit" class="btn btn-primary">S'incrire</button>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="form-group">
+                    <label for="address">Numéro et nom de rue</label>
+                    <input type="text" class="form-control" id="adresse" placeholder="Adresse" name="address">
                 </div>
             </div>
         </div>
 
+        <p class="lead">
+            <button type="submit" class="btn btn-lg btn-info" id="boutonInscription">S'incrire</button>
+        </p>
 </div>
 </form>
 </div>
