@@ -10,9 +10,9 @@ $(document).ready(function(){
 
 		var tmp = $(this).val();
 
-		if(tmp == "" || (tmp.length < 8)) 
+		if(tmp == "" || (tmp.length < 10)) 
 		{
-			$("#mdperrorc").html("Taille >= 8 caractères");
+			$("#mdperrorc").html(" 10 caractères min");
 			mdpc = "";
 		}
 		else
@@ -33,9 +33,9 @@ $(document).ready(function(){
 			$("#idcerror").html("");
 			idc = "";
 		}
-		else if(tmp.length < 11 || tmp.length > 12)
+		else if( tmp.length > 50)
 		{
-			$("#idcerror").html(" 11 ou 12 caractères");
+			$("#idcerror").html(" 50 caractères max");
 			idc = "";
 		}
 		else
