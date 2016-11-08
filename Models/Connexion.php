@@ -22,11 +22,4 @@ catch (Exception $e) // on renvoie l'erreur s'il y en a une
     die("Erreur : " . $e->getMessage());
 }
 
-/*$reponse = $DB->query('SELECT nom FROM departement;');
-
-while ($donnee = $reponse->fetch())
-{
-    echo $donnee['nom'];
-}*/
-
 ?>
