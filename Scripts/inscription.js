@@ -136,4 +136,5 @@ jQuery(document).ready(function () {
 //Fermeture du popup indiquant les problèmes si pression de la touche escape
 $(document).keyup(function(e){
     if (e.keyCode == 27) $("#closePbInscription").click();
+    if (e.keyCode == 13 && $("#pbInscription").hasClass('in')) $("#closePbInscription").click();
 });
