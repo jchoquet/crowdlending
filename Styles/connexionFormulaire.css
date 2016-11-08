@@ -11,3 +11,35 @@
     padding-left: 0px;
     padding-right: 0px;
 }
+
+
+
+@media (max-width: 768px){
+    .padding-correct{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+    .padding-correct{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px){
+    .padding-correct{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media(min-width: 1200px){
+    .padding-correct{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+

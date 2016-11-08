@@ -60,43 +60,45 @@
 
         <div class="row">
             <div class="col-md-offset-2 col-md-4">
-                <div class="form-group">
+                <div class="row">
+                <div class="form-group padding-correct">
                     <label for="Password">Mot de passe *</label>
                     <input type="password" class="form-control" id="password" placeholder="Mot de passe"
                            name="password">
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="Phone">Téléphone</label>
-                    <input type="text" class="form-control" id="tel" placeholder="Numéro de téléphone" name="phone">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-offset-2 col-md-8">
-                <div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-offset-2 col-md-4">
-                <div class="form-group">
+                <div class="row">
+                <div class="form-group padding-correct">
                     <label for="Vpassword">Vérification mot de passe *</label>
                     <input type="password" class="form-control" id="vpassword" placeholder="Vérification mot de passe"
                            name="passwordCheck">
                 </div>
+                    </div>
             </div>
 
             <div class="col-md-4">
-                <div class="form-group">
+                <div class="row">
+                <div class="form-group padding-correct">
+                    <label for="Phone">Téléphone</label>
+                    <input type="text" class="form-control" id="tel" placeholder="Numéro de téléphone" name="phone">
+                </div>
+                    </div>
+
+                <div class="row">
+                <div class="form-group padding-correct">
                     <label for="Commune">Commune</label>
                     <input type="text" class="form-control" id="commune" placeholder="Commune" name="commune">
                 </div>
+                    </div>
             </div>
             <br/>
 
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-4">
+                <div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
+            </div>
         </div>
 
         <div class="row">
