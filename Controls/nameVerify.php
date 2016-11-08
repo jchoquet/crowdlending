@@ -8,7 +8,7 @@
 
 $username = $_GET['username'];
 
-include(dirname(__FILE__) . '/../Models/connexion.php');
+include(dirname(__FILE__) . '/../Models/Connexion.php');
 
 $sql = $DB->prepare("SELECT * FROM utilisateur WHERE username = $username");
 $sql->execute();
