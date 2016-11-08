@@ -91,8 +91,8 @@
 
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="Address">Commune</label>
-                    <input type="text" class="form-control" id="adresse" placeholder="Commune" name="address">
+                    <label for="Commune">Commune</label>
+                    <input type="text" class="form-control" id="commune" placeholder="Commune" name="commune">
                 </div>
             </div>
             <br/>
