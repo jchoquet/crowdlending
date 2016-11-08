@@ -1,0 +1,13 @@
+.lead{
+    text-align: center;
+    margin-top: 15px; /* laisser de l'espace avant le bouton "S'inscrire" */
+}
+
+#boutonInscription{
+    font-size: 20px;
+}
+
+#nomPrenom{
+    padding-left: 0px;
+    padding-right: 0px;
+}
