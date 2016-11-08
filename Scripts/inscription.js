@@ -7,51 +7,78 @@ jQuery(document).ready(function () {
     jQuery("#register").submit(function () {
 
         if (jQuery("#nom").val() == "") {
-            alert("Merci de saisir votre nom");
-            jQuery("#nom").focus();
+            $("#problemName").html("Veuillez remplir le champ 'Nom'");
+            $("#pbInscription").modal();
+            $("#pbInscription").focus();
+            $('#pbInscription').on('hidden.bs.modal', function () {
+                jQuery("#nom").focus();
+            })
             return false;
         }
         if (jQuery("#prenom").val() == "") {
-            alert("Merci de saisir votre prenom");
-            jQuery("#prenom").focus();
+            $("#problemName").html("Veuillez remplir le champ 'Prénom'");
+            $("#pbInscription").modal();
+            $('#pbInscription').on('hidden.bs.modal', function () {
+                jQuery("#prenom").focus();
+            })
             return false;
         }
         if (jQuery("#username").val() == "") {
-            alert("Merci de saisir un nom d'utilisateur");
-            jQuery("#username").focus();
+            $("#problemName").html("Veuillez remplir le champ 'Nom d'utilisateur'");
+            $("#pbInscription").modal();
+            $('#pbInscription').on('hidden.bs.modal', function () {
+                jQuery("#username").focus();
+            })
             return false;
         }
         if (!userNameNotTooLong()) {
-            alert("Votre nom est trop long, il doit faire moins de 50 caractères de long");
-            jQuery("#username").focus();
+            $("#problemName").html("Le nom d'utilisateur choisi est trop long");
+            $("#pbInscription").modal();
+            $('#pbInscription').on('hidden.bs.modal', function () {
+                jQuery("#username").focus();
+            })
             return false;
         }
 
         //Check if the user name is not already taken
         if(!userNameNotExist()){
-            alert("Le nom d'utilisateur existe déjà");
-            jQuery("#username").focus();
+            $("#problemName").html("Le nom d'utilisateur que vous avez choisi est déjà attribué, veuillez en choisir un autre");
+            $("#pbInscription").modal();
+            $('#pbInscription').on('hidden.bs.modal', function () {
+                jQuery("#username").focus();
+            })
             return false;
         }
 
         if (jQuery("#email").val() == "" || valideEmail(jQuery("#email").val())) {
-            alert("Merci de saisir votre adresse email correcte");
-            jQuery("#email").focus();
+            $("#problemName").html("L'adresse email entrée est invalide");
+            $("#pbInscription").modal();
+            $('#pbInscription').on('hidden.bs.modal', function () {
+                jQuery("#email").focus();
+            })
             return false;
         }
         if (jQuery("#password").val() == "") {
-            alert("Merci de saisir votre mot de passe");
-            jQuery("#password").focus();
+            $("#problemName").html("Veuillez remplir le champ 'Mot de passe'");
+            $("#pbInscription").modal();
+            $('#pbInscription').on('hidden.bs.modal', function () {
+                jQuery("#password").focus();
+            })
             return false;
         }
         if (jQuery("#vpassword").val() == "") {
-            alert("Merci de saisir la vérification de votre mot de passe");
-            jQuery("#vpassword").focus();
+            $("#problemName").html("Veuillez remplir le champ 'Vérification mot de passe'");
+            $("#pbInscription").modal();
+            $('#pbInscription').on('hidden.bs.modal', function () {
+                jQuery("#vpassword").focus();
+            })
             return false;
         }
 
 
     });
+
+
     $("#vpassword").keyup(checkPasswordMatch);
     $("#password").keyup(checkPasswordMatch);
 
@@ -104,4 +131,9 @@ jQuery(document).ready(function () {
         });
     }
 
+});
+
+//Fermeture du popup indiquant les problèmes si pression de la touche escape
+$(document).keyup(function(e){
+    if (e.keyCode == 27) $("#closePbInscription").click();
 });

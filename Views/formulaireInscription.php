@@ -18,9 +18,6 @@
  */
 ?>
 
-<!-- CSS pour la page -->
-<link rel="stylesheet" href="../Styles/connexionFormulaire.css">
-
 <div class="container">
     <form role="form" id="register" method="post" action="../Controls/callVerifServ.php">
         <div class="row">
