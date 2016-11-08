@@ -2,7 +2,7 @@
 //retourne 0 si tout les champs sont remplis
 //retourne 1 sinon
 
-include __DIR__ . '/../Models/Connexion.php';
+include __DIR__ . '/../Models/connexion.php';
 
 
 function verifFullfill()
