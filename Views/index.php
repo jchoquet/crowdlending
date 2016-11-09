@@ -2,49 +2,52 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8"/>
-
-    <!-- Pour ajouter une icone dans le titre de la page -->
-    <!-- link rel="shortcut icon" href="fonts/icone.ico" -->
-    <title>CROWDLENDING</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Pour les moteurs de recherche -->
     <meta name="description" lang="fr" content="plateforme de prêt d'objets entre particuliers" />
     <meta name="keywords" lang="fr" content="prêt, objet, voisinage, communauté" />
 
-    <!-- Source jquery -->
-    <script src="Scripts/jquery_library.js"></script>
 
-    <!-- Source JavaScript Bootstrap -->
-    <script src="Scripts/bootstrap.js"></script>
+    <!-- Pour ajouter une icone dans le titre de la page -->
+    <!-- link rel="shortcut icon" href="fonts/icone.ico" -->
+    <title>CROWDLENDING</title>
+
     <!-- Source CSS Bootstrap -->
     <link rel="stylesheet" href="Styles/bootstrap.css">
 
     <!-- CSS pour la page -->
     <link rel="stylesheet" href="Styles/index.css">
-
   </head>
 
   <body >
-
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
+
+        <!-- Barre de navigation -->
           <div class="masthead clearfix">
             <div class="inner">
               <!-- Logo/nom du site -->
-              <h3 class="masthead-brand">Crowdlending</h3>
-
-              <ul class="nav masthead-nav">
-                <li>
-                  <a href="Views/inscription.php">S'inscrire</a>
-                </li>
-                <li>
-                  <a href="Views/connexion.php">Se connecter</a>
-                </li>
-              </ul>
+             <!--  <p>
+              <img alt="Brand" id="logo" src="Images/logo.png"></a> -->
+              <h3 class="masthead-brand">Just lend it!</h3>
+             <!--  </p> -->
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li>
+                    <a href="Views/inscription.php">S'inscrire</a>
+                  </li>
+                  <li>
+                    <a href="Views/connexion.php">Se connecter</a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
 
+          <!-- Texte de présentation au milieu -->
           <div class="inner cover">
             <h1 class="cover-heading">Bienvenue sur notre plateforme de crowdlending !</h1>
               <p class="lead">
@@ -55,9 +58,15 @@
               </p>
           </div>
 
-
         </div>
       </div>
     </div>
+
+    <!-- Script JS placés à la fin du document pour charger plus rapidement -->
+    <!-- Source jquery -->
+    <script src="Scripts/jquery_library.js"></script>
+    <!-- Source JavaScript Bootstrap -->
+    <script src="Scripts/bootstrap.js"></script>
+
   </body>
 </html>
