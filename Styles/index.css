@@ -14,14 +14,30 @@ a:hover {
 }
 
 /*
- * Logo
+ * Logo et brand
  */
+
+@font-face {
+    font-family: 'calligraffitiregular';
+    src: url('Fonts/Calligraffiti-webfont.eot');
+    src: url('Fonts/Calligraffiti-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Fonts/Calligraffiti-webfont.woff') format('woff'),
+         url('Fonts/Calligraffiti-webfont.ttf') format('truetype'),
+         url('Fonts/Calligraffiti-webfont.svg#calligraffitiregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 #logo {
   float:left;
   height: 90px;
   padding-right: 5px;
   vertical-align: middle;
+}
+
+.masthead-brand {
+  font-family: "calligraffitiregular", "sans serif";
 }
 
 /*
@@ -78,6 +94,7 @@ body {
 .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 15px;
 }
 
 .masthead-nav > li {

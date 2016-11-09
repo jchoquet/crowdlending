@@ -30,10 +30,12 @@
           <div class="masthead clearfix">
             <div class="inner">
               <!-- Logo/nom du site -->
-             <!--  <p>
-              <img alt="Brand" id="logo" src="Images/logo.png"></a> -->
+              <p>
+              <img alt="Brand" id="logo" src="Images/logo.png"></a>
+              </p>
+              <p>
               <h3 class="masthead-brand">Just lend it!</h3>
-             <!--  </p> -->
+              </p>
               <nav>
                 <ul class="nav masthead-nav">
                   <li>
