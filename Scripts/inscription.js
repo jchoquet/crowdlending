@@ -2,6 +2,8 @@
  * Created by mehdi on 01/11/2016.
  */
 
+var userNameExisted = false;
+
 jQuery(document).ready(function () {
 
     jQuery("#register").submit(function () {
@@ -41,7 +43,7 @@ jQuery(document).ready(function () {
         }
 
         //Check if the user name is not already taken
-        if(!userNameNotExist()){
+        if(userNameExisted){
             $("#problemName").html("Le nom d'utilisateur que vous avez choisi est déjà attribué, veuillez en choisir un autre");
             $("#pbInscription").modal();
             $('#pbInscription').on('hidden.bs.modal', function () {
@@ -81,6 +83,7 @@ jQuery(document).ready(function () {
 
     $("#vpassword").keyup(checkPasswordMatch);
     $("#password").keyup(checkPasswordMatch);
+    $("#username").blur(userNameNotExist);
 
     function checkPasswordMatch() {
         var password = $("#password").val();
@@ -120,13 +123,14 @@ jQuery(document).ready(function () {
      * else return false. */
     function userNameNotExist() {
         var username = $("#username").val();
-        var changeUrl = "../Controls/nameVerify.php?action=check&username=" + username;
-        $.get(changeUrl, function (str) {
-            if (str == '1') {
-                return true;
+        $. post("/Inscription/Controls/nameVerify.php", {username : username}, function (str) {
+            if (str == '0'){
+                $("#divUserNameNotExist").html("<p style=\"color:red;\">Le nom d'utilisateur est déjà attribué</p>");
+                userNameExisted = true;
             }
             else {
-                return false;
+                $("#divUserNameNotExist").html("<p style=\"color:red;\"></p>");
+                userNameExisted = false;
             }
         });
     }

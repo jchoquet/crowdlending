@@ -27,7 +27,7 @@
                 </h1>
             </div>
         </div>
-
+        <!-- Older one
         <div class="row">
             <div class="col-md-offset-2 col-md-8" id="nomPrenom">
                 <div class="form-group col-md-4">
@@ -43,6 +43,47 @@
                     <input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur"
                            name="username">
                 </div>
+            </div>
+        </div>
+        -->
+        <div class="row">
+            <div class="col-md-offset-2 col-md-4">
+                <div class="row">
+                    <div class="form-group padding-correct">
+                        <label for="Nom">Nom *</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group padding-correct">
+                        <label for="Nom">Nom d'utilisateur *</label>
+                        <input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur"
+                               name="username">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="form-group padding-correct">
+                        <label for="Prenom">Prénom *</label>
+                        <input type="text" class="form-control" id="prenom" placeholder="Prénom" name="prenom">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group padding-correct">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-4">
+                <div class="registrationFormAlert" id="divUserNameNotExist"></div>
             </div>
         </div>
 
@@ -106,7 +147,6 @@
                 </div>
             </div>
         </div>
-
         <p class="lead">
             <button type="submit" class="btn btn-lg btn-info" id="boutonInscription">S'incrire</button>
         </p>
