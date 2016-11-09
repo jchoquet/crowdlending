@@ -54,10 +54,13 @@ body {
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
+
 .site-wrapper-inner {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: middle;
+
 }
+
 .cover-container {
   margin-right: auto;
   margin-left: auto;
@@ -142,12 +145,7 @@ body {
   top: 0;
 }
 
-.site-wrapper-inner {
-  vertical-align: middle;
-}
-
 .masthead,
-.mastfoot,
 .cover-container {
   width: 100%;
 }
