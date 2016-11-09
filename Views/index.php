@@ -12,7 +12,7 @@
 
     <!-- Pour ajouter une icone dans le titre de la page -->
     <!-- link rel="shortcut icon" href="fonts/icone.ico" -->
-    <title>CROWDLENDING</title>
+    <title>Lend it</title>
 
     <!-- Source CSS Bootstrap -->
     <link rel="stylesheet" href="Styles/bootstrap.css">

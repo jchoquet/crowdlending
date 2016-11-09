@@ -20,6 +20,12 @@
 
 <div class="site-wrapper">
     <div class="site-wrapper-inner">
+
+        <!-- Fleche retour landing page -->
+        <div id="arrow-container">
+            <a href="../index.php"><i class="material-icons md-36 md-light">arrow_back</i></a>
+        </div>
+
         <div class="container">
             <form role="form" id="register" method="post" action="../Controls/callVerifServ.php">
                 <div class="row">

@@ -9,13 +9,16 @@
     <meta name="description" lang="fr" content="plateforme de prêt d'objets entre particuliers" />
     <meta name="keywords" lang="fr" content="prêt, objet, voisinage, communauté" />
 
-
     <!-- Pour ajouter une icone dans le titre de la page -->
     <!-- link rel="shortcut icon" href="fonts/icone.ico" -->
-    <title>CROWDLENDING</title>
+    <title>Lend it</title>
 
     <!-- Source CSS Bootstrap -->
     <link rel="stylesheet" href="../Styles/bootstrap.css">
+
+    <!-- CSS pour l'icone retour -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <!-- Source css pour la page -->
     <link rel="stylesheet" href="../Styles/connexion.css">

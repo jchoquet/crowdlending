@@ -31,7 +31,7 @@ body {
 }
 
 .container {
-    background-color: rgba(255,255,255,0.75);
+    background-color: rgba(255,255,255,0.85);
     border-radius: 6px;
     padding:40px;
     margin-right: auto;
@@ -49,6 +49,15 @@ body {
     text-align: center;
     margin-top: 15px; /* laisser de l'espace avant le bouton "S'inscrire" */
 }
+
+#arrow-container {
+  position: fixed;
+  top: 0;
+  margin: 25px;
+}
+
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-light { color: rgba(255, 255, 255, 0.85); }
 
 /* -------------- Formulaire connexion----------------- */
 
