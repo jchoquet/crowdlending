@@ -2,12 +2,12 @@
 //retourne 0 si tout les champs sont remplis
 //retourne 1 sinon
 
-include __DIR__ . '/../Models/Connexion.php';
+include __DIR__ . '/../Models/connexion.php';
 
 
 function verifFullfill()
 {
-    global $DB, $password, $username, $nom, $prenom, $password2, $phone, $address, $email;
+    global $DB, $password, $username, $nom, $prenom, $password2, $phone, $address, $email, $commune;
 	$password = $DB->quote(htmlspecialchars($_POST['password']));
 	$username = $DB->quote(htmlspecialchars($_POST['username']));
 	$nom = $DB->quote(htmlspecialchars($_POST['nom']));
@@ -16,7 +16,8 @@ function verifFullfill()
     $email = $DB->quote(htmlspecialchars($_POST['email']));
 	$phone = $DB->quote(htmlspecialchars($_POST['phone']));
 	$address = $DB->quote(htmlspecialchars($_POST['address']));
-	if($password == "" || $username == "" || $nom == "" || $prenom == "" || $password2 == "" || $phone == "" || $address == "")
+    $commune = $DB->quote(htmlspecialchars($_POST['commune']));
+	if($password == "" || $username == "" || $nom == "" || $prenom == "" || $password2 == "" || $phone == "" || $address == "" || $commune == "")
 	{
 		return 1;
 	}

@@ -8,9 +8,9 @@
 include __DIR__ . '/verificationServeur.php';
 
 // Redirection vers la page d'accueil si tous les tests sont passés, ou vers la page d'inscription sinon
-if (verifFullfill() == 0 && verifPassword() && verifEmail() == 0 && verifUsername() == 0 )
+if (verifFullfill() == 0 && verifPassword() && verifEmail() == 0 && verifUsername() == 0)
 {
-    global $DB, $password, $username, $nom, $prenom, $password2, $phone, $address, $email;
+    global $DB, $password, $username, $nom, $prenom, $password2, $phone, $address, $email, $commune;
 
     //Hashage du mot de passe
     $hashpassword = password_hash($password, PASSWORD_DEFAULT);
@@ -26,8 +26,7 @@ if (verifFullfill() == 0 && verifPassword() && verifEmail() == 0 && verifUsernam
     $sql->bindValue(':hashpassword', $hashpassword);
 
     //Préparation de la requête de recherche de l'id de la ville de l'utilisateur
-    $reqId = $DB -> prepare("SELECT id FROM commune WHERE nom = :address LIMIT 1");
-    $reqId->bindValue(':address','Dijon');
+    $reqId = $DB -> prepare("SELECT id FROM commune WHERE nom = $commune LIMIT 1");
 
     //Execution et récupération de cet id
     $reqId->execute();
@@ -36,6 +35,7 @@ if (verifFullfill() == 0 && verifPassword() && verifEmail() == 0 && verifUsernam
     {
         //Cas où la commune a été trouvée, son id est stocké dans $id_commune
         $check = $reqId->fetch(PDO::FETCH_ASSOC);
+        global $id_commune;
         $id_commune = $check['id'];
     }
     else
@@ -54,6 +54,9 @@ if (verifFullfill() == 0 && verifPassword() && verifEmail() == 0 && verifUsernam
 }
 
 //Redirection vers la page d'inscription si les champs ne sont pas valides
-else header(__DIR__ . '/../Views/inscription.php');
 
+else {
+    echo "Il y a eu un problème lors de votre inscription, veuillez cliquer sur le lien ci\n";
+    echo "<a href=\"../Views/inscription.php\">Page d'inscription</a>";
+}
 ?>

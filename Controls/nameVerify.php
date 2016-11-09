@@ -6,15 +6,15 @@
  * Time: 22:16
  */
 
-$Name = $_GET['name'];
+$username = $_GET['username'];
 
-include( dirname(__FILE__) . '/../Models/Connexion.php');
+include(dirname(__FILE__) . '/../Models/Connexion.php');
 
-$sql = $DB->prepare("SELECT * FROM Utilisateur WHERE username = :name");
-$sql->execute(array('name' => $Name));
-$result = $sql->fetchAll();
+$sql = $DB->prepare("SELECT * FROM utilisateur WHERE username = $username");
+$sql->execute();
 
-if($result[0] == "")
+//Si le nom d'utilisateur n'a pas déjà été pris
+if($sql->rowCount() == 0)
 {
     echo '1';
 }
