@@ -2,6 +2,8 @@
  * Created by mehdi on 01/11/2016.
  */
 
+var userNameExisted = false;
+
 jQuery(document).ready(function () {
 
     jQuery("#register").submit(function () {
@@ -41,7 +43,7 @@ jQuery(document).ready(function () {
         }
 
         //Check if the user name is not already taken
-        if(!userNameNotExist()){
+        if(userNameExisted){
             $("#problemName").html("Le nom d'utilisateur que vous avez choisi est déjà attribué, veuillez en choisir un autre");
             $("#pbInscription").modal();
             $('#pbInscription').on('hidden.bs.modal', function () {
@@ -75,13 +77,25 @@ jQuery(document).ready(function () {
             return false;
         }
 
+        if (jQuery("#commune").val() == "") {
+            $("#problemName").html("Veuillez remplir le champ 'Commune'");
+            $("#pbInscription").modal();
+            $('#pbInscription').on('hidden.bs.modal', function () {
+                jQuery("#commune").focus();
+            })
+            return false;
+        }
+
 
     });
 
-
+    //Lancement des différentes fonctions en fonction de l'intéraction de l'utilisateur avec les champs
     $("#vpassword").keyup(checkPasswordMatch);
     $("#password").keyup(checkPasswordMatch);
+    $("#username").keyup(userNameNotExist);
 
+    /*Fonction vérifiant que le mot de passe entré dans les champs mot de passe et vérification mot de passe
+    sont les mêmes*/
     function checkPasswordMatch() {
         var password = $("#password").val();
         var confirmPassword = $("#vpassword").val();
@@ -92,7 +106,7 @@ jQuery(document).ready(function () {
             $("#divCheckPasswordMatch").html("");
     }
 
-
+    //Fonction validant l'email à l'aide d'une regEx
     function valideEmail(Email) {
         var filtre = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         var valid = filtre.test(Email);
@@ -120,13 +134,14 @@ jQuery(document).ready(function () {
      * else return false. */
     function userNameNotExist() {
         var username = $("#username").val();
-        var changeUrl = "../Controls/nameVerify.php?action=check&username=" + username;
-        $.get(changeUrl, function (str) {
-            if (str == '1') {
-                return true;
+        $. post(urlSite.concat("/Controls/nameVerify.php"), {username : username}, function (str) {
+            if (str == '0'){
+                $("#divUserNameNotExist").html("<p style=\"color:red;\">Le nom d'utilisateur est déjà attribué</p>");
+                userNameExisted = true;
             }
             else {
-                return false;
+                $("#divUserNameNotExist").html("<p style=\"color:red;\"></p>");
+                userNameExisted = false;
             }
         });
     }

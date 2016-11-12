@@ -18,15 +18,8 @@
     <meta name="description" content="Page d'inscription sur le site">
     <meta name="author" content="Mehdi KHADIR">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="../Styles/bootstrap.css"/>
 
-    <!-- CSS pour l'icone retour -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
 
-    <!-- CSS pour la page -->
-    <link rel="stylesheet" href="../Styles/connexionFormulaire.css">
 </head>
 
 <body>
@@ -56,11 +49,16 @@
 
 </body>
 
-    <script src="../Scripts/jquery_library.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<![endif]-->
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="../Scripts/bootstrap.js"></script>
+<script src="../Scripts/jquery_library.js"></script>
 
-    <script src="../Scripts/inscription.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="../Scripts/bootstrap.js"></script>
+
+<script src="../Scripts/config.js"></script>
+<script src="../Scripts/inscription.js"></script>
 
 </html>
