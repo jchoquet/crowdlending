@@ -125,7 +125,10 @@
                 <div class="row">
                 <div class="form-group padding-correct">
                     <label for="Commune">Commune</label>
-                    <input type="text" class="form-control" id="commune" placeholder="Commune" name="commune">
+                    <input type="text" class="form-control" id="commune" list="noms_communes" placeholder="Commune" name="commune">
+                    <datalist id="noms_communes">
+                        <?php include "../Models/autocomplete_commune.php"; ?>
+                    </datalist>
                 </div>
                     </div>
             </div>
