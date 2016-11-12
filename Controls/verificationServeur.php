@@ -7,7 +7,7 @@ include __DIR__ . '/../Models/connexion.php';
 
 function verifFullfill()
 {
-    global $DB, $password, $username, $nom, $prenom, $password2, $phone, $address, $email, $commune;
+    global $DB;
 	$password = $DB->quote(htmlspecialchars($_POST['password']));
 	$username = $DB->quote(htmlspecialchars($_POST['username']));
 	$nom = $DB->quote(htmlspecialchars($_POST['nom']));

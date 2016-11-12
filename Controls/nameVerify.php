@@ -10,8 +10,9 @@ $username = $_POST['username'];
 
 include(dirname(__FILE__) . '/../Models/Connexion.php');
 
-
-$sql = $DB->prepare("SELECT * FROM Utilisateur WHERE username = '$username'");
+//Requête sélectionnant tous les noms d'utilisateurs correspondant à celui entré par l'utilisateur dans le formulaire
+$sql = $DB->prepare("SELECT * FROM utilisateur WHERE username = :username");
+$sql->bindValue(':username',$username);
 $sql->execute();
 
 //Si le nom d'utilisateur n'a pas déjà été pris

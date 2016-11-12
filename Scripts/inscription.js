@@ -83,7 +83,7 @@ jQuery(document).ready(function () {
 
     $("#vpassword").keyup(checkPasswordMatch);
     $("#password").keyup(checkPasswordMatch);
-    $("#username").blur(userNameNotExist);
+    $("#username").keyup(userNameNotExist);
 
     function checkPasswordMatch() {
         var password = $("#password").val();
@@ -123,7 +123,7 @@ jQuery(document).ready(function () {
      * else return false. */
     function userNameNotExist() {
         var username = $("#username").val();
-        $. post("/Inscription/Controls/nameVerify.php", {username : username}, function (str) {
+        $. post(urlSite.concat("/Controls/nameVerify.php"), {username : username}, function (str) {
             if (str == '0'){
                 $("#divUserNameNotExist").html("<p style=\"color:red;\">Le nom d'utilisateur est déjà attribué</p>");
                 userNameExisted = true;
