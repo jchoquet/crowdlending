@@ -77,14 +77,25 @@ jQuery(document).ready(function () {
             return false;
         }
 
+        if (jQuery("#commune").val() == "") {
+            $("#problemName").html("Veuillez remplir le champ 'Commune'");
+            $("#pbInscription").modal();
+            $('#pbInscription').on('hidden.bs.modal', function () {
+                jQuery("#commune").focus();
+            })
+            return false;
+        }
+
 
     });
 
-
+    //Lancement des différentes fonctions en fonction de l'intéraction de l'utilisateur avec les champs
     $("#vpassword").keyup(checkPasswordMatch);
     $("#password").keyup(checkPasswordMatch);
     $("#username").keyup(userNameNotExist);
 
+    /*Fonction vérifiant que le mot de passe entré dans les champs mot de passe et vérification mot de passe
+    sont les mêmes*/
     function checkPasswordMatch() {
         var password = $("#password").val();
         var confirmPassword = $("#vpassword").val();
@@ -95,7 +106,7 @@ jQuery(document).ready(function () {
             $("#divCheckPasswordMatch").html("");
     }
 
-
+    //Fonction validant l'email à l'aide d'une regEx
     function valideEmail(Email) {
         var filtre = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         var valid = filtre.test(Email);

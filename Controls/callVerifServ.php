@@ -38,7 +38,7 @@ if (verifFullfill() == 0  && verifPassword() && verifEmail() == 0 && verifUserna
 
     //Préparation de la requête de recherche de l'id de la ville de l'utilisateur
     $reqId = $DB -> prepare("SELECT id FROM commune WHERE nom = :commune");
-    $reqId->bindValue(':commune',$commune);
+    $reqId->bindValue(':commune',substr($commune, 0, -5));
 
     //Execution et récupération de cet id
     $reqId->execute();

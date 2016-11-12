@@ -103,7 +103,7 @@
 
                 <div class="row">
                     <div class="form-group padding-correct">
-                        <label for="Commune">Commune</label>
+                        <label for="Commune">Commune *</label>
                         <input type="text" class="form-control" id="commune" list="noms_communes" placeholder="Commune"
                                name="commune">
                         <datalist id="noms_communes">
