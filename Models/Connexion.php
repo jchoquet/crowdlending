@@ -5,10 +5,8 @@
  * Date: 06/11/2016
  * Time: 11:18
  */
-
 // On inclut "Config.php" de cette façon pour éviter des erreurs de double inclusion
 include __DIR__ . "/../Config.php";
-
 // On essaie de se connecter avec PDO à la base de données
 // en utilisant les paramètres du fichier "Config.php"
 try
@@ -21,12 +19,4 @@ catch (Exception $e) // on renvoie l'erreur s'il y en a une
 {
     die("Erreur : " . $e->getMessage());
 }
-
-/*$reponse = $DB->query('SELECT nom FROM departement;');
-
-while ($donnee = $reponse->fetch())
-{
-    echo $donnee['nom'];
-}*/
-
 ?>

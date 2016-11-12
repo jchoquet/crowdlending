@@ -10,7 +10,7 @@
 // et remplir les tables "departement" et "commune"
 
 // On se connecte à la base de données
-include "Connexion.php";
+include "connexion.php";
 
 
 // Ajout des tables "departement " et "commune"
