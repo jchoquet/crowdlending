@@ -21,12 +21,15 @@
 
 
     <!-- CSS pour la page -->
-    <link rel="stylesheet" href="../Styles/connexionFormulaire.css">
+    <link rel="stylesheet" href="../Styles/inscription.css">
+    <link rel="stylesheet" href="../Styles/bootstrap.css">
+
+
 </head>
 
 <body>
 
-    <?php include("formulaireInscription.php"); ?>
+    <?php include __DIR__."./formulaireInscription.php"; ?>
 
     <!-- Modal -->
     <div id="pbInscription" class="modal fade" role="dialog">
