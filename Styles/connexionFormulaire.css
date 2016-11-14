@@ -2,9 +2,10 @@
  *  Mise en page générale
  */
 
+/*
 html,
 body {
-    /* Position, taille de l'image de fond */
+    !* Position, taille de l'image de fond *!
     background: url("../Images/landing_bg_1.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -53,6 +54,7 @@ body {
 
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-light { color: rgba(255, 255, 255, 0.85); }
+*/
 
 /*
  *  Formulaire et modal

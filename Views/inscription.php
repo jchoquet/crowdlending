@@ -48,8 +48,6 @@
 
         </div>
     </div>
-
-<<<<<<< HEAD
 </body>
 
 <!--[if lt IE 9]>
