@@ -2,7 +2,7 @@ CREATE TABLE objet(
 id INTEGER PRIMARY KEY AUTO_INCREMENT,
 nom VARCHAR(255) NOT NULL,
 prix FLOAT DEFAULT NULL,
-path_photo VARCHAR(255),
+path_photo VARCHAR(255) DEFAULT "no_image.png",
 id_owner INTEGER,
 isAvailable TINYINT DEFAULT 1,
 description TEXT,
