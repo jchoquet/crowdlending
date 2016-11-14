@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <!-- formulaire de connexion -->
 			<div id="co" class="col-md-offset-4 col-md-4">
-				<form role="form" method="post" action="../Controls/scriptc1.php">
+				<form role="form" method="post" action="../Controls/ConnexionVerif.php">
 				<div class="form-group">
 					<label for="identifiant">Identifiant</label>
     				<input class="form-control" id="identifiantc" name="username" type="text" value="" required/>
@@ -17,6 +17,5 @@
     			<button class="btn btn-default btn-block" type="submit" id="connexion" name="connexion">Se connecter</button>
     			<span class="errors" id="formerror"></span>
 			</div>
-
 	</form>
 </div>
