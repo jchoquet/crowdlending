@@ -1,6 +1,7 @@
 <div class="container-fluid">
     <!-- formulaire de connexion -->
-			<div id="co" class="col-md-offset-4 col-md-4">
+			<div id="co" class="col-md-offset-1 col-md-10">
+					<h1 id="connexionTitre">Connexion</h1>
 				<form role="form" method="post" action="../Controls/ConnexionVerif.php">
 				<div class="form-group">
 					<label for="identifiant">Identifiant</label>
