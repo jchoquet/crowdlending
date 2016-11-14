@@ -1,26 +1,23 @@
 <?php
 
-include __DIR__ . '/../Models/Connexion.php';
+include __DIR__ . '/../Models/connexion.php';
 include __DIR__ . '/ConnexionUser.php';
-
 
 try
   {
-
-	/* Si tous les champs sont renseignÃ©s */
+	/* Si tous les champs sont renseignés */
 	
 	if(isset($_POST['username']) && isset($_POST['mdp']))
 	{
 
-		$id=getIdUser($_Post['username']);
-        echo $id;
+    $id=getIdUser($_Post['username']);
 		$mdp=$_POST['mdp'];
 
-		$hash=connexionUser($id);
+		$hash=GetPswUser($DB,$id);
 
 		if (password_verify($mdp, $hash)) 
 		{
-			/* L'utilisateur existe */
+			/* le mot de passe correspond donc l'utilisateur existe et la connexion peut être établie */
 
 			session_start();
 			$_SESSION['login']=$id;
@@ -28,8 +25,7 @@ try
 
 		   	echo "OK";
 		}
-        else 
-        {
+        else {
             echo "Erreur identifiant ou mot de passe";
         } 
 	}
@@ -38,10 +34,9 @@ try
 	
 	$DB = null;
 }
-
-catch(PDOException $e)
-{
+catch(PDOException $e){
 	echo "Database Error";
 }
+
 
 ?>
