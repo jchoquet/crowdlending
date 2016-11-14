@@ -20,6 +20,8 @@
 
 
 
+    <!-- CSS pour la page -->
+    <link rel="stylesheet" href="../Styles/connexionFormulaire.css">
 </head>
 
 <body>
@@ -47,6 +49,7 @@
         </div>
     </div>
 
+<<<<<<< HEAD
 </body>
 
 <!--[if lt IE 9]>
@@ -61,4 +64,6 @@
 <script src="../Scripts/config.js"></script>
 <script src="../Scripts/inscription.js"></script>
 
+
+</body>
 </html>

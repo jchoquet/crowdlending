@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `commune`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `commune` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `code_departement` varchar(3) DEFAULT NULL,
+  `code_departement` varchar(3) NOT NULL,
   `nom` varchar(45) DEFAULT NULL,
   `code_postal` varchar(255) DEFAULT NULL,
   `longitude` float DEFAULT NULL,
@@ -33,7 +33,8 @@ CREATE TABLE `commune` (
   KEY `ville_departement` (`code_departement`),
   KEY `ville_nom_reel` (`nom`),
   KEY `ville_code_postal` (`code_postal`),
-  KEY `ville_longitude_latitude_deg` (`longitude`,`latitude`)
+  KEY `ville_longitude_latitude_deg` (`longitude`,`latitude`),
+  CONSTRAINT `fk_commune_departement` FOREIGN KEY (`code_departement`) REFERENCES `departement` (`code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=36831 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -56,11 +57,11 @@ DROP TABLE IF EXISTS `departement`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `departement` (
-  `code` varchar(3) COLLATE utf8_bin NOT NULL,
-  `nom` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `code` varchar(3) NOT NULL,
+  `nom` varchar(255) NOT NULL,
   PRIMARY KEY (`code`),
   KEY `index_departement_nom` (`nom`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +70,7 @@ CREATE TABLE `departement` (
 
 LOCK TABLES `departement` WRITE;
 /*!40000 ALTER TABLE `departement` DISABLE KEYS */;
-INSERT INTO `departement` VALUES ('01','Ain'),('02','Aisne'),('03','Allier'),('06','Alpes-Maritimes'),('04','Alpes-de-Haute-Provence'),('08','Ardennes'),('07','Ardèche'),('09','Ariège'),('10','Aube'),('11','Aude'),('12','Aveyron'),('67','Bas-Rhin'),('13','Bouches-du-Rhône'),('14','Calvados'),('15','Cantal'),('16','Charente'),('17','Charente-Maritime'),('18','Cher'),('19','Corrèze'),('2A','Corse-du-sud'),('23','Creuse'),('21','Côte-d\'or'),('22','Côtes-d\'armor'),('79','Deux-Sèvres'),('24','Dordogne'),('25','Doubs'),('26','Drôme'),('91','Essonne'),('27','Eure'),('28','Eure-et-Loir'),('29','Finistère'),('30','Gard'),('32','Gers'),('33','Gironde'),('971','Guadeloupe'),('973','Guyane'),('68','Haut-Rhin'),('31','Haute-Garonne'),('43','Haute-Loire'),('52','Haute-Marne'),('74','Haute-Savoie'),('70','Haute-Saône'),('87','Haute-Vienne'),('2B','Haute-corse'),('05','Hautes-Alpes'),('65','Hautes-Pyrénées'),('92','Hauts-de-Seine'),('34','Hérault'),('35','Ile-et-Vilaine'),('36','Indre'),('37','Indre-et-Loire'),('38','Isère'),('39','Jura'),('40','Landes'),('41','Loir-et-Cher'),('42','Loire'),('44','Loire-Atlantique'),('45','Loiret'),('46','Lot'),('47','Lot-et-Garonne'),('48','Lozère'),('49','Maine-et-Loire'),('50','Manche'),('51','Marne'),('972','Martinique'),('53','Mayenne'),('976','Mayotte'),('54','Meurthe-et-Moselle'),('55','Meuse'),('56','Morbihan'),('57','Moselle'),('58','Nièvre'),('59','Nord'),('60','Oise'),('61','Orne'),('75','Paris'),('62','Pas-de-Calais'),('63','Puy-de-Dôme'),('64','Pyrénées-Atlantiques'),('66','Pyrénées-Orientales'),('69','Rhône'),('974','Réunion'),('975','Saint-Pierre-et-Miquelon'),('72','Sarthe'),('73','Savoie'),('71','Saône-et-Loire'),('76','Seine-Maritime'),('93','Seine-Saint-Denis'),('77','Seine-et-Marne'),('80','Somme'),('81','Tarn'),('82','Tarn-et-Garonne'),('90','Territoire de Belfort'),('95','Val-d\'oise'),('94','Val-de-Marne'),('83','Var'),('84','Vaucluse'),('85','Vendée'),('86','Vienne'),('88','Vosges'),('89','Yonne'),('78','Yvelines');
+INSERT INTO `departement` VALUES ('01','Ain'),('02','Aisne'),('03','Allier'),('04','Alpes-de-Haute-Provence'),('06','Alpes-Maritimes'),('07','Ardèche'),('08','Ardennes'),('09','Ariège'),('10','Aube'),('11','Aude'),('12','Aveyron'),('67','Bas-Rhin'),('13','Bouches-du-Rhône'),('14','Calvados'),('15','Cantal'),('16','Charente'),('17','Charente-Maritime'),('18','Cher'),('19','Corrèze'),('2A','Corse-du-sud'),('21','Côte-d\'or'),('22','Côtes-d\'armor'),('23','Creuse'),('79','Deux-Sèvres'),('24','Dordogne'),('25','Doubs'),('26','Drôme'),('91','Essonne'),('27','Eure'),('28','Eure-et-Loir'),('29','Finistère'),('30','Gard'),('32','Gers'),('33','Gironde'),('971','Guadeloupe'),('973','Guyane'),('68','Haut-Rhin'),('2B','Haute-corse'),('31','Haute-Garonne'),('43','Haute-Loire'),('52','Haute-Marne'),('70','Haute-Saône'),('74','Haute-Savoie'),('87','Haute-Vienne'),('05','Hautes-Alpes'),('65','Hautes-Pyrénées'),('92','Hauts-de-Seine'),('34','Hérault'),('35','Ile-et-Vilaine'),('36','Indre'),('37','Indre-et-Loire'),('38','Isère'),('39','Jura'),('40','Landes'),('41','Loir-et-Cher'),('42','Loire'),('44','Loire-Atlantique'),('45','Loiret'),('46','Lot'),('47','Lot-et-Garonne'),('48','Lozère'),('49','Maine-et-Loire'),('50','Manche'),('51','Marne'),('972','Martinique'),('53','Mayenne'),('976','Mayotte'),('54','Meurthe-et-Moselle'),('55','Meuse'),('56','Morbihan'),('57','Moselle'),('58','Nièvre'),('59','Nord'),('60','Oise'),('61','Orne'),('75','Paris'),('62','Pas-de-Calais'),('63','Puy-de-Dôme'),('64','Pyrénées-Atlantiques'),('66','Pyrénées-Orientales'),('974','Réunion'),('69','Rhône'),('975','Saint-Pierre-et-Miquelon'),('71','Saône-et-Loire'),('72','Sarthe'),('73','Savoie'),('77','Seine-et-Marne'),('76','Seine-Maritime'),('93','Seine-Saint-Denis'),('80','Somme'),('81','Tarn'),('82','Tarn-et-Garonne'),('90','Territoire de Belfort'),('95','Val-d\'oise'),('94','Val-de-Marne'),('83','Var'),('84','Vaucluse'),('85','Vendée'),('86','Vienne'),('88','Vosges'),('89','Yonne'),('78','Yvelines');
 /*!40000 ALTER TABLE `departement` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -82,4 +83,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-12 19:09:56
+-- Dump completed on 2016-11-13 19:05:32

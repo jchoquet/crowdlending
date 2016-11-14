@@ -22,7 +22,7 @@ Outil de crowdlending
 
 ### Adresse du backlog
 
-*Lien vers le backlog sur Trello.*
+https://trello.com/b/JihqisMV/groupe-1-tableau-du-projet
 
 ## Partie libre
 

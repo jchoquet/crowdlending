@@ -41,7 +41,7 @@ body {
 
 @media (min-width: 992px) {
   .container {
-    width: 400px;
+    width: 500px;
   }
 }
 
@@ -80,8 +80,9 @@ body {
 }
 
 /* -------------- Erreurs ----------------- */
+
 .errors{
   float:right;
-  margin-left: 20px;
+  margin-left: 10px;
   color : #a94442;
 }
