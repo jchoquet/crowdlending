@@ -5,7 +5,7 @@ include __DIR__ . '/ConnexionUser.php';
 
 try
   {
-	/* Si tous les champs sont renseignés */
+	/* Si tous les champs sont renseignÃ©s */
 	
 	if(isset($_POST['username']) && isset($_POST['mdp']))
 	{
@@ -17,7 +17,7 @@ try
 
 		if (password_verify($mdp, $hash)) 
 		{
-			/* le mot de passe correspond donc l'utilisateur existe et la connexion peut être établie */
+			/* le mot de passe correspond donc l'utilisateur existe et la connexion peut Ãªtre Ã©tablie */
 
 			session_start();
 			$_SESSION['login']=$id;
