@@ -10,7 +10,7 @@ try
 	if(isset($_POST['username']) && isset($_POST['mdp']))
 	{
 
-    $id=getIdUser($_Post['username']);
+    $id=getIdUser($_POST['username']);
 		$mdp=$_POST['mdp'];
 
 		$hash=GetPswUser($DB,$id);

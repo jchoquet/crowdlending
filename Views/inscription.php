@@ -17,25 +17,49 @@
     <meta name="description" content="Page d'inscription sur le site">
     <meta name="author" content="Mehdi KHADIR">
 
-    <link rel="stylesheet" href="">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Styles/bootstrap.css"/>
+
+    <!-- CSS pour la page -->
+    <link rel="stylesheet" href="../Styles/connexionFormulaire.css">
 
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
 
-    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="../Scripts/jquery_library.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="../Scripts/bootstrap.js"></script>
 
+    <script src="../Scripts/config.js"></script>
     <script src="../Scripts/inscription.js"></script>
 </head>
 
 <body>
 
 <?php include("formulaireInscription.php"); ?>
+
+<!-- Modal -->
+<div id="pbInscription" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" id="closePbInscription">&times;</button>
+                <h3 class="modal-title"><img src="../Images/warning-icon-png-2749.png" id="warningIcon">Problème lors de votre inscription</h3>
+            </div>
+            <div class="modal-body">
+                <p id="problemName"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>

@@ -26,7 +26,7 @@ function GetIdUser($userName)
   }
   else
       {
-      echo "Id non trouvé\n";
+      echo "Id user non trouvé\n";
       $id = 0;
   }
   return $id;
