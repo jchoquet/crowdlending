@@ -54,13 +54,11 @@
         </div>
     </div>
 
-</body>
-
     <script src="../Scripts/jquery_library.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
     <script src="../Scripts/bootstrap.js"></script>
 
+    <script src="../Scripts/config.js"></script>
     <script src="../Scripts/inscription.js"></script>
 
+</body>
 </html>

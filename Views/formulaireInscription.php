@@ -34,69 +34,90 @@
                             <small> Merci de renseigner vos informations</small>
                         </h1>
                     </div>
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-4">
+                <div class="form-group">
+                    <label for="Nom">Nom *</label>
+                    <input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="Prenom">Prénom *</label>
+                    <input type="text" class="form-control" id="prenom" placeholder="Prénom" name="prenom">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-4">
+                <div class="form-group">
+                    <label for="Nom">Nom d'utilisateur *</label>
+                    <input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur"
+                           name="username">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-4">
+                <div class="registrationFormAlert" id="divUserNameNotExist"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="form-group">
+                    <label for="Email">Adresse email *</label>
+                    <input type="text" class="form-control" id="email" placeholder="Adresse email" name="email">
                 </div>
 
                 <div class="row">
-                    <div class="col-md-12" id="nomPrenom">
-                        <div class="form-group col-md-4">
-                            <label for="Nom">Nom *</label>
-                            <input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="Prenom">Prénom *</label>
-                            <input type="text" class="form-control" id="prenom" placeholder="Prénom" name="prenom">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="Username">Nom d'utilisateur *</label>
-                            <input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur"
-                                   name="username">
-                        </div>
+
+                    <div class="form-group padding-correct">
+                        <label for="Password">Mot de passe *</label>
+                        <input type="password" class="form-control" id="password" placeholder="Mot de passe"
+                               name="password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group padding-correct">
+                        <label for="Vpassword">Vérification mot de passe *</label>
+                        <input type="password" class="form-control" id="vpassword"
+                               placeholder="Vérification mot de passe"
+                               name="passwordCheck">
+                    </div>
+                </div>
+            </div>
+
+                <div class="row">
+
+                    <div class="form-group padding-correct">
+                        <label for="Phone">Téléphone</label>
+                        <input type="text" class="form-control" id="tel" placeholder="Numéro de téléphone" name="phone">
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="Email">Adresse email *</label>
-                            <input type="text" class="form-control" id="email" placeholder="Adresse email" name="email">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="row">
-                        <div class="form-group padding-correct">
-                            <label for="Password">Mot de passe *</label>
-                            <input type="password" class="form-control" id="password" placeholder="Mot de passe"
-                                   name="password">
-                        </div>
-                    </div>
-                        <div class="row">
-                        <div class="form-group padding-correct">
-                            <label for="Vpassword">Vérification mot de passe *</label>
-                            <input type="password" class="form-control" id="vpassword" placeholder="Vérification mot de passe"
-                                   name="passwordCheck">
-                        </div>
-                            </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="row">
-                        <div class="form-group padding-correct">
-                            <label for="Phone">Téléphone</label>
-                            <input type="text" class="form-control" id="tel" placeholder="Numéro de téléphone" name="phone">
-                        </div>
-                            </div>
-
-                        <div class="row">
-                        <div class="form-group padding-correct">
-                            <label for="Commune">Commune</label>
-                            <input type="text" class="form-control" id="commune" placeholder="Commune" name="commune">
-                        </div>
-                            </div>
-                    </div>
                     <br/>
+                <div class="row">
+                    <div class="form-group padding-correct">
+                        <label for="Commune">Commune *</label>
+                        <input type="text" class="form-control" id="commune" list="noms_communes" placeholder="Commune"
+                               name="commune">
+                        <datalist id="noms_communes">
+                            <?php include "../Models/autocomplete_commune.php"; ?>
+                        </datalist>
+                    </div>
+                </div>
+            </div>
+            <br/>
 
                 </div>
 
@@ -114,11 +135,11 @@
                         </div>
                     </div>
                 </div>
-
-                <p class="lead">
-                    <button type="submit" class="btn btn-lg btn-info" id="boutonInscription">S'inscrire</button>
-                </p>
-            </form>
+            </div>
         </div>
-    </div>
+        <p class="lead">
+            <button type="submit" class="btn btn-lg btn-info" id="boutonInscription">S'incrire</button>
+        </p>
+</div>
+</form>
 </div>

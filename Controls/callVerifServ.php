@@ -7,10 +7,21 @@
  */
 include __DIR__ . '/verificationServeur.php';
 
+//Récupération des données de post
+$username = $_POST['username'];
+$password = $_POST['password'];
+$nom = $_POST['nom'];
+$prenom = $_POST['prenom'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+$email = $_POST['email'];
+$commune = $_POST['commune'];
+
+
 // Redirection vers la page d'accueil si tous les tests sont passés, ou vers la page d'inscription sinon
-if (verifFullfill() == 0 && verifPassword() && verifEmail() == 0 && verifUsername() == 0)
+if (verifFullfill() == 0  && verifPassword() && verifEmail() == 0 && verifUsername() == 0)
 {
-    global $DB, $password, $username, $nom, $prenom, $password2, $phone, $address, $email, $commune;
+    global $DB;
 
     //Hashage du mot de passe
     $hashpassword = password_hash($password, PASSWORD_DEFAULT);
@@ -19,21 +30,22 @@ if (verifFullfill() == 0 && verifPassword() && verifEmail() == 0 && verifUsernam
 
     //Préparation de la requête d'insertion du nouvel utilisateur
     $sql = $DB->prepare("INSERT INTO utilisateur (username, prenom, nom, email, hash_password, id_commune) VALUES (:username, :prenom, :nom, :email, :hashpassword, :id_commune)");
-    $sql->bindValue(':username', $username, PDO::PARAM_STR);
+    $sql->bindValue(':username',$username, PDO::PARAM_STR);
     $sql->bindValue(':prenom', $prenom, PDO::PARAM_STR);
     $sql->bindValue(':nom', $nom, PDO::PARAM_STR);
     $sql->bindValue(':email', $email, PDO::PARAM_STR);
-    $sql->bindValue(':hashpassword', $hashpassword);
+    $sql->bindValue(':hashpassword', $hashpassword, PDO::PARAM_STR);
 
     //Préparation de la requête de recherche de l'id de la ville de l'utilisateur
-    $reqId = $DB -> prepare("SELECT id FROM commune WHERE nom = $commune LIMIT 1");
+    $reqId = $DB -> prepare("SELECT id FROM commune WHERE nom = :commune");
+    $reqId->bindValue(':commune',substr($commune, 0, -5));
 
     //Execution et récupération de cet id
     $reqId->execute();
 
+    //Si des villes ont été trouvées, on stocke l'ID qui lui correspond dans $id_commune
     if ($reqId->rowCount() > 0)
     {
-        //Cas où la commune a été trouvée, son id est stocké dans $id_commune
         $check = $reqId->fetch(PDO::FETCH_ASSOC);
         global $id_commune;
         $id_commune = $check['id'];

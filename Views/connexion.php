@@ -26,13 +26,15 @@
 
   <body>
     <?php include("formulaireConnexion.php"); ?>
-  </body>
+
 
   <!-- Source jquery -->
   <script src="../Scripts/jquery_library.js"></script>
   <!-- Source JavaScript Bootstrap -->
   <script src="../Scripts/bootstrap.js"></script>
   <!-- fichier JS validation formulaire -->
-  <script src="../Scripts/validate_co1.js"></script>
+  <script src="../Scripts/validate_connexion.js"></script>
+
+</body>
 
 </html>
