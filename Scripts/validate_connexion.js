@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 		if(tmp == "" || (tmp.length < 10)) 
 		{
-			$("#mdperrorc").html(" 10 caractères min");
+			$("#mdperrorc").html("10 caractÃ¨res min");
 			mdpc = "";
 		}
 		else
@@ -33,9 +33,9 @@ $(document).ready(function(){
 			$("#idcerror").html("");
 			idc = "";
 		}
-		else if( tmp.length > 50)
+		else if(tmp.length > 50)
 		{
-			$("#idcerror").html(" 50 caractères max");
+			$("#idcerror").html(" 50 caractÃ¨res max");
 			idc = "";
 		}
 		else
@@ -57,7 +57,7 @@ $(document).ready(function(){
 			$.ajax({
 
 				type:'POST',
-				url:'scriptc1.php',
+				url:'ConnexionVerif.php',
 				data:"mdp="+mdpc+"&id="+idc,
 				success:function(msg) {
 
