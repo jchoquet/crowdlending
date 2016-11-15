@@ -2,9 +2,6 @@
  * Propriétés texte générales
  */
 
-h1 {
-  font-size: 45px;
-}
 h3 {
   font-size: 30px;
 }
@@ -14,7 +11,33 @@ a,
 a:focus,
 a:hover {
   color: #fff;
-  font-size: 19px;
+}
+
+/*
+ * Logo et brand
+ */
+
+@font-face {
+    font-family: 'calligraffitiregular';
+    src: url('Fonts/Calligraffiti-webfont.eot');
+    src: url('Fonts/Calligraffiti-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Fonts/Calligraffiti-webfont.woff') format('woff'),
+         url('Fonts/Calligraffiti-webfont.ttf') format('truetype'),
+         url('Fonts/Calligraffiti-webfont.svg#calligraffitiregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#logo {
+  float:left;
+  height: 90px;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+.masthead-brand {
+  font-family: "calligraffitiregular", "sans serif";
 }
 
 /*
@@ -23,15 +46,17 @@ a:hover {
 
 html,
 body {
-  background: url("../Images/landing_bg_1.jpg") no-repeat center center fixed; 
 
+  /* Position, taille de l'image de fond */
+  background: url("../Images/landing_bg_1.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
   height: 100%;
   background-color: #060;
+
+  /* Texte */
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
@@ -40,15 +65,18 @@ body {
 .site-wrapper {
   display: table;
   width: 100%;
-  height: 100%; /* For at least Firefox */
+  height: 100%;
   min-height: 100%;
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
+
 .site-wrapper-inner {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: middle;
+
 }
+
 .cover-container {
   margin-right: auto;
   margin-left: auto;
@@ -66,18 +94,19 @@ body {
 .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 15px;
 }
 
 .masthead-nav > li {
   display: inline-block;
+  margin-top: 15px;
 }
 .masthead-nav > li + li {
   margin-left: 20px;
 }
 .masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 25px;
+  padding: 0px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.95);
@@ -87,7 +116,7 @@ body {
 .masthead-nav > li > a:focus {
   background-color: transparent;
   border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
+  border-bottom-color: rgba(255,255,255,.75);
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
@@ -111,7 +140,6 @@ body {
  */
 
 .cover {
- /*padding: 0 20px;*/
  background-color: rgba(91,84,69,0.75); /* Pour pouvoir lire le texte */
 }
 
@@ -124,26 +152,20 @@ body {
   .cover {
      border-radius: 6px;
   }
+
 /*
  * Alignement
  */
-
 
 .masthead {
   position: fixed;
   top: 0;
 }
 
-.site-wrapper-inner {
-  vertical-align: middle;
-}
-
 .masthead,
-.mastfoot,
 .cover-container {
-  width: 100%; 
+  width: 100%;
 }
-
 
 @media (min-width: 992px) {
 

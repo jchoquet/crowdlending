@@ -2,30 +2,40 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8"/>
-    <title>Connexion</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- pour les moteurs de recherche -->
-    <metaname="description" lang="fr" content="Page de connexion sur le site" />
-    <metaname="keywords" lang="fr" content="cnnexion , pima " />
+    <!-- Pour les moteurs de recherche -->
+    <meta name="description" lang="fr" content="plateforme de prêt d'objets entre particuliers" />
+    <meta name="keywords" lang="fr" content="prêt, objet, voisinage, communauté" />
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="../Styles/bootstrap.css">
+    <!-- Pour ajouter une icone dans le titre de la page -->
+    <!-- link rel="shortcut icon" href="fonts/icone.ico" -->
+    <title>Lend it</title>
 
-	<!-- jquery -->
-	<script src="../Scripts/jquery_library.js"></script>
+    <!-- Source CSS Bootstrap -->
+    <link rel="stylesheet" href="../Styles/bootstrap.css">
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="../Scripts/bootstrap.js"></script>
+    <!-- CSS pour l'icone retour -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
-	<!-- fichier css perso -->
-	<link rel="stylesheet" href="../Styles/connexion.css">
+    <!-- Source css pour la page -->
+    <link rel="stylesheet" href="../Styles/connexion.css">
+  </head>
 
-	<!-- fichier JS validation formulaire -->
-	<script src="../Scripts/validate_connexion.js"></script>
+  <body>
+    <?php include("formulaireConnexion.php"); ?>
 
-</head>
-<body>
-    
-<?php include("formulaireConnexion.php"); ?>
+
+  <!-- Source jquery -->
+  <script src="../Scripts/jquery_library.js"></script>
+  <!-- Source JavaScript Bootstrap -->
+  <script src="../Scripts/bootstrap.js"></script>
+
+  <!-- fichier JS validation formulaire -->
+  <script src="../Scripts/validate_connexion.js"></script>
+
 </body>
+
 </html>
