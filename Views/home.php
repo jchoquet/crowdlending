@@ -19,6 +19,7 @@
   <body>
 
     <?php include("header.php"); ?>
+    <?php include("footer.php"); ?>
 
     <!-- Source jquery -->
     <script src="../Scripts/jquery_library.js"></script>

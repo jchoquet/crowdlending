@@ -8,17 +8,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <span class="navbar-brand">Lend it </span>
+      <span class="navbar-brand">Lend it !</span>
     </div>
 
     <div class="collapse navbar-collapse" id="menu-navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="index.php">Accueil</a></li>
-        <li><a href="#">Rechercher un objet</a></li>
-        <li><a href="#">Faire une demande</a></li>
-        <li><a href="#">Ajouter un objet</a></li>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span> Rechercher un objet</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-bell"></span> Faire une demande</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Ajouter un objet</a></li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Bidule
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Random guy
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
@@ -27,6 +27,8 @@
             <li><a href="#">Mon historique</a></li>
           </ul>
         </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li>
           <a href="#"><span class="glyphicon glyphicon-log-in"></span> Déconnexion</a>
         </li>
