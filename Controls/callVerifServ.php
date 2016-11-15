@@ -58,15 +58,28 @@ if (verifFullfill() == 0  && verifPassword() && verifEmail() == 0 && verifUserna
     }
     $sql->bindValue(':id_commune', $id_commune);
 
+
     //Execution de la requête d'enregistrement de l'utilisateur
-    $sql->execute();
+    $result = $sql->execute();
 
-    //Redirection vers la page d'accueil si tout s'est bien passé
-    header(__DIR__ . '/../index.php');
+    if($result)
+    {
+        //Debut de la session
+        session_start();
+        $_SESSION['username']=$username;
+        $_SESSION['pwd']=$hash;
+
+        //Redirection vers la page d'accueil si tout s'est bien passé
+        header('location: ../acceuil.php');
+    }
+    else
+    {
+        echo "Il y a eu un problème lors de votre inscription, veuillez cliquer sur le lien ci\n";
+        echo "<a href=\"../Views/inscription.php\">Page d'inscription</a>";
+    }
+
 }
-
 //Redirection vers la page d'inscription si les champs ne sont pas valides
-
 else {
     echo "Il y a eu un problème lors de votre inscription, veuillez cliquer sur le lien ci\n";
     echo "<a href=\"../Views/inscription.php\">Page d'inscription</a>";
