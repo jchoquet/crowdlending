@@ -21,8 +21,8 @@
 
 
     <!-- CSS pour la page -->
-    <link rel="stylesheet" href="../Styles/inscription.css">
     <link rel="stylesheet" href="../Styles/bootstrap.css">
+    <link rel="stylesheet" href="../Styles/inscription.css">
 
 
 </head>
