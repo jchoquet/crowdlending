@@ -6,7 +6,7 @@
  * Time: 17:26
  */
 
-include "connexion.php";
+include __DIR__."/connexion.php";
 
 // on récupère les noms de toutes les communes
 $requete = $DB->query("SELECT nom, code_departement FROM commune");

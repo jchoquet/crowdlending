@@ -15,10 +15,10 @@
     <title>Lend it</title>
 
     <!-- Source CSS Bootstrap -->
-    <link rel="stylesheet" href="Styles/bootstrap.css">
+    <link rel="stylesheet" href="../Styles/bootstrap.css">
 
     <!-- CSS pour la page -->
-    <link rel="stylesheet" href="Styles/index.css">
+    <link rel="stylesheet" href="../Styles/index.css">
   </head>
 
   <body >
@@ -31,7 +31,7 @@
             <div class="inner">
               <!-- Logo/nom du site -->
               <p>
-              <img alt="Brand" id="logo" src="Images/logo.png"></a>
+              <img alt="Brand" id="logo" src="../Images/logo.png"></a>
               </p>
               <p>
               <h3 class="masthead-brand">Just lend it!</h3>
@@ -39,10 +39,10 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li>
-                    <a href="Views/inscription.php">S'inscrire</a>
+                    <a href="inscription.php">S'inscrire</a>
                   </li>
                   <li>
-                    <a href="Views/connexion.php">Se connecter</a>
+                    <a href="connexion.php">Se connecter</a>
                   </li>
                 </ul>
               </nav>
@@ -56,7 +56,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec leo in diam dignissim pulvinar. Vivamus tristique dapibus tempor. Donec finibus eros turpis, quis iaculis justo tempus sit amet. Nullam viverra ex odio, sed tempor sem rhoncus sit amet. Integer dapibus odio in egestas dignissim. Integer non erat sapien.
               </p>
               <p class="lead">
-                <a class="btn btn-lg btn-info" href="Views/inscription.php">Rejoins nous!</a>
+                <a class="btn btn-lg btn-info" href="inscription.php">Rejoins nous!</a>
               </p>
           </div>
 
@@ -66,9 +66,9 @@
 
     <!-- Script JS placés à la fin du document pour charger plus rapidement -->
     <!-- Source jquery -->
-    <script src="Scripts/jquery_library.js"></script>
+    <script src="../Scripts/jquery_library.js"></script>
     <!-- Source JavaScript Bootstrap -->
-    <script src="Scripts/bootstrap.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
 
   </body>
 </html>

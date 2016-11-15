@@ -20,8 +20,8 @@ body {
     width: 100%;
     height: 100%;
     min-height: 100%;
-    -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
 }
 
 .site-wrapper-inner {
@@ -31,76 +31,85 @@ body {
 }
 
 .container {
-    background-color: rgba(255,255,255,0.85);
+    background-color: rgba(255, 255, 255, 0.85);
     border-radius: 6px;
-    padding:30px;
+    padding: 30px;
     margin-right: auto;
     margin-left: auto;
     width: 100%;
 }
 
 @media (min-width: 992px) {
-  .container {
-    width: 800px;
-  }
+    .container {
+        width: 800px;
+    }
 }
 
 #arrow-container {
-  position: fixed;
-  top: 0;
-  margin: 25px;
+    position: fixed;
+    top: 0;
+    margin: 25px;
 }
 
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-light { color: rgba(255, 255, 255, 0.85); }
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+*
+
+/
 
 /*
  *  Formulaire et modal
  */
 
-.lead{
+.lead {
     text-align: center;
     margin-top: 15px; /* laisser de l'espace avant le bouton "S'inscrire" */
 }
 
-#boutonInscription{
+#boutonInscription {
     font-size: 20px;
 }
 
-#nomPrenom{
+#nomPrenom {
     padding-left: 0px;
     padding-right: 0px;
 }
 
-@media (max-width: 768px){
-    .padding-correct{
+@media (max-width: 768px) {
+    .padding-correct {
         padding-right: 15px;
         padding-left: 15px;
     }
 }
 
-@media (min-width: 768px) and (max-width: 992px){
-    .padding-correct{
+@media (min-width: 768px) and (max-width: 992px) {
+    .padding-correct {
         padding-right: 15px;
         padding-left: 15px;
     }
 }
 
-@media (min-width: 992px) and (max-width: 1200px){
-    .padding-correct{
+@media (min-width: 992px) and (max-width: 1200px) {
+    .padding-correct {
         padding-right: 15px;
         padding-left: 15px;
     }
 }
 
-@media(min-width: 1200px){
-    .padding-correct{
+@media (min-width: 1200px) {
+    .padding-correct {
         padding-right: 15px;
         padding-left: 15px;
     }
 }
 
-#warningIcon{
+#warningIcon {
     height: 10%;
     width: 10%;
     margin-bottom: 5px;

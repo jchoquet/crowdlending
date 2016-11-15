@@ -17,12 +17,15 @@
  *
  */
 ?>
+
 <div class="site-wrapper">
     <div class="site-wrapper-inner">
-        <!-- Fleche retour landing page -->
+
+        <!-- Flèche retour landing page -->
         <div id="arrow-container">
             <a href="../index.php"><i class="material-icons md-36 md-light">arrow_back</i></a>
         </div>
+
         <div class="container">
             <form role="form" id="register" method="post" action="../Controls/callVerifServ.php">
                 <div class="row">
@@ -32,23 +35,38 @@
                         </h1>
                     </div>
                 </div>
+
                 <div class="row">
-                    <div class="col-md-12" id="nomPrenom">
-                        <div class="form-group col-md-4">
+                    <div class="col-md-6">
+                        <div class="form-group">
                             <label for="Nom">Nom *</label>
                             <input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
                         </div>
-                        <div class="form-group col-md-4">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
                             <label for="Prenom">Prénom *</label>
                             <input type="text" class="form-control" id="prenom" placeholder="Prénom" name="prenom">
                         </div>
-                        <div class="form-group col-md-4">
-                            <label for="Username">Nom d'utilisateur *</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Nom">Nom d'utilisateur *</label>
                             <input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur"
                                    name="username">
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="registrationFormAlert" id="divUserNameNotExist"></div>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -57,44 +75,57 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="row">
-                        <div class="form-group padding-correct">
-                            <label for="Password">Mot de passe *</label>
-                            <input type="password" class="form-control" id="password" placeholder="Mot de passe"
-                                   name="password">
-                        </div>
-                    </div>
-                        <div class="row">
-                        <div class="form-group padding-correct">
-                            <label for="Vpassword">Vérification mot de passe *</label>
-                            <input type="password" class="form-control" id="vpassword" placeholder="Vérification mot de passe"
-                                   name="passwordCheck">
-                        </div>
+                            <div class="form-group padding-correct">
+                                <label for="Password">Mot de passe *</label>
+                                <input type="password" class="form-control" id="password" placeholder="Mot de passe"
+                                       name="password">
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group padding-correct">
+                                <label for="Vpassword">Vérification mot de passe *</label>
+                                <input type="password" class="form-control" id="vpassword"
+                                       placeholder="Vérification mot de passe"
+                                       name="passwordCheck">
+                            </div>
+                        </div>
                     </div>
+
                     <div class="col-md-6">
                         <div class="row">
-                        <div class="form-group padding-correct">
-                            <label for="Phone">Téléphone</label>
-                            <input type="text" class="form-control" id="tel" placeholder="Numéro de téléphone" name="phone">
-                        </div>
+                            <div class="form-group padding-correct">
+                                <label for="Phone">Téléphone</label>
+                                <input type="text" class="form-control" id="tel" placeholder="Numéro de téléphone"
+                                       name="phone">
                             </div>
+                        </div>
+
                         <div class="row">
-                        <div class="form-group padding-correct">
-                            <label for="Commune">Commune</label>
-                            <input type="text" class="form-control" id="commune" placeholder="Commune" name="commune">
-                        </div>
+                            <div class="form-group padding-correct">
+                                <label for="Commune">Commune *</label>
+                                <input type="text" class="form-control" id="commune" list="noms_communes"
+                                       placeholder="Commune"
+                                       name="commune">
+                                <datalist id="noms_communes">
+                                    <?php include __DIR__ . "/../Models/autocomplete_commune.php"; ?>
+                                </datalist>
                             </div>
+                        </div>
                     </div>
                     <br/>
+
                 </div>
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -103,8 +134,8 @@
                         </div>
                     </div>
                 </div>
-                <p class="lead">
-                    <button type="submit" class="btn btn-lg btn-info" id="boutonInscription">S'inscrire</button>
+                <p class="lead text-center">
+                    <button type="submit" class="btn btn-lg btn-info" id="boutonInscription">S'incrire</button>
                 </p>
             </form>
         </div>
