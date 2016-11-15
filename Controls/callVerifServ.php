@@ -65,9 +65,9 @@ if (verifFullfill() == 0  && verifPassword() && verifEmail() == 0 && verifUserna
     if($result)
     {
         //Debut de la session
-        session_start();
+        session_start ();
         $_SESSION['username']=$username;
-        $_SESSION['pwd']=$hash;
+        $_SESSION['pwd']=$hashpassword;
 
         //Redirection vers la page d'accueil si tout s'est bien passé
         header('location: ../acceuil.php');
