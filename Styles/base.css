@@ -1,0 +1,32 @@
+/* Rédéfinition du dossier où trouver les icones bootstrap */
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('Fonts/glyphicons-halflings-regular.eot');
+  src: url('Fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('Fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('Fonts/glyphicons-halflings-regular.woff') format('woff'), url('Fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('Fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+/* Police pour le logo */
+
+@font-face {
+    font-family: 'calligraffitiregular';
+    src: url('Fonts/Calligraffiti-webfont.eot');
+    src: url('Fonts/Calligraffiti-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Fonts/Calligraffiti-webfont.woff') format('woff'),
+         url('Fonts/Calligraffiti-webfont.ttf') format('truetype'),
+         url('Fonts/Calligraffiti-webfont.svg#calligraffitiregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Mise en page générale */
+
+.navbar {
+  border-radius: 0px;
+}
+
+.main {
+  padding: 0px 10px;
+}
