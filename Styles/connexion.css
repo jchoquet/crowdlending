@@ -1,0 +1,42 @@
+body { 
+margin:0; 
+padding:0; 
+
+-webkit-background-size: cover; /* pour Chrome et Safari */ 
+-moz-background-size: cover; /* pour Firefox */ 
+-o-background-size: cover; /* pour Opera */ 
+background-size: cover; /* version standardisée */ 
+}
+
+/* -------------- Formulaire connexion----------------- */
+
+
+#co {
+
+	margin-top: 10%;
+	padding:30px;
+	background-color: white;
+	border-radius: 5px;
+}
+
+#co>button[type="submit"] {
+
+	margin-top : 6%;	
+	background-color: #52b3da;
+    color: white;
+}
+
+#co>button[type="submit"]:hover
+{
+	color : white;
+	background-color:#66CC33;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* -------------- Erreurs ----------------- */
+
+.errors{
+  float:right;
+  margin-left: 20px;
+  color : #a94442;
+}
