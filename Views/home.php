@@ -10,10 +10,10 @@
     <title>Lend it</title>
 
     <!-- Source CSS Bootstrap -->
-    <link rel="stylesheet" href="../Styles/bootstrap.css">
+    <link rel="stylesheet" href="Styles/bootstrap.css">
 
     <!-- Source css pour le design du site -->
-    <link rel="stylesheet" href="../Styles/base.css">
+    <link rel="stylesheet" href="Styles/base.css">
   </head>
 
   <body>
@@ -22,9 +22,9 @@
     <?php include("footer.php"); ?>
 
     <!-- Source jquery -->
-    <script src="../Scripts/jquery_library.js"></script>
+    <script src="Scripts/jquery_library.js"></script>
     <!-- Source JavaScript Bootstrap -->
-    <script src="../Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
 
   </body>
 </html>
