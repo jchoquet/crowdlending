@@ -18,12 +18,13 @@
     <meta name="description" content="Page d'inscription sur le site">
     <meta name="author" content="Mehdi KHADIR">
 
-
-
     <!-- CSS pour la page -->
     <link rel="stylesheet" href="../Styles/bootstrap.css">
     <link rel="stylesheet" href="../Styles/inscription.css">
 
+    <!-- CSS pour l'icone retour -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
 </head>
 
