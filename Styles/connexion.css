@@ -30,20 +30,18 @@ body {
     vertical-align: middle;
 }
 
-.container-fluid {
+.container {
     background-color: rgba(255,255,255,0.85);
     border-radius: 6px;
-    padding:30px;
-    padding-bottom: 45px;
+    padding:40px;
     margin-right: auto;
     margin-left: auto;
     width: 100%;
 }
 
 @media (min-width: 992px) {
-  .container-fluid {
+  .container {
     width: 500px;
-      margin-top: 15px;
   }
 }
 
@@ -61,31 +59,6 @@ body {
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-light { color: rgba(255, 255, 255, 0.85); }
 
-/* -------------- Formulaire connexion----------------- */
-
-/*#co {
-  margin-top: 10%;
-  padding:30px;
-  background-color: white;
-  border-radius: 5px;
-}*/
-#co>button[type="submit"] {
-  margin-top : 6%;
-  background-color: #52b3da;
-  color: white;
-}
-#co>button[type="submit"]:hover
-{
-  color : white;
-  background-color:#66CC33;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
-}
-
-/* -------------- Titre du formulaire de connexion ----------------*/
-
-#connexionTitre{
-    margin-bottom: 17px;
-}
 
 /* -------------- Erreurs ----------------- */
 
