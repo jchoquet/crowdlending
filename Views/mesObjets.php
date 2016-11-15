@@ -8,11 +8,8 @@
 
 session_start();
 
-// en attendant que la session soit définie lors de la connexion, on crée quelques valeurs pour tester
-$_SESSION['idUser'] = 1;
-
-include "../Controls/mesObjetsCtrl.php";
-include "../Models/mesobjetsM.php";
+include __DIR__."/../Controls/mesObjetsCtrl.php";
+include __DIR__."/../Models/mesobjetsM.php";
 
 ?>
 
@@ -76,7 +73,7 @@ include "../Models/mesobjetsM.php";
         print "<tr>";
         print "<td>" . $num . "</td>";
 
-        $path_photo = "../Images/Objets/" . $infor[0];
+        $path_photo = __DIR__."/../Images/Objets/" . $infor[0];
         $nom = $infor[1];
 
         print "<td>";

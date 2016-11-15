@@ -7,14 +7,14 @@
  */
 
 
-include "connexion.php";
+include __DIR__."/connexion.php";
 // L'id de l'utilisateur connecté est connu grâce à session_start() lancé au moment de la connexion
 
 // Renvoie le "path_photo", le "nom" et l'"id" des objets disponibles de l'utilisateur
 function get_available_objets()
 {
     global $DB;
-    $id = $_SESSION['idUser'];
+    $id = $_SESSION['login'];
     $informations_objets = array();
     // La boucle qui suit récupère les informations des objets disponibles de l'utilisateur
     foreach ($DB->query("SELECT path_photo, nom, id FROM objet WHERE id_owner=\"$id\" AND isAvailable=1;") as $row)
