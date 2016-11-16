@@ -108,7 +108,7 @@ include __DIR__ . "/../Models/mesobjetsM.php";
                 </div>
                 <div class="modal-footer">
                     <a id="link-button" role="button" class="btn btn-default">Supprimer l'objet</a>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="dismiss-button">Annuler</button>
                 </div>
             </div>
         </div>

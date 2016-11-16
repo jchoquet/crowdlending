@@ -4,8 +4,10 @@
 
 // http://fellowtuts.com/jquery/bootstrap-dynamic-modal-popup-with-dynamic-data-content/
 
-$(document).ready(function () {
-    $('#myModal').on('show.bs.modal', function (event) { // id of the modal with event
+$(document).ready(function () 
+{
+    $('#myModal').on('show.bs.modal', function (event) 
+    { // id of the modal with event
         var button = $(event.relatedTarget); // Button that triggered the modal
         
         var link = button.data('link'); // Extract info from data-* attributes
@@ -19,9 +21,16 @@ $(document).ready(function () {
         
         
         // on modifie la page lorsque l'utilisateur clique sur le boutton "Supprimer l'objet"
-        $('#link-button').click(function(){
+        $('#link-button').click(function()
+        {
             var button = $(this);
             window.location = link;
         });
     });
+});
+
+// Fermeture du popup si l'utilisateur appuie sur la touche "echap"
+$(document).keyup(function(e) 
+{
+    if (e.keyCode == 27) $("#dismiss-button").click();
 });
