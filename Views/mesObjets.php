@@ -8,8 +8,8 @@
 
 session_start();
 
-include __DIR__."/../Controls/mesObjetsCtrl.php";
-include __DIR__."/../Models/mesobjetsM.php";
+include __DIR__ . "/../Controls/mesObjetsCtrl.php";
+include __DIR__ . "/../Models/mesobjetsM.php";
 
 ?>
 
@@ -73,7 +73,7 @@ include __DIR__."/../Models/mesobjetsM.php";
         print "<tr>";
         print "<td>" . $num . "</td>";
 
-        $path_photo = __DIR__."/../Images/Objets/" . $infor[0];
+        $path_photo = "../Images/Objets/" . $infor[0];
         $nom = $infor[1];
 
         print "<td>";
