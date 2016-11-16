@@ -83,7 +83,14 @@ include __DIR__ . "/../Models/mesobjetsM.php";
         print "<td>" . $nom . "</td>";
 
         print "<td>";
-        $page_after_delete = "mesObjets.php?page=" . $page . "&delete=" . $infor[2];
+
+        if ($num == ($page - 1) * $DIV + 1 and $num == sizeof($informations_objets) and $page != 1)
+        {
+            $newpage = $page - 1;
+            $page_after_delete = "mesObjets.php?page=" . $newpage . "&delete=" . $infor[2];
+        }
+        else
+            $page_after_delete = "mesObjets.php?page=" . $page . "&delete=" . $infor[2];
 
         print "<div class=\"btn btn-danger btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
           <span class=\"glyphicon glyphicon-trash\"></span>
@@ -127,17 +134,23 @@ include __DIR__ . "/../Models/mesobjetsM.php";
 </div>
 
 <!-- Pour les pages, on crée des boutons "précédent" et "suivant" -->
-<nav>
+<div class="text-center">
     <?php $surplus = $num > $page*$DIV; ?> <!-- "surplus" sert à savoir s'il y a trop d'objets pour une seule page -->
-    <ul class="pager">
+    <ul class="pagination">
         <?php if($page > 1): ?>
-            <li class="pager-prev"><a href="<?php echo "mesObjets.php?page=".($page-1); ?>">&lt;&lt; précédent</a></li>
+            <li><a href="<?php echo "mesObjets.php?page=".($page-1); ?>">«</a></li>
+            <li><a href="<?php echo "mesObjets.php?page=".($page-1); ?>"><?php echo $page-1; ?></a></li>
+            <li class="active"><a href="#"><?php echo $page; ?></a></li>
         <?php endif; ?>
         <?php if($surplus): ?>
-            <li class="pager-next"><a href="<?php echo "mesObjets.php?page=".($page+1); ?>">&gt;&gt; suivant</a></li>
+            <?php if($page == 1): ?>
+                <li class="active"><a href="#"><?php echo $page; ?></a></li>
+            <?php endif; ?>
+            <li><a href="<?php echo "mesObjets.php?page=".($page+1); ?>"><?php echo $page+1; ?></a></li>
+            <li><a href="<?php echo "mesObjets.php?page=".($page+1); ?>">»</a></li>
         <?php endif; ?>
     </ul>
-</nav>
+</div>
 
 </body>
 </html>
