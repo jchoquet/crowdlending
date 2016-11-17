@@ -77,8 +77,9 @@ jQuery(document).ready(function () {
             return false;
         }
 
-        if (jQuery("#commune").val() == "") {
-            $("#problemName").html("Veuillez remplir le champ 'Commune'");
+        if ($("#commune").val().length<=5)
+        {
+            $("#problemName").html("Veuillez remplir le champ 'Commune' avec une des communes proposées dans le menu déroulant correspondant.");
             $("#pbInscription").modal();
             $('#pbInscription').on('hidden.bs.modal', function () {
                 jQuery("#commune").focus();
@@ -153,3 +154,23 @@ $(document).keyup(function(e){
     if (e.keyCode == 27) $("#closePbInscription").click();
     if (e.keyCode == 13 && $("#pbInscription").hasClass('in')) $("#closePbInscription").click();
 });
+
+//Affichage du modal pour le cas où la commune n'a pas été trouvée dans la BD
+function communeNotFound(){
+    $("#problemName").html("Veuillez choisir une commune figurant dans le menu déroulant du champ 'Commune'");
+    $("#pbInscription").modal();
+    $('#pbInscription').on('hidden.bs.modal', function () {
+        jQuery("#commune").focus();
+    })
+    return false;
+}
+
+//Affichage d'une erreur inconnue
+function erreurInconnue(){
+    $("#problemName").html("Une erreur s'est produite lors de votre inscription. Veuillez réessayer");
+    $("#pbInscription").modal();
+    $('#pbInscription').on('hidden.bs.modal', function () {
+        jQuery("#nom").focus();
+    })
+    return false;
+}
