@@ -23,7 +23,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a href="#">Mon compte</a></li>
-            <li><a href="#">Mes objets</a></li>
+            <li><a href="Views/mesObjets.php">Mes objets</a></li>
             <li><a href="#">Mon historique</a></li>
           </ul>
         </li>
