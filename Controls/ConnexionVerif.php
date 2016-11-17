@@ -20,9 +20,9 @@ try
 			/* le mot de passe correspond donc l'utilisateur existe et la connexion peut être établie */
 
 			session_start();
-			$_SESSION['login']=$id;
-			$_SESSION['pwd']=$hash;
-			$_SESSION['username']=$username;
+			$_SESSION['login'] = $id;
+			$_SESSION['pwd'] = $hash;
+			$_SESSION['username'] = $_POST['username'];
 
 		  header('location: ../acceuil.php');
 

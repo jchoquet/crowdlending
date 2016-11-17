@@ -6,6 +6,7 @@
  * Time: 19:09
  */
 include __DIR__ . '/verificationServeur.php';
+include __DIR__ . "/ConnexionUser.php";
 
 //Récupération des données de post
 $username = $_POST['username'];
@@ -64,17 +65,18 @@ if (verifFullfill() == 0  && verifPassword() && verifEmail() == 0 && verifUserna
 
     if($result)
     {
-        //Debut de la session
+        // Début de la session
         session_start ();
-        $_SESSION['username']=$username;
-        $_SESSION['pwd']=$hashpassword;
+        $_SESSION['login'] = GetIdUser($username);
+        $_SESSION['username'] = $username;
+        $_SESSION['pwd'] = $hashpassword;
 
-        //Redirection vers la page d'accueil si tout s'est bien passé
+        // Redirection vers la page d'accueil si tout s'est bien passé
         header('location: ../acceuil.php');
     }
     else
     {
-        echo "Il y a eu un problème lors de votre inscription, veuillez cliquer sur le lien ci\n";
+        echo "Il y a eu un problème lors de votre inscription, veuillez cliquer sur le lien suivant :\n";
         echo "<a href=\"../Views/inscription.php\">Page d'inscription</a>";
     }
 
