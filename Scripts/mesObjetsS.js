@@ -8,7 +8,7 @@ $(document).ready(function () {
     $('#myModal').on('show.bs.modal', function (event) { // id of the modal with event
         var button = $(event.relatedTarget); // Button that triggered the modal
 
-        var link = $('.btn').data('link'); // Extract info from data-* attributes
+        var link = $('.deleteButton').data('link'); // Extract info from data-* attributes
         /*var nom = $('.btn').data('nom');
 
         var content = 'Vous allez supprimer l\'objet "' + nom + '". Voulez-vous continuer ?';
@@ -28,7 +28,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-    $('.btn').click(function (e) {
+    $('.deleteButton').click(function (e) {
         $("#myModal").modal();
         e.stopPropagation();
         $("#messageConfirmation").html("Vous êtes sur le point de supprimer l'objet '" + this.getAttribute('data-nom') + "'.");

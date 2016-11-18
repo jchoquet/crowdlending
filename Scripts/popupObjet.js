@@ -7,6 +7,10 @@ $(document).ready(function () {
         nomObjet(this.getAttribute("id"));
         urlPhotoObjet(this.getAttribute("id"));
         $("#myObject").modal();
+        $('#closeModalObject').click(function(e){
+            $("#myObject").modal('hide');
+            e.stopPropagation();
+        });
     });
 });
 
@@ -43,3 +47,4 @@ $(document).keyup(function(e){
     if (e.keyCode == 27) $("#myObject").modal('hide');
     e.stopPropagation();
 });
+

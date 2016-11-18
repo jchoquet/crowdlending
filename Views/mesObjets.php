@@ -97,7 +97,7 @@ include __DIR__ . "/../Models/mesobjetsM.php";
                 } else
                     $page_after_delete = "mesObjets.php?page=" . $page . "&delete=" . $infor[2];
 
-                print "<div class=\"btn btn-danger btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
+                print "<div class=\"btn btn-danger btn-lg deleteButton\" data-toggle=\"modal\" data-target=\"#myModal\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
               <span class=\"glyphicon glyphicon-trash\"></span>
             </div>";
 
@@ -183,7 +183,7 @@ include __DIR__ . "/../Models/mesobjetsM.php";
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" id="closeModalObject">Close</button>
+                <button type="button" class="btn btn-default" id="closeModalObject">Close</button>
             </div>
         </div>
 
