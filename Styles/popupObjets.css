@@ -1,3 +1,9 @@
 .picturePopup{
     max-width: 100%;
 }
+
+/*Allow scrolling if the description is too long */
+.modal .modal-body {
+    max-height: 350px;
+    overflow-y: auto;
+}

@@ -31,7 +31,7 @@ $(document).ready(function () {
     $('.btn').click(function (e) {
         $("#myModal").modal();
         e.stopPropagation();
-        $("#messageConfirmation").html(this.getAttribute('data-nom'));
+        $("#messageConfirmation").html("Vous êtes sur le point de supprimer l'objet '" + this.getAttribute('data-nom') + "'.");
     });
 
     $('#dismiss-button').click(function(){
