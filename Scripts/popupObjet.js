@@ -1,20 +1,18 @@
 /**
  * Created by qianqiuhao on 16/11/12.
  */
-jQuery(document).ready(function () {
-    $("#nomObjet,#photoObjet").click(function () {
+$(document).ready(function () {
+    $('tr').click(function () {
+        descriptionObjet(this.getAttribute("id"));
+        nomObjet(this.getAttribute("id"));
+        urlPhotoObjet(this.getAttribute("id"));
         $("#myObject").modal();
     });
 });
 
-descriptionObjet();
-nomObjet();
-urlPhotoObjet();
-
 //Affiche dans le popup le nom de l'objet
-function nomObjet()
+function nomObjet(idObjet)
 {
-    var idObjet = 1;
     var fun = "nom";
     $. post(urlSite.concat("/Models/popupObjet.php"), {idObjet : idObjet, fun: fun}, function (str) {
         $("#nomObjetPopup").html(str);
@@ -22,20 +20,18 @@ function nomObjet()
 }
 
 //Affiche dans le popup la description de l'objet
-function urlPhotoObjet()
+function urlPhotoObjet(idObjet)
 {
-    var idObjet = 1;
+    $pathImgsObjets = urlSite.concat("/Images/Objets/")
     var fun = "urlPhoto";
     $. post(urlSite.concat("/Models/popupObjet.php"), {idObjet : idObjet, fun: fun}, function (str) {
-        $("#photoObjet").attr("src",str);
-        $("#photoObjetBigger").attr("src",str);
+        $("#photoObjet").attr("src", $pathImgsObjets.concat(str));
     });
 }
 
 //Affiche dans le popup la description de l'objet
-function descriptionObjet()
+function descriptionObjet(idObjet)
 {
-    var idObjet = 1;
     var fun = "description";
     $. post(urlSite.concat("/Models/popupObjet.php"), {idObjet : idObjet, fun: fun}, function (str) {
         $("#descriptionObjet").html(str);
@@ -44,5 +40,6 @@ function descriptionObjet()
 
 //Fermeture du popup si la touche échap est appuyée
 $(document).keyup(function(e){
-    if (e.keyCode == 27) $("#closePopup").click();
+    if (e.keyCode == 27) $("#myObject").modal('hide');
+    e.stopPropagation();
 });

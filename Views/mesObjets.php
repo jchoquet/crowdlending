@@ -20,6 +20,7 @@ include __DIR__ . "/../Models/mesobjetsM.php";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Styles/popupObjets.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -73,19 +74,22 @@ include __DIR__ . "/../Models/mesobjetsM.php";
             if ($num <= ($page - 1) * $DIV) // si on parcourt les objets des pages précédentes, on continue
                 continue;
 
-            print "<tr>";
-            print "<td>" . $num . "</td>";
+            $id = $infor[2];
+
+            //Stockage de l'id dans tr pour le javascript
+            print "<tr id=\"$id\">";
+            print "<td class='numObj'>" . $num . "</td>";
 
             $path_photo = "../Images/Objets/" . $infor[0];
             $nom = $infor[1];
 
-            print "<td>";
+            print "<td class='imgObj'>";
             print "<img src=\"$path_photo\" class=\"img-thumbnail\" alt=\"$nom\" width=\"76\" height=\"59\">"; // on réduit la taille des images
             print "</td>";
 
-            print "<td>" . $nom . "</td>";
+            print "<td class='nomObj'>" . $nom . "</td>";
 
-            print "<td>";
+            print "<td class='supObj'>";
 
             // Si l'utilisateur supprime le dernier objet de la dernière page et qu'il ne restait que cet objet dans cette page,
             // on revient à la page précédente (sauf si la page actuelle est la page 1)
@@ -101,35 +105,9 @@ include __DIR__ . "/../Models/mesobjetsM.php";
 
             ?>
 
-            <!-- http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_modal_sm&stacked=h -->
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Message d'avertissement</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Vous allez supprimer l'objet <?php echo $nom; ?>.</p>
-                            <p>Êtes-vous sûr de vouloir continuer ?</p>
-                        </div>
-                        <div class="modal-footer">
-                            <a id="link-button" role="button" class="btn btn-default">Supprimer l'objet</a>
-                            <button type="button" class="btn btn-default" data-dismiss="modal" id="dismiss-button">
-                                Annuler
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <script type="text/javascript" src="../Scripts/mesObjetsS.js"></script>
-
             <?php
 
+            print "</td>";
             print "</tr>";
         }
     }
@@ -161,5 +139,61 @@ include __DIR__ . "/../Models/mesobjetsM.php";
     </ul>
 </div>
 
+
+<!-- http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_modal_sm&stacked=h -->
+<!-- Modal delete-->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Message d'avertissement</h4>
+            </div>
+            <div class="modal-body">
+                <p id="messageConfirmation"></p>
+                <p>Êtes-vous sûr de vouloir continuer ?</p>
+            </div>
+            <div class="modal-footer">
+                <a id="link-button" role="button" class="btn btn-default">Supprimer l'objet</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="dismiss-button">
+                    Annuler
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal information objet-->
+
+<div id="myObject" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" id="closePopup">&times;</button>
+                <h4 class="modal-title" id="nomObjetPopup"></h4>
+            </div>
+            <div class="modal-body">
+                <img id="photoObjet" src="" class="picturePopup"/>
+                <h3>Description :</h3>
+                <p id="descriptionObjet"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 </body>
+
+<script type="text/javascript" src="../Scripts/config.js"></script>
+<script type="text/javascript" src="../Scripts/popupObjet.js"></script>
+<script type="text/javascript" src="../Scripts/mesObjetsS.js"></script>
+
 </html>
