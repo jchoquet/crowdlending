@@ -39,7 +39,7 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li>
-                    <a href="inscription.php">S'inscrire</a>
+                    <a href="../Controls/inscription.php">S'inscrire</a>
                   </li>
                   <li>
                     <a href="connexion.php">Se connecter</a>
@@ -56,7 +56,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec leo in diam dignissim pulvinar. Vivamus tristique dapibus tempor. Donec finibus eros turpis, quis iaculis justo tempus sit amet. Nullam viverra ex odio, sed tempor sem rhoncus sit amet. Integer dapibus odio in egestas dignissim. Integer non erat sapien.
               </p>
               <p class="lead">
-                <a class="btn btn-lg btn-info" href="inscription.php">Rejoins nous!</a>
+                <a class="btn btn-lg btn-info" href="../Controls/inscription.php">Rejoins nous!</a>
               </p>
           </div>
 
