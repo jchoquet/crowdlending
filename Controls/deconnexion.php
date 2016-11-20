@@ -14,7 +14,7 @@ session_destroy();
 
 /* On redirige vers la landing page */
 
-header('location: ../index.php');
+header('location: index.php');
 
 
 ?>
