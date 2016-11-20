@@ -16,7 +16,7 @@ include __DIR__ . "/../Models/mesobjetsM.php";
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Mes objets</title>
+    <title>Lend it - Mes objets</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

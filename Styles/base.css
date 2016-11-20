@@ -65,7 +65,7 @@ body {
 }
 
 .footer-text {
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
   margin: 20px 0;
 }
@@ -114,3 +114,35 @@ body {
         display:block !important;
     }
 }
+
+.footer ul {
+  list-style-type:none;
+  float:right;
+  margin: 20px 0;
+  display: inline;
+}
+
+.footer ul li {
+  display: inline;
+}
+
+.footer ul li:after {
+  content:"/";
+  color:#FFF;
+  margin-right:8px;
+  margin-left:8px;
+}
+
+/*
+ .bottom_ul li a { color:#FFF;  font-size:12px;}
+
+
+ .footer p { text-align:left; vertical-align: middle; color:#FFF; padding:10px 0; margin-bottom:0px;}
+
+.footer .container {
+min-height: 60px;
+}
+
+.footer .col-md-6 {
+  vertical-align: middle;
+}*/
