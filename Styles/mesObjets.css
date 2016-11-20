@@ -1,3 +1,21 @@
 #supressBtn {
   float: right;
 }
+
+.pagination li a {
+  color: #31b0d5;
+}
+
+.pagination .active a {
+  background-color: #31b0d5;
+  border-color: #31b0d5;
+}
+
+.pagination .active a:hover {
+  background-color: #31b0d5;
+  border-color: #31b0d5;
+}
+
+.pagination li a:hover {
+  color: #31b0d5;;
+}
