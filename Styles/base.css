@@ -69,3 +69,9 @@ body {
   vertical-align: middle;
   margin: 20px 0;
 }
+
+/* Pour le contenu */
+
+.content {
+  margin-top: 50px;
+}
