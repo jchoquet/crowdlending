@@ -122,15 +122,15 @@ function verifPhoto()
 {
 	$photo_nom = mysql_real_escape_string(htmlspecialchars($_FILES['photo']['name']));
 	$photo_size = filesize($_FILES['photo']['tmp_name']);
-	if ($taille>100000)
+	if ($photo_size>100000)
 	{
-		return 1
+		return 1;
 	}
 	$extensions = array('.png', '.gif', '.jpg', '.jpeg');
 	$extension = strrchr($photo_nom, '.');
 	if(!in_array($extension, $extensions))
 	{
-		return 1
+		return 1;
 	}
 	$fichier = strtr($fichier,
      'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
