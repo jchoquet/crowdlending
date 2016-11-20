@@ -30,7 +30,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="Controls/deconnexion.php"><span class="glyphicon glyphicon-log-in"></span> Déconnexion</a>
+          <a href="Controls/deconnexion.php"><span class="glyphicon glyphicon-log-out"></span> Déconnexion</a>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
