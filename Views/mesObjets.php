@@ -22,12 +22,14 @@ include __DIR__ . "/../Models/mesobjetsM.php";
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Source css pour le design du site -->
+    <link rel="stylesheet" href="../Styles/base.css">
 </head>
 <body>
 
+<?php include("header.php"); ?>
 
-
-<div class="container">
+<div class="container content">
     <h2>Mes objets</h2>
 
     <?php
@@ -160,6 +162,8 @@ include __DIR__ . "/../Models/mesobjetsM.php";
         <?php endif; ?>
     </ul>
 </div>
+
+<?php include("footer.php"); ?>
 
 </body>
 </html>
