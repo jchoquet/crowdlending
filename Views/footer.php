@@ -1,8 +1,8 @@
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <p class="footer-left footer-text text-muted">© 2016 - Groupe 1 PIMA</p>
+      <div class="footer-left col-md-6 hidden-sm hidden-xs">
+        <p class="footer-text text-muted">© 2016 - Groupe 1 PIMA</p>
       </div>
       <div class="col-md-6">
         <ul>
