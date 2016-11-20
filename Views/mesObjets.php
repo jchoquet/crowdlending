@@ -6,10 +6,8 @@
  * Time: 18:28
  */
 
-session_start();
-
-include __DIR__ . "/../Controls/mesObjetsCtrl.php";
-include __DIR__ . "/../Models/mesobjetsM.php";
+include "Controls/mesObjetsCtrl.php";
+include "Models/mesobjetsM.php";
 
 ?>
 
@@ -23,7 +21,7 @@ include __DIR__ . "/../Models/mesobjetsM.php";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Source css pour le design du site -->
-    <link rel="stylesheet" href="../Styles/base.css">
+    <link rel="stylesheet" href="Styles/base.css">
 </head>
 <body>
 
@@ -78,7 +76,7 @@ include __DIR__ . "/../Models/mesobjetsM.php";
             print "<tr>";
             print "<td>" . $num . "</td>";
 
-            $path_photo = "../Images/Objets/" . $infor[0];
+            $path_photo = "Images/Objets/" . $infor[0];
             $nom = $infor[1];
 
             print "<td>";
@@ -128,7 +126,7 @@ include __DIR__ . "/../Models/mesobjetsM.php";
                 </div>
             </div>
 
-            <script type="text/javascript" src="../Scripts/mesObjetsS.js"></script>
+            <script type="text/javascript" src="Scripts/mesObjetsS.js"></script>
 
             <?php
 
