@@ -103,7 +103,7 @@ include "Models/mesobjetsM.php";
             } else
                 $page_after_delete = "mesObjets.php?page=" . $page . "&delete=" . $infor[2];
 
-            print "<div class=\"btn btn-danger btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
+            print "<div id=\"supressBtn\" class=\"btn btn-danger btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
               <span class=\"glyphicon glyphicon-trash\"></span>
             </div>";
 
@@ -125,8 +125,8 @@ include "Models/mesobjetsM.php";
                             <p>Êtes-vous sûr de vouloir continuer ?</p>
                         </div>
                         <div class="modal-footer">
-                            <a id="link-button" role="button" class="btn btn-default">Supprimer l'objet</a>
-                            <button type="button" class="btn btn-default" data-dismiss="modal" id="dismiss-button">
+                            <a id="link-button" role="button" class="btn btn-danger">Supprimer l'objet</a>
+                            <button type="button" class="btn btn-success" data-dismiss="modal" id="dismiss-button">
                                 Annuler
                             </button>
                         </div>
