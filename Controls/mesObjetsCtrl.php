@@ -7,6 +7,6 @@
  */
 
 $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : 1; // pour savoir la page actuelle
-$DIV = 2; // nombre d'objets affichés
+$DIV = 5; // nombre d'objets affichés
 
 ?>

@@ -30,6 +30,20 @@ include "Models/mesobjetsM.php";
     <link rel="stylesheet" href="Styles/base.css">
     <!-- Source css pour cette page -->
     <link rel="stylesheet" href="Styles/mesObjets.css">
+
+    <script>
+        if ($(window).width() > 768)
+        {
+            /*Taille des ipads */
+            <?php $DIV = 10; ?>
+        }
+        if ($(window).width() > 992)
+        {
+            /* Desktop */
+            <?php $DIV = 12; ?>
+        }
+    </script>
+
 </head>
 <body>
 
