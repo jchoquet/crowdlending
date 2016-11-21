@@ -34,13 +34,11 @@ include "Models/mesobjetsM.php";
     <script>
         if ($(window).width() > 768)
         {
-            /*Taille des ipads */
-            <?php $DIV = 10; ?>
+            <?php $DIV = 5; ?> /* tablet : 8 */
         }
-        if ($(window).width() > 992)
+        if ($(window).width() > 992) /* ordi : 10 */
         {
-            /* Desktop */
-            <?php $DIV = 12; ?>
+            <?php $DIV = 5; ?>
         }
     </script>
 

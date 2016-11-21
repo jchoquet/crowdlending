@@ -89,6 +89,6 @@ if (verifFullfill() == 0  && verifPassword() && verifEmail() == 0 && verifUserna
 //Redirection vers la page d'inscription si les champs ne sont pas valides
 else {
     echo "Il y a eu un problème lors de votre inscription, veuillez cliquer sur le lien ci\n";
-    echo "<a href=\"../Views/inscription.php\">Page d'inscription</a>";
+    echo "<a href=\"inscription.php\">Page d'inscription</a>";
 }
 ?>
