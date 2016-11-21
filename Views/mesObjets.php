@@ -100,7 +100,7 @@ include "Models/mesobjetsM.php";
                 print "<td class='numObj'>" . $num . "</td>";
 
 
-                $path_photo = "../Images/Objets/" . $infor[0];
+                $path_photo = "Images/Objets/" . $infor[0];
                 $nom = $infor[1];
 
                 print "<td class='imgObj'>";
