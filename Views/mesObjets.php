@@ -100,7 +100,7 @@ include "Models/mesobjetsM.php";
                 print "<td class='numObj'>" . $num . "</td>";
 
 
-                $path_photo = "Images/Objets/" . $infor[0];
+                $path_photo = "../Images/Objets/" . $infor[0];
                 $nom = $infor[1];
 
                 print "<td class='imgObj'>";
@@ -120,7 +120,7 @@ include "Models/mesobjetsM.php";
                 } else
                     $page_after_delete = "mesObjets.php?page=" . $page . "&delete=" . $infor[2];
 
-                print "<div class=\"btn btn-danger btn-lg deleteButton\" data-toggle=\"modal\" data-target=\"#myModal\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
+                print "<div class=\"btn btn-danger btn-lg pull-right\" data-toggle=\"modal\" data-target=\"#myModal\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
               <span class=\"glyphicon glyphicon-trash\"></span>
             </div>";
 
@@ -172,7 +172,7 @@ include "Models/mesobjetsM.php";
             </div>
             <div class="modal-body">
                 <p id="messageConfirmation"></p>
-                <p>Êtes-vous sûr de vouloir continuer ?</p>
+                <p><br/>Êtes-vous sûr de vouloir continuer ?</p>
             </div>
             <div class="modal-footer">
                 <a id="link-button" role="button" class="btn btn-danger">Supprimer l'objet</a>
