@@ -71,14 +71,14 @@ Il est possible que le temps consacré au projet soit impacté par le fait que l
 
 |          	| :( 	| :&#124; 	| :) 	| :D 	|
 |:--------:	|:----:	|:----:	    |:----:	|:----:	|
-| Equipe 1 	|  *0* 	|  *0* 	    |  *0* 	|  *0* 	|
+| Equipe 1 	|  *0* 	|  *0* 	    |  *6* 	|  *0* 	|
 
 ### Taux de confiance de l'équipe pour la réalisation du projet 
 *Remplir le tableau sachant que :D est une confiance totale dans le fait de réaliser le projet. Mettre le nombre de votes dans chacune des cases. Expliquer en cas de besoin.*
 
 |          	| :( 	| :&#124; 	| :) 	| :D 	|
 |:--------:	|:----:	|:----:	    |:----:	|:----:	|
-| Equipe 1 	|  *0* 	|  *0* 	    |  *0* 	|  *0* 	|
+| Equipe 1 	|  *0* 	|  *0* 	    |  *6* 	|  *0* 	|
 
  
  
