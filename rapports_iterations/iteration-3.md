@@ -25,7 +25,7 @@ Nous avons remarqué que le manque de communication entre des stories qui dépen
   
 ### Bilans des retours et des précédentes actions 
 *Quels sont les retours faits par l'équipe pendant la rétrospective? Quelles sont les actions qui ont apporté quelque chose ou non?*
-> Nous avons choisi d'utiliser ce sprint pour corriger des bugs et améliorer ce que nous avions fait. L'équipe est putôt satisfaite des améliorations.\
+> Nous avons choisi d'utiliser ce sprint pour corriger des bugs et améliorer ce que nous avions fait. L'équipe est plutôt satisfaite des améliorations.\
 Le manque de communication, ainsi que le manque de push sur Gitlab a été remarqué par plusieurs membres.\
 Une meilleure répartition du travail pourrait être trouvée.
 
