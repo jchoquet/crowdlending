@@ -53,7 +53,7 @@
           <div class="inner cover">
             <h1 class="cover-heading">Bienvenue sur notre plateforme de crowdlending !</h1>
               <p class="lead">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec leo in diam dignissim pulvinar. Vivamus tristique dapibus tempor. Donec finibus eros turpis, quis iaculis justo tempus sit amet. Nullam viverra ex odio, sed tempor sem rhoncus sit amet. Integer dapibus odio in egestas dignissim. Integer non erat sapien.
+                Lend it est une plateforme de prêts d'objets en toute confiance. Economisez de l'argent, et faites-en économiser à vos voisins ! Si vous aussi vous souhaitez opter pour un mode de consommation différent et raisonné, just Lend It !
               </p>
               <p class="lead">
                 <a class="btn btn-lg btn-info" href="Controls/inscription.php">Rejoins nous!</a>
