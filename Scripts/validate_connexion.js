@@ -10,9 +10,9 @@ $(document).ready(function(){
 
 		var tmp = $(this).val();
 
-		if(tmp == "" || (tmp.length < 10)) 
+		if(tmp == "" || (tmp.length < 1)) 
 		{
-			$("#mdperrorc").html("10 caractÃ¨res min");
+			$("#mdperrorc").html("1 caractère min");
 			mdpc = "";
 		}
 		else
