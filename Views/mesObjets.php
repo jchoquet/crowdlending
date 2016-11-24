@@ -57,10 +57,20 @@ include "Models/mesobjetsM.php";
         $nom = objet_to_delete($id_to_delete);
 
         if (delete_objet($id_to_delete))
-            print "L'objet \"$nom\" a bien été supprimé." . "<br>";
+        {
+            print "<div class='alert alert-success alert-dismissible'>";
+            print "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
+            print "L'objet \"$nom\" a bien été supprimé";
+            print "</div >";
+        }
         else
             if (!$pageWasRefreshed)
-                print "Erreur : l'objet \"$nom\" n'a pas été supprimé.";
+            {
+                print "<div class='alert alert-danger alert-dismissible'>";
+                print "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
+                print "<strong > Erreur !</strong > L'objet \"$nom\" n'a pas été supprimé";
+                print "</div >";
+            }
         $_REQUEST['delete'] = NULL;
     }
     ?>
