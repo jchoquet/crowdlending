@@ -11,7 +11,14 @@ include __DIR__ . "/../Models/rechercheM.php";
 
 //Récupération des variables entrées en $_GET
 
-$idObjetSearch = $_GET['idObjetSearch'];
+if(isset($_GET['searchWord'])){
+    $searchWord = $_GET['searchWord'];
+}
+
+else{
+    header('Location: Views/pbRecherche.php');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +74,7 @@ $idObjetSearch = $_GET['idObjetSearch'];
 
         <?php
         $num = 0; // "num" sert à créer les numéros des lignes du tableau
-        $informations_objets = get_available_objets($idObjetSearch); // on récupère les informations des objets disponibles de l'utilisateur
+        $informations_objets = get_available_objets($searchWord); // on récupère les informations des objets disponibles de l'utilisateur
 
         if (sizeof($informations_objets) != 0) {
             foreach ($informations_objets as $infor) {
