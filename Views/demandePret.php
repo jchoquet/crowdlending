@@ -99,10 +99,16 @@ include "Models/demandePretM.php";
                 print "<td class='username_borrower'>" . $username_borrower . "</td>";
 
                 print "<td class='choix_pret'>";
-                
+
 
                 print "<div class=\"btn btn-danger btn-lg pull-right\">
-              <span class=\"glyphicon glyphicon-trash\"></span>
+              <span class=\"glyphicon glyphicon-remove\">Refuser</span>
+            </div>";
+
+                print "<div class=\"btn pull-right\"></div>"; // pour qu'il y ait un espace entre les 2 boutons
+
+                print "<div class=\"btn btn-success btn-lg pull-right\">
+              <span class=\"glyphicon glyphicon-ok\">Accepter</span>
             </div>";
 
                 ?>
