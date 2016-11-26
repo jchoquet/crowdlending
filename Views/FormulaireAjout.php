@@ -8,7 +8,7 @@ include __DIR__ . '/../Views/header.php';
 ?>
 
 
-<form role="form" id="addobject" method="post" action="../Controls/verificationObject.php">
+<form role="form" id="ajout" method="POST" action="../Controls/verificationObject.php">
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
 
@@ -21,7 +21,7 @@ include __DIR__ . '/../Views/header.php';
 
                 </br><p>
                 <fieldset class="field-border col-md-offset-2 col-md-7">
-                    <legend class="field-border">PrÃªtez vos objets en toute sÃ©curitÃ© !</legend>
+                    <legend class="field-border">PrÃªtez vos objets en toute sécurité !</legend>
                 </fieldset>
                 </p>
 
@@ -30,9 +30,9 @@ include __DIR__ . '/../Views/header.php';
                 <div class="row">
                     <div class="col-md-offset-2 col-md-7">
                         <div class="form-group">
-                            <label for="categorie" > CatÃ©gorie </label>
+                            <label for="categorie" > Catégorie </label>
                             <br><select name="categorie" id="categorie" onchange="fetch_select_Categorie(this.value);"></br>
-                                <option>Selectionner une catÃ©gorie</option>
+                                <option>Selectionner une catégorie</option>
                                 <?php printSelect($tab); ?>
                             </select>
                         </div>
@@ -53,7 +53,7 @@ include __DIR__ . '/../Views/header.php';
                 <div class="row">
                     <div class="col-md-offset-2 col-md-7">
                         <div class="form-group">
-                            <label for="description">Description de mon objet (fonctions, caractÃ©ristiques) :</label>
+                            <label for="description">Description de mon objet (fonctions, caractéristiques) :</label>
                             <textarea class="form-control" id="description" name="description" placeholder="Description de votre annonce" ></textarea>
                             <span class="errors" id="descriptionerror"></span>
                         </div>
@@ -62,7 +62,7 @@ include __DIR__ . '/../Views/header.php';
 
                 <p>
                 <fieldset class="field-border col-md-offset-2 col-md-7">
-                    <legend class="field-border">De belles photos font la diffÃ©rence !</legend>
+                    <legend class="field-border">De belles photos font la différence !</legend>
                 </fieldset>
                 </p>
                 </br></br>
