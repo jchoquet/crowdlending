@@ -8,10 +8,10 @@
 
 include __DIR__."/connexion.php";
 
-//Récupération de l'id de l'objet ouvert
+//RÃ©cupÃ©ration de l'id de l'objet ouvert
 $idObjet = $_POST['idObjet'];
 
-//Exécution de la fonction adéquate
+//ExÃ©cution de la fonction adÃ©quate
 if(isset($_POST['fun'])){
     if($_POST['fun'] == 'nom'){
         nomObj($idObjet);
@@ -24,44 +24,44 @@ if(isset($_POST['fun'])){
     }
 }
 
-//Affiche le nom de l'objet étudié
+//Affiche le nom de l'objet Ã©tudiÃ©
 function nomObj($idObjet){
     global $DB;
-    //Préparation de la requête
+    //PrÃ©paration de la requÃªte
     $requete = $DB->prepare("SELECT nom FROM objet WHERE id = :idObjet");
     $requete->bindValue(':idObjet', $idObjet);
 
-    //Exécution et récupération du résultat
+    //ExÃ©cution et rÃ©cupÃ©ration du rÃ©sultat
     $requete->execute();
-    $row = $requete->fetch(); //Récupération du premier résultat
+    $row = $requete->fetch(); //RÃ©cupÃ©ration du premier rÃ©sultat
     echo $row['nom'];
 }
 
-//Affiche l'url de la photo de l'objet étudié
+//Affiche l'url de la photo de l'objet Ã©tudiÃ©
 function urlPhotoObj($idObjet){
     global $DB;
-    //Préparation de la requête
+    //PrÃ©paration de la requÃªte
     $requete = $DB->prepare("SELECT path_photo FROM objet WHERE id = :idObjet");
     $requete->bindValue(':idObjet', $idObjet);
 
-    //Exécution et récupération du résultat
+    //ExÃ©cution et rÃ©cupÃ©ration du rÃ©sultat
     $requete->execute();
-    $row = $requete->fetch(); //Récupération du premier résultat
+    $row = $requete->fetch(); //RÃ©cupÃ©ration du premier rÃ©sultat
     echo $row['path_photo'];
 }
 
-//Affiche la description de l'objet étudié
+//Affiche la description de l'objet Ã©tudiÃ©
 
 function descriptionObj($idObjet)
 {
     global $DB;
-    //Préparation de la requête
+    //PrÃ©paration de la requÃªte
     $requete = $DB->prepare("SELECT description FROM objet WHERE id = :idObjet");
     $requete->bindValue(':idObjet', $idObjet);
 
-    //Exécution et récupération du résultat
+    //ExÃ©cution et rÃ©cupÃ©ration du rÃ©sultat
     $requete->execute();
-    $row = $requete->fetch(); //Récupération du premier résultat
+    $row = $requete->fetch(); //RÃ©cupÃ©ration du premier rÃ©sultat
     echo $row['description'];
 }
 

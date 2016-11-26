@@ -29,28 +29,28 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
     $sql->bindValue(':isAvailable', $isAvailable, PDO::PARAM_INT);
     $sql->bindValue(':description', $description, PDO::PARAM_STR);
 
-    //Execution de la requête d'enregistrement de l'utilisateur
+    //Execution de la requÃªte d'enregistrement de l'utilisateur
     $result = $sql->execute();
-    //Redirection vers la page d'accueil si tout s'est bien passé
+    //Redirection vers la page d'accueil si tout s'est bien passÃ©
     if($result)
     {
-        // Début de la session
+        // DÃ©but de la session
         session_start ();
 
-        // Redirection vers la page d'accueil si tout s'est bien passé
-        echo "L'ajout s'est bien déroulé. Retour à la page d'ajour :\n";
+        // Redirection vers la page d'accueil si tout s'est bien passÃ©
+        echo "L'ajout s'est bien dÃ©roulÃ©. Retour Ã  la page d'ajour :\n";
         echo "<a href=\"../Views/inscription.php\">Page d'inscription</a>";
         header('location: ../acceuil.php');
     }
     else
     {
-        echo "Il y a eu un problème lors de votre ajout d'objet, veuillez cliquer sur le lien ci\n";
+        echo "Il y a eu un problÃ¨me lors de votre ajout d'objet, veuillez cliquer sur le lien ci\n";
         echo "<a href=\"../Views/Ajout.php\">Page d'ajout d'objet</a>";
     }
 }
 //Redirection vers la page d'inscription si les champs ne sont pas valides
 else {
-    echo "Il y a eu un problème lors de votre ajout d'objet, veuillez cliquer sur le lien ci\n";
+    echo "Il y a eu un problÃ¨me lors de votre ajout d'objet, veuillez cliquer sur le lien ci\n";
     echo "<a href=\"../Views/Ajout.php\">Page d'ajout d'objet</a>";}
 
 

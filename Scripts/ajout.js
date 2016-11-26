@@ -20,25 +20,25 @@ $(document).ready(function(){
 			titre = tmp;
 		}
 	});
- 
- 
- 	/*$("#description").keyup(function() {
 
-		var tmp = $(this).val();
 
-		if(tmp == "" || (tmp.length < 8)) 
-		{
-			$("#descriptionerror").html("description >= 8 caractères");
-			description = "";
-		}
-		else
-		{
-			$("#descriptionerror").html("");
-			description = tmp;
-		}
-	});*/
- 
- 
+	/*$("#description").keyup(function() {
+
+	 var tmp = $(this).val();
+
+	 if(tmp == "" || (tmp.length < 8))
+	 {
+	 $("#descriptionerror").html("description >= 8 caractÃ¨res");
+	 description = "";
+	 }
+	 else
+	 {
+	 $("#descriptionerror").html("");
+	 description = tmp;
+	 }
+	 });*/
+
+
 
 
 
@@ -46,7 +46,7 @@ $(document).ready(function(){
 
 		if( titre == "" )
 		{
-			$("#formerror").html("Erreur : l'objet n'a pas été ajouté");
+			$("#formerror").html("Erreur : l'objet n'a pas étéajouté");
 		}
 		else{
 			$("#formerror").html("");
@@ -61,7 +61,7 @@ $(document).ready(function(){
 						window.location.replace("../Views/Ajout.php");
 					}
 					else{
-						
+
 						$("#formerror").html(msg);
 					}
 				}
