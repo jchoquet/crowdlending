@@ -3,6 +3,10 @@
 include __DIR__ . '/../Models/connexion.php';
 session_start();
 
+$titre = $_POST['titre'];
+$description = $_POST['description'];
+
+$id = $_SESSION['login'];
 
 if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
 {
@@ -10,11 +14,12 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
     $titre = $DB->quote(htmlspecialchars($_POST['titre']));
     $description = $DB->quote(htmlspecialchars($_POST['description']));
     $owned = $_SESSION['login'];
-    $id = 70;
+    //$id = max_id() + 1 ;
+    $id=102;
     $path_photo = 'photo';
     $isAvailable = 1;
     $prix = 0;
-    $sql = $DB->prepare("INSERT INTO objet (id ,nom,prix, path_photo, id_owner, isAvailable, description) VALUES (:id , :titre, :prix , :path_photo , :owned, :isAvailable, :description)");
+    $sql = $DB->prepare("INSERT INTO objet (id ,nom,prix, path_photo, id_owner, isAvailable, description) VALUES (:id , :titre, :prix , :path_photo , :owned, :isAvailable, :description) ON DUPLICATE KEY UPDATE id = :id");
     $sql->bindValue(':id', $id , PDO::PARAM_INT);
     $sql->bindValue(':titre',$titre, PDO::PARAM_STR);
     $sql->bindValue(':prix', $prix , PDO::PARAM_INT);
@@ -31,20 +36,20 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
         // DÃ©but de la session
         session_start ();
 
-        // Redirection vers la page d'accueil si tout s'est bien passÃ©
-        echo "L'ajout s'est bien dÃ©roulÃ©. Retour Ã  la page d'ajour :\n";
-        echo "<a href=\"../Views/inscription.php\">Page d'inscription</a>";
-        header('location: ../acceuil.php');
+        // Redirection vers la page mesObjets si tout s'est bien passé
+        echo "L'ajout s'est bien déroulé.\n";
+        echo "<a href=\"../Views/mesObjets.php\">Ma liste d'objets</a>";
+        header('location: ../Views/mesObjets.php');
     }
     else
     {
-        echo "Il y a eu un problÃ¨me lors de votre ajout d'objet, veuillez cliquer sur le lien ci\n";
+        echo "Il y a eu un problème lors de votre ajout d'objet, veuillez cliquer sur le lien ci\n";
         echo "<a href=\"../Views/Ajout.php\">Page d'ajout d'objet</a>";
     }
 }
-//Redirection vers la page d'inscription si les champs ne sont pas valides
+//Redirection vers la page d'ajout si les champs ne sont pas valides.
 else {
-    echo "Il y a eu un problÃ¨me lors de votre ajout d'objet, veuillez cliquer sur le lien ci\n";
+    echo "Il y a eu un problème lors de votre ajout d'objet, veuillez cliquer sur le lien ci\n";
     echo "<a href=\"../Views/Ajout.php\">Page d'ajout d'objet</a>";}
 
 
@@ -82,4 +87,14 @@ function verifDescription()
     return 0;
 
 }
+
+// Renvoie l'id max de la table objet
+function max_id()
+{
+    global $DB;
+    $req = $DB->prepare("SELECT MAX(id) from objet");
+    $result = $req->execute();
+    return $result;
+}
+
 ?>
