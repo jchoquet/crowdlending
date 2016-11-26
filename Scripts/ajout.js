@@ -3,6 +3,7 @@ $(document).ready(function(){
 	/* variables connexion */
 
 	var titre = "";
+	var description = "";
 
 
 	$("#titre").keyup(function() {
@@ -21,44 +22,40 @@ $(document).ready(function(){
 		}
 	});
 
-
-	/*$("#description").keyup(function() {
+	 $("#description").keyup(function() {
 
 	 var tmp = $(this).val();
 
-	 if(tmp == "" || (tmp.length < 8))
+	 if( (tmp.length > 1000))
 	 {
-	 $("#descriptionerror").html("description >= 8 caractÃ¨res");
-	 description = "";
+	 		$("#descriptionerror").html("La taille maximale est de 1000 caractères");
+	 		description = "";
 	 }
 	 else
 	 {
-	 $("#descriptionerror").html("");
-	 description = tmp;
+	 		$("#descriptionerror").html("");
+	 		description = tmp;
 	 }
-	 });*/
-
-
-
+	 });
 
 
 	$("#ajout").click(function() {
 
 		if( titre == "" )
 		{
-			$("#formerror").html("Erreur : l'objet n'a pas étéajouté");
+			$("#formerror").html("");
 		}
 		else{
 			$("#formerror").html("");
 			$.ajax({
 
 				type:'POST',
-				url:'../Controls/verificationObject.php',
-				data:"titre="+titre,
+				url:'../crowdlending/Controls/verificationObject.php',
+				data:"titre="+titre+"&description="+description,
 				success:function(msg) {
 
 					if(msg == "OK"){
-						window.location.replace("../Views/Ajout.php");
+						window.location.replace("../crowdlending/Views/mesObjets.php");
 					}
 					else{
 
@@ -69,7 +66,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#modifObj").click(function() {
+/*	$("#modifObj").click(function() {
 
 		if( titre == "" )
 		{
@@ -94,7 +91,7 @@ $(document).ready(function(){
 				}
 			});
 		}
-	});
+	});*/
 
 
 });
