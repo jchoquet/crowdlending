@@ -55,11 +55,11 @@ include __DIR__ . "/../Views/modif2.php";
 
         if (delete_objet($id_to_delete))
         {
-            print "L'objet \"$nom\" a bien Ã©tÃ© supprimÃ©";
+            print "L'objet \"$nom\" a bien été supprimé";
         }
         else
             if (!$pageWasRefreshed) {
-                print "<strong > Erreur !</strong > L'objet \"$nom\" n'a pas Ã©tÃ© supprimÃ©";
+                print "<strong > Erreur !</strong > L'objet \"$nom\" n'a pas été supprimé";
             }
         $_REQUEST['delete'] = NULL;
     }
@@ -69,16 +69,23 @@ include __DIR__ . "/../Views/modif2.php";
         $id_to_modifier = $_REQUEST['modifier'];
         $nom = objet_to_modifier($id_to_modifier);
 
-        if (modifier_objet($id_to_modifier)){
+        $titre = $_POST['titre'];
+        $description = $_POST['description'];
+        $prix = 0;
+        $isAvailable = 1;
+        $path_photo = 'photo';
+
+
+        if (modifier_objet($id_to_modifier , $titre , $prix , $isAvailable , $path_photo , $description)){
             print "<div class='alert alert-success alert-dismissible'>";
             print "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
-            print "L'objet \"$nom\" a bien Ã©tÃ© modifiÃ©";
+            print "L'objet \"$nom\" a bien été modifié";
             print "</div >";}
         else
             if (!$pageWasRefreshed){
                 print "<div class='alert alert-danger alert-dismissible'>";
                 print "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
-                print "<strong > Erreur !</strong > L'objet \"$nom\" n'a pas Ã©tÃ© modifiÃ©";
+                print "<strong > Erreur !</strong > L'objet \"$nom\" n'a pas été modifié";
                 print "</div >";}
         $_REQUEST['modifier'] = NULL;
     }
@@ -100,8 +107,8 @@ include __DIR__ . "/../Views/modif2.php";
         <tbody>
 
         <?php
-        $num = 0; // "num" sert Ã  crÃ©er les numÃ©ros des lignes du tableau
-        $informations_objets = get_available_objets(); // on rÃ©cupÃ¨re les informations des objets disponibles de l'utilisateur
+        $num = 0; // "num" sert Ã  créer les numéros des lignes du tableau
+        $informations_objets = get_available_objets(); // on récupÃ¨re les informations des objets disponibles de l'utilisateur
 
         if (sizeof($informations_objets) != 0) {
             foreach ($informations_objets as $infor) {
@@ -110,7 +117,7 @@ include __DIR__ . "/../Views/modif2.php";
                 if ($num > $page * $DIV) // si on a atteint les objets de la page suivante, on s'arrÃªte
                     break;
 
-                if ($num <= ($page - 1) * $DIV) // si on parcourt les objets des pages prÃ©cÃ©dentes, on continue
+                if ($num <= ($page - 1) * $DIV) // si on parcourt les objets des pages précédentes, on continue
                     continue;
 
                 print "<tr>";
@@ -120,7 +127,7 @@ include __DIR__ . "/../Views/modif2.php";
                 $nom = $infor[1];
 
                 print "<td>";
-                print "<img src=\"$path_photo\" class=\"img-thumbnail\" alt=\"$nom\" width=\"76\" height=\"59\">"; // on rÃ©duit la taille des images
+                print "<img src=\"$path_photo\" class=\"img-thumbnail\" alt=\"$nom\" width=\"76\" height=\"59\">"; // on réduit la taille des images
                 print "</td>";
 
                 print "<td>" . $nom . "</td>";
@@ -128,7 +135,7 @@ include __DIR__ . "/../Views/modif2.php";
                 print "<td>";
 
                 // Si l'utilisateur supprime le dernier objet de la derniÃ¨re page et qu'il ne restait que cet objet dans cette page,
-                // on revient Ã  la page prÃ©cÃ©dente (sauf si la page actuelle est la page 1)
+                // on revient Ã  la page précédente (sauf si la page actuelle est la page 1)
                 if ($num == ($page - 1) * $DIV + 1 and $num == sizeof($informations_objets) and $page != 1) {
                     $newpage = $page - 1;
                     $page_after_delete = "mesObjets.php?page=" . $newpage . "&delete=" . $infor[2];
@@ -137,8 +144,9 @@ include __DIR__ . "/../Views/modif2.php";
                     $page_after_delete = "mesObjets.php?page=" . $page . "&delete=" . $infor[2];
                 }
 
-                $page_apres_modification="../Controls/verificationObjectM.php";
+                //$page_apres_modification = "mesObjets.php?page=" . $page . "&modifier=" . $infor[2];
 
+                $page_apres_modification="../Controls/verificationObjectM.php";
                 $iid=$infor[2];
 
 
@@ -186,7 +194,7 @@ include __DIR__ . "/../Views/modif2.php";
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <label for="titre"> Modifier votre objet : <?php echo getnom($iid); ?> ! </label>
+                                <label for="titre"> Modifier votre objet : <?php echo "$nom" ?> ! </label>
                                 <button type="button" class="close" data-dismiss="modal" id="closePopup">&times;</button>
                                 <h4 class="modal-title" id="nomObjetPopup"></h4>
                             </div>
@@ -241,7 +249,7 @@ include __DIR__ . "/../Views/modif2.php";
     </table>
 </div>
 
-<!-- Pour les pages, on crÃ©e des boutons "prÃ©cÃ©dent" et "suivant" -->
+<!-- Pour les pages, on crée des boutons "précédent" et "suivant" -->
 <div class="text-center">
     <?php $surplus = $num > $page*$DIV; ?> <!-- "surplus" sert Ã  savoir s'il y a trop d'objets pour une seule page -->
     <ul class="pagination">
