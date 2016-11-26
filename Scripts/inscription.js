@@ -3,6 +3,8 @@
  */
 
 var userNameExisted = false;
+var passwordMatch = false;
+
 
 jQuery(document).ready(function () {
 
@@ -77,6 +79,15 @@ jQuery(document).ready(function () {
             return false;
         }
 
+        if (passwordMatch == false) {
+            $("#problemName").html("Mots de passe différents");
+            $("#pbInscription").modal();
+            $('#pbInscription').on('hidden.bs.modal', function () {
+                jQuery("#password").focus();
+            })
+            return false;
+        }
+
         if ($("#commune").val().length<=5)
         {
             $("#problemName").html("Veuillez remplir le champ 'Commune' avec une des communes proposées dans le menu déroulant correspondant.");
@@ -101,10 +112,14 @@ jQuery(document).ready(function () {
         var password = $("#password").val();
         var confirmPassword = $("#vpassword").val();
 
-        if (password != confirmPassword && confirmPassword != "")
+        if (password != confirmPassword && confirmPassword != "") {
+            passwordMatch = false;
             $("#divCheckPasswordMatch").html("<p style=\"color:red;\">Mots de passe différents</p>");
-        else
+        }
+        else {
+            passwordMatch = true;
             $("#divCheckPasswordMatch").html("");
+        }
     }
 
     //Fonction validant l'email à l'aide d'une regEx
