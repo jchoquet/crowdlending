@@ -24,4 +24,12 @@ function get_available_objets($word) //En fonction de l'id de l'objet recherché
     return $informations_objets;
 }
 
+function get_email($owner_id)
+{
+    global $DB;
+    foreach( $DB->query("SELECT username, email FROM utilisateur WHERE id=\"$owner_id\";") as $row) {
+        return $row;
+    }
+}
+
 ?>

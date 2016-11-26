@@ -115,6 +115,10 @@ else{
                     } else
                         $page_after_delete = "mesObjets.php?page=" . $page . "&delete=" . $infor[2];
 
+                    $page_email = "emailPreteur.php?owner=".$infor[3];
+
+                    print "<a class=\"btn btn-primary btn-lg pull-right\" href=\"$page_email\">
+                            <span class=\"glyphicon glyphicon-envelope\"></span> </a>";
                     ?>
 
                     <?php
