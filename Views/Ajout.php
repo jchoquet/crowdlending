@@ -35,7 +35,7 @@
     <?php
     include("header.php");
     include("formulaireAjout.php");
-    //include("footer.php");
+    include("footer.php");
     ?>
 </body>
 </html>

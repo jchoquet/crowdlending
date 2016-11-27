@@ -6,16 +6,7 @@
  include __DIR__ . '/../Controls/ListeCategorie.php';
 ?>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="Styles/bootstrap.css">
-    <script src="Scripts/jquery_library.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
-</head>
 
-
-<body>
 <div class="content">
     <div class="wrapper">
         <div class="container" id="container-form">
@@ -80,5 +71,3 @@
         </div>
     </div>
 </div>
-</body>
-
