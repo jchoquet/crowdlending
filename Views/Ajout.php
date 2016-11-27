@@ -14,28 +14,28 @@
     <meta name="author" content="Mahrous Anouar">
 
     <!-- Source CSS Bootstrap -->
-    <link rel="stylesheet" href="../Styles/bootstrap.css">
+    <link rel="stylesheet" href="Styles/bootstrap.css">
 
     <!-- Source css pour le design du site -->
-    <link rel="stylesheet" href="../Styles/base.css">
+    <link rel="stylesheet" href="Styles/base.css">
 
     <!-- Source pour le formulaire d'ajout -->
-    <link rel="stylesheet" href="../Styles/ajout.css">
+    <link rel="stylesheet" href="Styles/ajout.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Source jquery -->
+    <script src="Scripts/jquery_library.js"></script>
+    <!-- Source JavaScript Bootstrap -->
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/ajout.js"></script>
 
 </head>
 
 <body>
-    <?php include("header.php"); ?>
-    <?php include("formulaireAjout.php"); ?>
-    <?php include("footer.php"); ?>
-
-
-    <!-- Source jquery -->
-    <script src="../Scripts/jquery_library.js"></script>
-    <!-- Source JavaScript Bootstrap -->
-    <script src="../Scripts/bootstrap.js"></script>
-    <script src="../Scripts/ajout.js"></script>
-
+    <?php
+    include("header.php");
+    include("formulaireAjout.php");
+    //include("footer.php");
+    ?>
 </body>
 </html>
