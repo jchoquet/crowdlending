@@ -9,7 +9,7 @@ session_start();
 
 $titre = $_POST['titre'];
 $description = $_POST['description'];
-$id_to_modifier = $infor[2]; // l'id de l'objet qu'on doit récuperer !!
+$id_to_modifier = $_POST['identifiantObjet']; // l'id de l'objet qu'on doit récuperer !!
 $id = $_SESSION['login'];
 $path_photo = 'photo'; // le path  de la photo en attendant le document final de khushas
 $isAvailable = 1;
@@ -23,11 +23,6 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
 
     $titre = $DB->quote(htmlspecialchars($_POST['titre']));
     $description = $DB->quote(htmlspecialchars($_POST['description']));
-    $id_to_modifier = $infor[2]; // l'id de l'objet qu'on doit récuperer !!
-    $id = $_SESSION['login'];
-    $path_photo = 'photo'; // le path  de la photo en attendant le document final de khushas
-    $isAvailable = 1;
-    $prix = 0;
 
     $sql = $DB->prepare("UPDATE objet SET id=\"$id_to_modifier\" , nom =\"$titre\", prix =\"$prix\", path_photo = \"$path_photo\" ,  id_owner=\"$id\" , isAvailable =\"$isAvailable\" ,description = \"$description\" WHERE id=\"$id_to_modifier\"");
     $sql->bindValue(':id', $id , PDO::PARAM_INT);
@@ -43,18 +38,16 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
     //Redirection vers la page d'accueil si tout s'est bien passÃ©
     if($result)
     {
-        // DÃ©but de la session
-        session_start ();
 
         // Redirection vers la page mes objets si tout s'est bien passÃ©
         echo "La modification s'est bien déroulé. Retour à  la page mes objets :\n";
-        echo "<a href=\"../Views/mesObjets.php\">Mes objets</a>";
-        header('location: ../Views/mesObjets.php');
+        echo "<a href=\"../mesObjets.php\">Mes objets</a>";
+        //header('location: ../mesObjets.php');
     }
     else
     {
         echo "Il y a eu un problème lors de votre modification d'objet, veuillez cliquer sur le lien ci\n";
-        echo "<a href=\"../Views/mesObjets.php\">Mes objets</a>";
+        echo "<a href=\"../mesObjets.php\">Mes objets</a>";
     }
 }
 
@@ -62,7 +55,7 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
 else
     {
     echo "Il y a eu un problème lors de votre modification d'objet, veuillez cliquer sur le lien ci\n";
-    echo "<a href=\"../Views/mesObjets.php\">Mes objets</a>";
+    echo "<a href=\"../mesObjets.php\">Mes objets</a>";
     }
 
 

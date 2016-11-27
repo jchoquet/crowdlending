@@ -235,6 +235,9 @@ include "Views/modif2.php";
 
                                     </div>
                                     </div>
+
+                                    <input type="hidden" id="identifiantObjet" name="identifiantObjet" value="<?php echo $iid; ?>" />
+
                                     <p class="lead text-center">
                                         <button type="submit" class="btn btn-lg btn-default btn-success" id="modifObj-btn" name="modifObj">Modifier l'objet</button>
                                         <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button">Annuler</button>
