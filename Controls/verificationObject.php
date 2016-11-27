@@ -6,21 +6,16 @@ session_start();
 $titre = $_POST['titre'];
 $description = $_POST['description'];
 
-$id = $_SESSION['login'];
-
 if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
 {
     global $DB;
     $titre = $DB->quote(htmlspecialchars($_POST['titre']));
     $description = $DB->quote(htmlspecialchars($_POST['description']));
     $owned = $_SESSION['login'];
-    //$id = max_id() + 1 ;
-    $id=102;
     $path_photo = 'photo';
     $isAvailable = 1;
     $prix = 0;
-    $sql = $DB->prepare("INSERT INTO objet (id ,nom,prix, path_photo, id_owner, isAvailable, description) VALUES (:id , :titre, :prix , :path_photo , :owned, :isAvailable, :description) ON DUPLICATE KEY UPDATE id = :id");
-    $sql->bindValue(':id', $id , PDO::PARAM_INT);
+    $sql = $DB->prepare("INSERT INTO objet (nom,prix, path_photo, id_owner, isAvailable, description) VALUES ( :titre, :prix , :path_photo , :owned, :isAvailable, :description)");
     $sql->bindValue(':titre',$titre, PDO::PARAM_STR);
     $sql->bindValue(':prix', $prix , PDO::PARAM_INT);
     $sql->bindValue(':path_photo', $path_photo, PDO::PARAM_STR);
@@ -33,8 +28,6 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
     //Redirection vers la page d'accueil si tout s'est bien passÃ©
     if($result)
     {
-        // DÃ©but de la session
-        session_start ();
 
         // Redirection vers la page mesObjets si tout s'est bien passé
         echo "L'ajout s'est bien déroulé.\n";
@@ -89,12 +82,12 @@ function verifDescription()
 }
 
 // Renvoie l'id max de la table objet
-function max_id()
+/*function max_id()
 {
     global $DB;
     $req = $DB->prepare("SELECT MAX(id) from objet");
     $result = $req->execute();
     return $result;
-}
+}*/
 
 ?>
