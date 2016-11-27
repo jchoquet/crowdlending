@@ -37,7 +37,7 @@ include __DIR__ . '/../Controls/ListeCategorie.php';
 </head>
 <body>
 	<?php include __DIR__ . '/../Views/header.php'; ?>
-	<form role="form" id="addobject" method="GET" action="../rechercheObjets.php">
+	<form role="form" id="addobject" method="GET" action="rechercheObjets.php">
 		<div class="site-wrapper">
 			<div class="site-wrapper-inner">
 				<!-- FlÃ¨che retour landing page -->
