@@ -15,11 +15,13 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0 && verifPh
     $titre = $DB->quote(htmlspecialchars($_POST['titre']));
     $description = $DB->quote(htmlspecialchars($_POST['description']));
     $owned = $_SESSION['login'];
-	if(isset($_FILES['photo']['tmp_name'])){
+	if(isset($_FILES['photo']['name']))
+	{
+		print("ok\n");
 		$nom = md5(uniqid(rand(), true));
 		$extension_upload = strtolower(  substr(  strrchr($_FILES['photo']['name'], '.')  ,1)  );
-		$path_photo = $nom . $extension_upload;
-		$moving = move_uploaded_file($_FILES['photo']['tmp_name'],"../".$nom);
+		$path_photo = $nom . "." . $extension_upload;
+		$moving = move_uploaded_file($_FILES['photo']['tmp_name'],"../Images/Objets/" . $path_photo);
 	}
 
 
@@ -74,9 +76,11 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0 && verifPh
     }
 }
 //Redirection vers la page d'ajout si les champs ne sont pas valides.
-else {
+else
+{
     echo "Il y a eu un problème lors de votre ajout d'objet, veuillez cliquer sur le lien ci\n";
-    echo "<a href=\"../Views/Ajout.php\">Page d'ajout d'objet</a>";}
+    echo "<a href=\"../Views/Ajout.php\">Page d'ajout d'objet</a>";
+}
 
 
 //retourne 0 si tout les champs sont rempli
@@ -86,6 +90,7 @@ function verifFullfill()
     $titre = $_POST['titre'];
     if ($titre== "")
     {
+		print("verifFullfill\n");
         return 1;
     }
     return 0;
@@ -97,6 +102,7 @@ function verifTitre()
 {
     if (strlen($_POST['titre']) > 255)
     {
+		print("verifTitre");
         return 1;
     }
     return 0;
@@ -108,6 +114,7 @@ function verifDescription()
 {
     if (strlen($_POST['description']) > 500)
     {
+		print("verifDescription");
         return 1;
     }
     return 0;
@@ -129,27 +136,32 @@ function verifPhoto()
 	{
 		if ($_FILES['photo']['error'] > 0)
 		{
+			print("photo_error");
 			return 1;
 		}
 		
-		$maxsize=100000;
-		if ($_FILES['photo']['size'] > $maxsize)
+		$MAXSIZE = 100000;
+		if ($_FILES['photo']['size'] > $MAXSIZE)
 		{
+			print("photo_size");
 			return 1;
 		}
 		
 		$extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
 		$extension_upload = strtolower(  substr(  strrchr($_FILES['photo']['name'], '.')  ,1)  );
 		if (!in_array($extension_upload,$extensions_valides))
-		{ 
+		{
+			print("photo_extension");
 			return 1;
 		}
 		
 		$image_dim = getimagesize($_FILES['photo']['tmp_name']);
-		$MAXWIDTH=64;
-		$MAXHEIGHT=64;
+		print_r($image_dim);
+		$MAXWIDTH = 2000;
+		$MAXHEIGHT = 2000;
 		if ($image_dim[0] > $MAXWIDTH OR $image_dim[1] > $MAXHEIGHT)
 		{
+			print("photo_dimensions");
 			return 1;
 		}
 		
