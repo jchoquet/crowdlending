@@ -1,5 +1,24 @@
 $(document).ready(function(){
 
+	$(document).on('change', ':file', function() {
+		var input = $(this);
+		if (input.val())
+	  {
+	    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+		}
+	  else
+	  {
+	    label = "Aucun fichier choisi";
+		}
+	    input.trigger('fileselect', label);
+	});
+
+	$(':file').on('fileselect', function (event, label) {
+		var input = $(this).parents('.input-group').find(':text'),
+		log = label;
+		input.val(log);
+	});
+
 	/* variables ajout */
 
 	var titre = "";

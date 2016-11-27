@@ -52,17 +52,17 @@ include 'Controls/ListeCategorie.php';
                     </fieldset>
                 </div>
 
-                <div class="row">
-                    <div class="form-group col-md-12">
-                        <label for="photo">Sélectionner une photo</label>
-                        <span class="btn btn-default btn-file"><input type="file" id="photo" name="photo" />
+                <div class="input-group">
+                    <label class="input-group-btn" for="photo">
+                        <span class="btn btn-info"><span class="glyphicon glyphicon-picture"></span>
+                        Sélectionner une photo <input type="file" id="photo" name="photo" style="display: none;">
                         </span>
-                    </div>
+                    </label>
+                    <input type="text" class="form-control" readonly="" value="Aucun fichier choisi" />
                 </div>
 
-
                 <p class="lead text-center">
-                     <button type="submit" class="btn btn-md btn-info" id="ajout" name="ajout">Enregistrer mon anonce</button>
+                     <button type="submit" class="btn btn-md btn-success" id="ajout" name="ajout">Enregistrer mon anonce</button>
                 </p>
                 <span class="errors" id="formerror"></span>
 
