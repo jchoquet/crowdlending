@@ -5,20 +5,14 @@ session_start();
 
 $titre = $_POST['titre'];
 $description = $_POST['description'];
-<<<<<<< HEAD
 $id = $_SESSION['login'];
 
 if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0 && verifPhoto()==0)
-=======
-
-if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
->>>>>>> 375ee4d893c6f56007e1f479c8e387a66fb362dd
 {
     global $DB;
     $titre = $DB->quote(htmlspecialchars($_POST['titre']));
     $description = $DB->quote(htmlspecialchars($_POST['description']));
     $owned = $_SESSION['login'];
-<<<<<<< HEAD
 	if(isset($_FILES['photo']['tmp_name'])){
 		$nom = md5(uniqid(rand(), true));
 		$extension_upload = strtolower(  substr(  strrchr($_FILES['photo']['name'], '.')  ,1)  );
@@ -28,12 +22,6 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
     $isAvailable = 1;
     $prix = 0;
     $sql = $DB->prepare("INSERT INTO objet (nom,prix, path_photo, id_owner, isAvailable, description) VALUES (:titre, :prix , :path_photo , :owned, :isAvailable, :description);");
-=======
-    $path_photo = 'photo';
-    $isAvailable = 1;
-    $prix = 0;
-    $sql = $DB->prepare("INSERT INTO objet (nom,prix, path_photo, id_owner, isAvailable, description) VALUES ( :titre, :prix , :path_photo , :owned, :isAvailable, :description)");
->>>>>>> 375ee4d893c6f56007e1f479c8e387a66fb362dd
     $sql->bindValue(':titre',$titre, PDO::PARAM_STR);
     $sql->bindValue(':prix', $prix , PDO::PARAM_INT);
     $sql->bindValue(':path_photo', $path_photo, PDO::PARAM_STR);
@@ -46,7 +34,6 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
     //Redirection vers la page d'accueil si tout s'est bien passÃ©
     if($result)
     {
-<<<<<<< HEAD
 		if(isset($_POST['categorie'])){
 			$queryObjet = $DB->prepare("SELECT id FROM objet WHERE id_owner=:owned AND nom=:titre;")
 			$queryObjet->bindValue(':owned',$owned, PDO::PARAM_INT);
@@ -70,8 +57,6 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
 		}
         // DÃ©but de la session
         session_start ();
-=======
->>>>>>> 375ee4d893c6f56007e1f479c8e387a66fb362dd
 
         // Redirection vers la page mesObjets si tout s'est bien passé
         echo "L'ajout s'est bien déroulé.\n";
@@ -126,13 +111,13 @@ function verifDescription()
 }
 
 // Renvoie l'id max de la table objet
-/*function max_id()
+function max_id()
 {
     global $DB;
     $req = $DB->prepare("SELECT MAX(id) from objet");
     $result = $req->execute();
     return $result;
-}*/
+}
 
 function verifPhoto()
 {

@@ -70,8 +70,7 @@ include __DIR__ . '/../Views/header.php';
                 <div class="row">
                     <p><div class="col-md-offset-2 col-md-7">
                         <label for="photo" > Photo </label>
-                        <span class="btn btn-default btn-file">
-						<input type="file" id="photo" name="photo" />
+                        <span class="btn btn-default btn-file"><input type="file" id="photo" name="photo" />
                     </div></p>
                 </div>
 
