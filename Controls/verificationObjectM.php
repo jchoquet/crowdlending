@@ -11,7 +11,7 @@ $titre = $_POST['titre'];
 $description = $_POST['description'];
 $id_to_modifier = $_POST['identifiantObjet']; // l'id de l'objet qu'on doit récuperer !!
 $id = $_SESSION['login'];
-$path_photo = 'photo'; // le path  de la photo en attendant le document final de khushas
+$path_photo = 'no_image.png'; // le path  de la photo en attendant le document final de khushas
 $isAvailable = 1;
 $prix = 0;
 
@@ -21,17 +21,19 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
 {
     global $DB;
 
-    $titre = $DB->quote(htmlspecialchars($_POST['titre']));
-    $description = $DB->quote(htmlspecialchars($_POST['description']));
+   /* $titre = $DB->quote(htmlspecialchars($_POST['titre']));
+    $description = $DB->quote(htmlspecialchars($_POST['description']));*/
 
     $sql = $DB->prepare("UPDATE objet SET id=\"$id_to_modifier\" , nom =\"$titre\", prix =\"$prix\", path_photo = \"$path_photo\" ,  id_owner=\"$id\" , isAvailable =\"$isAvailable\" ,description = \"$description\" WHERE id=\"$id_to_modifier\"");
-    $sql->bindValue(':id', $id , PDO::PARAM_INT);
-    $sql->bindValue(':titre',$titre, PDO::PARAM_STR);
-    $sql->bindValue(':prix', $prix , PDO::PARAM_INT);
-    $sql->bindValue(':path_photo', $path_photo, PDO::PARAM_STR);
-    $sql->bindValue(':id', $id, PDO::PARAM_INT);
-    $sql->bindValue(':isAvailable', $isAvailable, PDO::PARAM_INT);
-    $sql->bindValue(':description', $description, PDO::PARAM_STR);
+
+   /* $sql = $DB->prepare("UPDATE objet SET id=:ido, nom=:titre, prix=:prix, path_photo=:path_photo, id_owner=:ids, isAvailable=:isAvailable, description=:description WHERE id=:ido");
+    $sql->bindParam(':ido', $id_to_modifier);
+    $sql->bindParam(':titre',$titre);
+    $sql->bindParam(':prix', $prix);
+    $sql->bindParam(':path_photo', $path_photo);
+    $sql->bindParam(':ids', $id);
+    $sql->bindParam(':isAvailable', $isAvailable);
+    $sql->bindParam(':description', $description);*/
 
     //Execution de la requÃªte d'enregistrement de l'utilisateur
     $result = $sql->execute();
