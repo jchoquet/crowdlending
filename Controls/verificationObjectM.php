@@ -42,23 +42,26 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
     {
 
         // Redirection vers la page mes objets si tout s'est bien passÃ©
-        echo "La modification s'est bien déroulé. Retour à  la page mes objets :\n";
-        echo "<a href=\"../mesObjets.php\">Mes objets</a>";
-        //header('location: ../mesObjets.php');
+        $message = "L'objet ".$titre." a bien été modifié";
+        $_SESSION['message'] = $message;
+        header('location: ../mesObjets.php');
+
     }
     else
     {
-        echo "Il y a eu un problème lors de votre modification d'objet, veuillez cliquer sur le lien ci\n";
-        echo "<a href=\"../mesObjets.php\">Mes objets</a>";
+        $message = "Il y a eu un problème lors de votre modification d'objet.";
+        $_SESSION['message'] = $message;
+        header('location: ../mesObjets.php');
     }
 }
 
 //Redirection vers la page mes objets si les champs ne sont pas valides
 else
-    {
-    echo "Il y a eu un problème lors de votre modification d'objet, veuillez cliquer sur le lien ci\n";
-    echo "<a href=\"../mesObjets.php\">Mes objets</a>";
-    }
+{
+    $message = "Il y a eu un problème lors de votre modification d'objet.";
+    $_SESSION['message'] = $message;
+    header('location: ../mesObjets.php');
+}
 
 
 //retourne 0 si tout les champs sont rempli

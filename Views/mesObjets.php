@@ -90,6 +90,8 @@ include "Views/modif2.php";
 
     ?>
 
+    <?php if(!empty($_SESSION['message'])) {
+        echo $_SESSION['message'];} ?>
 
     <p>Liste de mes objets :</p>
     <table class="table table-hover">
