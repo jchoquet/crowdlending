@@ -181,8 +181,8 @@ include "Views/modif2.php";
                                 <p> êtes-vous sûr de vouloir continuer ?</p>
                             </div>
                             <div class="modal-footer">
-                                <a id="link-button" role="button" class="btn btn-default">Supprimer l'objet</a>
-                                <button type="button" class="btn btn-default" data-dismiss="modal" id="dismiss-button">
+                                <a id="link-button" role="button" class="btn btn-defaul btn-danger">Supprimer l'objet</a>
+                                <button type="button" class="btn btn-default btn-success" data-dismiss="modal" id="dismiss-button">
                                     Annuler
                                 </button>
                             </div>
@@ -242,7 +242,7 @@ include "Views/modif2.php";
 
                                     <p class="lead text-center">
                                         <button type="submit" class="btn btn-lg btn-default btn-success" id="modifObj-btn" name="modifObj">Modifier l'objet</button>
-                                        <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button">Annuler</button>
+                                        <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button>
                                     </p>
                                     <span class="errors" id="formerror"></span>
                                 </form>
