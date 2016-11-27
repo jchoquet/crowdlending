@@ -7,3 +7,7 @@
     max-height: 350px;
     overflow-y: auto;
 }
+
+#modifObj .modal-body {
+  max-height: 700px;
+}
