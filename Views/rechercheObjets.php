@@ -106,23 +106,19 @@ else{
 
                     print "<td class='supObj'>";
 
-
-                    // Si l'utilisateur supprime le dernier objet de la dernière page et qu'il ne restait que cet objet dans cette page,
-                    // on revient à la page précédente (sauf si la page actuelle est la page 1)
-                    if ($num == ($page - 1) * $DIV + 1 and $num == sizeof($informations_objets) and $page != 1) {
-                        $newpage = $page - 1;
-                        $page_after_delete = "mesObjets.php?page=" . $newpage . "&delete=" . $infor[2];
-                    } else
-                        $page_after_delete = "mesObjets.php?page=" . $page . "&delete=" . $infor[2];
-
                     $page_email = "emailPreteur.php?owner=".$infor[3];
+                    $page_demande_traiter = "demandeTraiter.php?id=".$infor[3];
 
+                    //button "get email address"
                     print "<a class=\"btn btn-primary btn-lg pull-right\" href=\"$page_email\">
                             <span class=\"glyphicon glyphicon-envelope\"></span> </a>";
+
+                    //button "demander l'objet"
+                    print "<div id=\"demande\" class=\"btn btn-success btn-lg pull-right\" style=\"margin-right: 10px\" data-nom=\"$nom\" data-link=\"$page_demande_traiter\"> 
+                        Demander </div>";
                     ?>
 
                     <?php
-
                     print "</td>";
                     print "</tr>";
                 }
@@ -154,6 +150,30 @@ else{
     </ul>
 </div>
 
+<!-- http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_modal_sm&stacked=h -->
+<!-- Modal envoyer une demande-->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Message d'avertissement</h4>
+            </div>
+            <div class="modal-body">
+                <p id="messageConfirmation"></p>
+                <p><br/>Êtes-vous sûr de vouloir continuer ?</p>
+            </div>
+            <div class="modal-footer">
+                <a id="link-button" role="button" class="btn btn-success">Envoyer la demande</a>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="dismiss-button">
+                    Annuler
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Modal information objet-->
 
@@ -187,5 +207,6 @@ else{
 
 <script type="text/javascript" src="Scripts/config.js"></script>
 <script type="text/javascript" src="Scripts/popupObjet.js"></script>
+<script type="text/javascript" src="Scripts/demandeSend.js"> </script>
 
 </html>
