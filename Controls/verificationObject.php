@@ -35,7 +35,7 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0 && verifPh
     if($result)
     {
 		if(isset($_POST['categorie'])){
-			$queryObjet = $DB->prepare("SELECT id FROM objet WHERE id_owner=:owned AND nom=:titre;")
+			$queryObjet = $DB->prepare("SELECT id FROM objet WHERE id_owner=:owned AND nom=:titre;");
 			$queryObjet->bindValue(':owned',$owned, PDO::PARAM_INT);
 			$queryObjet->bindValue(':titre',$titre, PDO::PARAM_STR);
 			$queryObjet->execute();
@@ -43,7 +43,7 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0 && verifPh
 			$idobjet = $result['id'];
 			
 			
-			$querycate = $DB->prepare("SELECT id FROM categorie WHERE nom=:titre;")
+			$querycate = $DB->prepare("SELECT id FROM categorie WHERE nom=:titre;");
 			$querycate->bindValue(':titre',$_POST['categorie'], PDO::PARAM_STR);
 			$querycate->execute();
 			$result = $querycate->fetch();
@@ -142,9 +142,9 @@ function verifPhoto()
 		}
 		
 		$image_dim = getimagesize($_FILES['photo']['tmp_name']);
-		$maxwidth=64;
-		$maxheight=64;
-		if ($image_sizes[0] > $maxwidth OR $image_sizes[1] > $maxheight)
+		$MAXWIDTH=64;
+		$MAXHEIGHT=64;
+		if ($image_dim[0] > $MAXWIDTH OR $image_dim[1] > $MAXHEIGHT)
 		{
 			return 1;
 		}
