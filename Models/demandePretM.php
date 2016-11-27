@@ -10,6 +10,16 @@ include __DIR__."/connexion.php";
 // L'id de l'utilisateur connecté est connu grâce à session_start() lancé au moment de la connexion
 
 
+if (isset($_POST['action']) && !empty($_POST['action'])) 
+{
+    $action = $_POST['action'];
+    switch($action) {
+        case 'accepter': modif_accepter(); break;
+        case 'refuser': modif_refuser(); break;
+    }
+}
+
+
 // Renvoie le "path_photo", le "nom" et l'"id" des objets disponibles de l'utilisateur
 function get_waiting_pret()
 {
@@ -29,6 +39,16 @@ function get_waiting_pret()
     return $informations_objets;
 }
 
+
+function modif_accepter($id_pret)
+{
+    echo 'aaa';
+}
+
+function modif_refuser($id_pret)
+{
+    echo 'bbb';
+}
 
 /*// Renvoie le nom de l'objet qui va être supprimé, d'id "id_to_delete"
 function objet_to_delete($id_to_delete)

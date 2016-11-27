@@ -109,8 +109,9 @@ include "Models/demandePretM.php";
             </div>";
 
                 print "<div class=\"espace btn pull-right\"></div>"; // pour qu'il y ait un espace entre les 2 boutons
+                // et sert à afficher le texte de résultat "Demande acceptée" ou "Demande refusée"
 
-                print "<div class=\"btn btn-success btn-lg pull-right\" onclick=\"accepter(this)\">
+                print "<div class=\"btn btn-success btn-lg pull-right\" onclick=\"accepter(this, $id_pret)\">
               <span class=\"glyphicon glyphicon-ok\">Accepter</span>
             </div>";
 
