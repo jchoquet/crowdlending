@@ -16,7 +16,7 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0 && verifPh
 	if(isset($_FILES['photo']['tmp_name'])){
 		$nom = md5(uniqid(rand(), true));
 		$extension_upload = strtolower(  substr(  strrchr($_FILES['photo']['name'], '.')  ,1)  );
-		$path_photo = "Images/Objets/".$nom.$extension_upload;
+		$path_photo = $nom.$extension_upload;
 		$moving = move_uploaded_file($_FILES['photo']['tmp_name'],"../".$nom);
 	}
     $isAvailable = 1;
