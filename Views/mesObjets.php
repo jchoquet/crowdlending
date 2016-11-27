@@ -18,6 +18,7 @@ include "Views/modif2.php";
     <link rel="stylesheet" href="Styles/bootstrap.css">
     <link rel="stylesheet" href="Styles/mesObjets.css">
     <link rel="stylesheet" href="Styles/popupObjets.css">
+    <link rel="stylesheet" href="Styles/base.css">
 
 
     <script src="Scripts/jquery_library.js"></script>
@@ -38,6 +39,8 @@ include "Views/modif2.php";
 
 </head>
 <body>
+
+<?php include("Views/header.php"); ?>
 
 <div class="container content">
     <h2>Mes objets</h2>
@@ -263,6 +266,8 @@ include "Views/modif2.php";
         <?php endif; ?>
     </ul>
 </div>
+
+<?php include("Views/footer.php"); ?>
 
 </body>
 </html>
