@@ -218,11 +218,21 @@ include "Views/modif2.php";
                                     </div>
                                     <div class="row">
                                     <div class="form-group">
-                                        <label for="description">Photo de l'objet :</label>
+                                        <label>Photo de l'objet :</label>
                                         <div class="col-md-12">
-                                        <img src="Images/Objets/<?php echo getphoto($iid); ?>"  width="150" height="150">
-                                        <button class="btn btn-default btn-file"><input type="file" id="photo" name="photo" /></button>
+                                            <img src="Images/Objets/<?php echo getphoto($iid); ?>"  width="150" height="150">
+                                            <div class="input-group">
+                                                <label class="input-group-btn" for="photo">
+                                                <span class="btn btn-info"><span class="glyphicon glyphicon-picture"></span>
+                                                    Sélectionner une photo <input type="file" id="photo" name="photo" style="display: none;"/>
+                                                </span>
+                                                </span>
+                                                </label>
+                                                <input type="text" class="form-control" readonly="" value="Aucun fichier choisi" />
+                                            </div>
                                         </div>
+
+
                                     </div>
                                     </div>
                                     <p class="lead text-center">
