@@ -29,6 +29,8 @@ include __DIR__ . "/../Views/modif2.php";
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="../Scripts/jquery_library.js"></script>
     <script src="../Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="../Scripts/ajout.js"></script>
+    <script type="text/javascript" src="../Scripts/mesObjetsS.js"></script>
 
     <script>
         if ($(window).width() > 768)
@@ -64,7 +66,7 @@ include __DIR__ . "/../Views/modif2.php";
         $_REQUEST['delete'] = NULL;
     }
 
-    if (isset($_REQUEST['modifier']))
+    /*if (isset($_REQUEST['modifier']))
     {
         $id_to_modifier = $_REQUEST['modifier'];
         $nom = objet_to_modifier($id_to_modifier);
@@ -88,7 +90,7 @@ include __DIR__ . "/../Views/modif2.php";
                 print "<strong > Erreur !</strong > L'objet \"$nom\" n'a pas été modifié";
                 print "</div >";}
         $_REQUEST['modifier'] = NULL;
-    }
+    }*/
 
     ?>
 
@@ -150,7 +152,7 @@ include __DIR__ . "/../Views/modif2.php";
                 $iid=$infor[2];
 
 
-                print "<div class=\"btn btn-success btn-lg\" data-toggle=\"modal\" data-target=\"#modifObj\" data-nom=\"$nom\" data-link=\"$page_apres_modification\">
+                print "<div class=\"btn btn-success btn-lg\" data-toggle=\"modal\" data-target=\"#modifObj\" data-nom=\"$iid\" data-link=\"$page_apres_modification\">
               <span class=\"glyphicon glyphicon-trash\"></span>
             </div>";
 
@@ -178,7 +180,7 @@ include __DIR__ . "/../Views/modif2.php";
                             </div>
                             <div class="modal-body">
                                 <p>Vous allez supprimer l'objet <?php echo $nom; ?>.</p>
-                                <p>ÃŠtes-vous sÃ»r de vouloir continuer ?</p>
+                                <p> êtes-vous sûr de vouloir continuer ?</p>
                             </div>
                             <div class="modal-footer">
                                 <a id="link-button" role="button" class="btn btn-default">Supprimer l'objet</a>
@@ -190,6 +192,7 @@ include __DIR__ . "/../Views/modif2.php";
                     </div>
                 </div>
 
+
                 <div class="modal fade" id="modifObj" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -200,6 +203,7 @@ include __DIR__ . "/../Views/modif2.php";
                             </div>
 
                             <div class="modal-body">
+                                <form role="form" id="modifObj" method="POST" action="../Controls/verificationObjectM.php">
                                 <div class="row">
                                     <label for="titre"> Nom d'objet :  </label>
                                     </br>
@@ -211,6 +215,7 @@ include __DIR__ . "/../Views/modif2.php";
                                     <label for="description"> Description de l'objet :</label>
                                     </br>
                                     <input type="textarea" class="form-control" id="description" name="description" placeholder="Description de votre objet" value="<?php echo getdescription($iid); ?>" >
+                                    <span class="errors" id="descriptionerror"></span>
                                 </div>
                                 </br>
                                 <div class="row">
@@ -220,20 +225,18 @@ include __DIR__ . "/../Views/modif2.php";
                                     <button class="btn btn-default btn-file"><input type="file" id="photo" name="photo" /></button>
                                     </br>
                                 </div>
+                                    <button type="submit" class="btn btn-default btn-success" id="modifObj" name="modifObj">Modifier l'objet</button>
+                                    <span class="errors" id="formerror"></span>
+                                    <button type="button" class="btn btn-default btn-danger" data-dismiss="modal" id="dismiss-button"> Annuler </button>
+                                </form>
                             </div>
 
                             <div class="modal-footer">
-                                <a id="link-button" role="button" class="btn btn-default btn-success">Modifier l'objet</a>
-                                <span class="errors" id="formerror"></span>
-                                <button type="button" class="btn btn-default btn-danger" data-dismiss="modal" id="dismiss-button"> Annuler </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
-                <script type="text/javascript" src="../Scripts/ajout.js"></script>
-                <script type="text/javascript" src="../Scripts/mesObjetsS.js"></script>
 
                 <?php
 

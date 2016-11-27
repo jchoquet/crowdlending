@@ -1,6 +1,9 @@
 <?php
 
 include __DIR__ . '/../Models/connexion.php';
+
+
+session_start();
 // L'id de l'utilisateur connecté est connu grà¢ce à  session_start() lancé au moment de la connexion
 
 
@@ -99,7 +102,7 @@ function verifDescription()
 }
 
 
-// Renvoie le nom de l'objet qui va être modifié, d'id "id_to_modifier"
+/*// Renvoie le nom de l'objet qui va être modifié, d'id "id_to_modifier"
 function objet_to_modifier($id_to_modifier)
 {
     global $DB;
@@ -115,7 +118,7 @@ function modifier_objet($id_to_modifier , $titre , $prix , $isAvailable , $path_
     $qr = $DB->prepare("UPDATE objet SET id=\"$id_to_modifier\" , nom =\"$titre\", prix =\"$prix\", path_photo = \"$path_photo\" ,  id_owner=\"$id\" , isAvailable =\"$isAvailable\" ,description = \"$description\" WHERE id=\"$id_to_modifier\"");
     $result = $qr->execute();
     return $result;
-}
+}*/
 
 
 ?>

@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	/* variables connexion */
+	/* variables ajout */
 
 	var titre = "";
 	var description = "";
@@ -50,35 +50,8 @@ $(document).ready(function(){
 			$.ajax({
 
 				type:'POST',
-				url:'../crowdlending/Controls/verificationObject.php',
+				url:'../Controls/verificationObject.php',
 				data:"titre="+titre+"&description="+description,
-				success:function(msg) {
-
-					if(msg == "OK"){
-						window.location.replace("../crowdlending/Views/mesObjets.php");
-					}
-					else{
-
-						$("#formerror").html(msg);
-					}
-				}
-			});
-		}
-	});
-
-/*	$("#modifObj").click(function() {
-
-		if( titre == "" )
-		{
-			$("#formerror").html("Erreur : l'objet n'a pas été modifié");
-		}
-		else{
-			$("#formerror").html("");
-			$.ajax({
-
-				type:'POST',
-				url:'../Controls/verificationObjectM.php',
-				data:"titre="+titre,
 				success:function(msg) {
 
 					if(msg == "OK"){
@@ -91,7 +64,34 @@ $(document).ready(function(){
 				}
 			});
 		}
-	});*/
+	});
+
+	$("#modifObj").click(function() {
+
+		if( titre == "" )
+		{
+			$("#formerror").html("");
+		}
+		else{
+			$("#formerror").html("");
+			$.ajax({
+
+				type:'POST',
+				url:'../Controls/verificationObjectM.php',
+				data:"titre="+titre+"&description="+description,
+				success:function(msg) {
+
+					if(msg == "OK"){
+						window.location.replace("../Views/mesObjets.php");
+					}
+					else{
+
+						$("#formerror").html(msg);
+					}
+				}
+			});
+		}
+	});
 
 
 });
