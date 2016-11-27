@@ -39,7 +39,7 @@ include "Views/modif2.php";
 </head>
 <body>
 
-<div class="container">
+<div class="container content">
     <h2>Mes objets</h2>
 
     <?php

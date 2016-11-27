@@ -6,87 +6,68 @@
 include 'Controls/ListeCategorie.php';
 ?>
 
-
-<form role="form" id="ajout" method="POST" action="Controls/verificationObject.php">
-    <div class="site-wrapper">
-        <div class="site-wrapper-inner">
-
-            <!-- FlÃ¨che retour landing page -->
-            <div id="arrow-container">
-                <a href="acceuil.php"><i class="material-icons md-36 md-light">arrow_back</i></a>
-            </div>
-
-            <div class="container">
-
-                </br><p>
-                <fieldset class="field-border col-md-offset-2 col-md-7">
-                    <legend class="field-border">PrÃªtez vos objets en toute sécurité !</legend>
-                </fieldset>
-                </p>
-
-                </br>
+<div class="content">
+    <div class="wrapper">
+        <div class="container" id="container-form">
+            <form role="form" id="ajout" method="POST" action="Controls/verificationObject.php">
 
                 <div class="row">
-                    <div class="col-md-offset-2 col-md-7">
-                        <div class="form-group">
-                            <label for="categorie" > Catégorie </label>
-                            <br><select name="categorie" id="categorie" onchange="fetch_select_Categorie(this.value);"></br>
-                                <option>Selectionner une catégorie</option>
-                                <?php printSelect($tab); ?>
-                            </select>
-                        </div>
-                    </div>
+                    <fieldset class="field-border col-md-12">
+                        <legend class="field-border">Prétez vos objets en toute sécurité !</legend>
+                    </fieldset>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-offset-2 col-md-7">
-                        <div class="form-group">
-                            <label for="titre">Le titre de mon annonce* </label>
-                            <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre" value="" required/>
-                            <span class="errors" id="titreerror"></span>
-                        </div>
+                    <div class="form-group col-md-12">
+                        <label for="categorie">Catégorie de l'objet</label>
+                        <select class="form-control" name="categorie" id="categorie" onchange="fetch_select_Categorie(this.value);"></br>
+                        <option>Sélectionner une catégorie</option>
+                        <?php printSelect($tab); ?>
+                        </select>
                     </div>
                 </div>
 
 
                 <div class="row">
-                    <div class="col-md-offset-2 col-md-7">
-                        <div class="form-group">
-                            <label for="description">Description de mon objet (fonctions, caractéristiques) :</label>
-                            <textarea class="form-control" id="description" name="description" placeholder="Description de votre annonce" ></textarea>
-                            <span class="errors" id="descriptionerror"></span>
-                        </div>
+                    <div class="form-group col-md-12">
+                        <label for="titre">Ajouter un titre à votre annonce *</label>
+                        <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre" value="" required/>
+                        <span class="errors" id="titreerror"></span>
                     </div>
                 </div>
 
-                <p>
-                <fieldset class="field-border col-md-offset-2 col-md-7">
-                    <legend class="field-border">De belles photos font la différence !</legend>
-                </fieldset>
-                </p>
-                </br></br>
 
                 <div class="row">
-                    <p><div class="col-md-offset-2 col-md-7">
-                        <label for="photo" > Photo </label>
+                    <div class="form-group col-md-12">
+                        <label for="description">Ajouter une description de l'objet (fonctions, caractéristiques)</label>
+                        <textarea class="form-control" id="description" name="description" placeholder="Description de votre annonce" ></textarea>
+                        <span class="errors" id="descriptionerror"></span>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <fieldset class="field-border col-md-12">
+                        <legend class="field-border">De belles photos font la différence !</legend>
+                    </fieldset>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="photo">Sélectionner une photo</label>
                         <span class="btn btn-default btn-file"><input type="file" id="photo" name="photo" />
-                    </div></p>
+                        </span>
+                    </div>
                 </div>
 
 
-                <div class="row">
-                    </br></br>
-                    <p><div class="col-md-offset-5  col-md-1">
-                        <button type="submit" class="btn btn-primary" id="ajout" name="ajout">Enregistrer mon anonce</button>
-                        <span class="errors" id="formerror"></span>
-                    </div></p>
-                </div>
+                <p class="lead text-center">
+                     <button type="submit" class="btn btn-md btn-info" id="ajout" name="ajout">Enregistrer mon anonce</button>
+                </p>
+                <span class="errors" id="formerror"></span>
 
-
-            </div>
+            </form>
         </div>
     </div>
-    </div>
-</form>
-
+</div>
 
