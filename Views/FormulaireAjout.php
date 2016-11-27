@@ -3,13 +3,13 @@
  * User: MAHROUS ANOUAR
  * Date: 10/11/2016
  */
-include 'Controls/ListeCategorie.php';
+ include __DIR__ . '/../Controls/ListeCategorie.php';
 ?>
 
 <div class="content">
     <div class="wrapper">
         <div class="container" id="container-form">
-            <form role="form" id="ajout" method="POST" action="Controls/verificationObject.php">
+            <form role="form" id="ajout" method="POST" action="../Controls/verificationObject.php">
 
                 <div class="row">
                     <fieldset class="field-border col-md-12">
