@@ -15,8 +15,13 @@ if (isset($_POST['action']) && !empty($_POST['action']) && isset($_POST['id_pret
     $action = $_POST['action'];
     $id_pret = $_POST['id_pret'];
     switch($action) {
-        case 'accepter': modif_accepter($id_pret); break;
-        case 'refuser': modif_refuser(); break;
+        case 'accepter':
+            modif_accepter($id_pret);
+            break;
+        case 'refuser':
+            $id_objet = $_POST['id_objet'];
+            modif_refuser($id_pret, $id_objet);
+            break;
     }
 }
 
@@ -49,9 +54,12 @@ function modif_accepter($id_pret)
     return $qr;
 }
 
-function modif_refuser($id_pret)
+function modif_refuser($id_pret, $id_objet)
 {
-    echo 'bbb';
+    global $DB;
+    $qr_delete = $DB->exec("DELETE FROM pret WHERE id=\"$id_pret\";");
+    $qr_update = $DB->exec("UPDATE objet SET isAvailable=1 WHERE id=\"$id_objet\";");
+    return array($qr_delete, $qr_update);
 }
 
 /*// Renvoie le nom de l'objet qui va être supprimé, d'id "id_to_delete"

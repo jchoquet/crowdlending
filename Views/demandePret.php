@@ -104,7 +104,7 @@ include "Models/demandePretM.php";
                 print "<td class='choix_pret'>";
 
 
-                print "<div class=\"btn btn-danger btn-lg pull-right\" onclick=\"refuser(this)\">
+                print "<div class=\"btn btn-danger btn-lg pull-right\" onclick=\"refuser(this, $id_pret, $id_objet)\">
               <span class=\"glyphicon glyphicon-remove\">Refuser</span>
             </div>";
 

@@ -13,8 +13,13 @@ function accepter(e, id_pret) {
     });
 }
 
-function refuser(e) {
+function refuser(e, id_pret, id_objet) {
     $(e).closest('td').find('.espace').html('Demande refusée');
     $(e).closest('td').find('.btn-success').remove();
     $(e).remove();
+
+    $.ajax({ url: 'Models/demandePretM.php',
+        data: {action: 'refuser', id_pret: id_pret, id_objet: id_objet},
+        type: 'post'
+    });
 }
