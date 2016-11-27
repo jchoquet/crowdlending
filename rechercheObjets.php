@@ -1,4 +1,10 @@
 <?php
 session_start();
-include "Views/rechercheObjets.php";
+if(isset($_GET['searchWord'])){
+    include "Views/RechercheObjets.php";
+}
+else
+{
+	include "Views/formulaireRecherche.php";
+}
 ?>
