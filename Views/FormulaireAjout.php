@@ -22,7 +22,7 @@
                     <div class="form-group col-md-12">
                         <label for="categorie">Catégorie de l'objet</label>
                         <select class="form-control" name="categorie" id="categorie" onchange="fetch_select_Categorie(this.value);"></br>
-                        <option>Sélectionner une catégorie</option>
+                        <option value="0">Sélectionner une catégorie</option>
                         <?php printSelect($tab); ?>
                         </select>
                     </div>
