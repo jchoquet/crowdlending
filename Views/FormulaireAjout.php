@@ -3,8 +3,7 @@
  * User: MAHROUS ANOUAR
  * Date: 10/11/2016
  */
-include __DIR__ . '/../Controls/ListeCategorie.php';
-include __DIR__ . '/../Views/header.php';
+include 'Controls/ListeCategorie.php';
 ?>
 
 
@@ -14,7 +13,7 @@ include __DIR__ . '/../Views/header.php';
 
             <!-- FlÃ¨che retour landing page -->
             <div id="arrow-container">
-                <a href="../acceuil.php"><i class="material-icons md-36 md-light">arrow_back</i></a>
+                <a href="acceuil.php"><i class="material-icons md-36 md-light">arrow_back</i></a>
             </div>
 
             <div class="container">
@@ -89,6 +88,5 @@ include __DIR__ . '/../Views/header.php';
     </div>
     </div>
 </form>
-<?php include __DIR__ . '/../Views/header.php'; ?>
 
 
