@@ -15,6 +15,13 @@ if(isset($_GET['searchWord'])){
     $searchWord = $_GET['searchWord'];
 }
 
+if(isset($_GET['categorie'])){
+    if($_GET['categorie']!="Selectionner+une+catégorie")
+        $categorie = $_GET['categorie'];
+    else
+        $categorie="";
+}
+
 else{
     header('Location: Views/pbRecherche.php');
     exit();
@@ -54,27 +61,27 @@ else{
 </head>
 <body>
 
-<?php include("header.php"); ?>
+    <?php include("header.php"); ?>
 
-<div class="container content">
-    <h2>Recherche d'objets</h2>
+    <div class="container content">
+        <h2>Recherche d'objets</h2>
 
-    <p>Résultats de la recherche:</p>
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Photo</th>
-            <th>Nom</th>
-            <th></th>
-        </tr>
-        </thead>
+        <p>Résultats de la recherche:</p>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Photo</th>
+                    <th>Nom</th>
+                    <th></th>
+                </tr>
+            </thead>
 
-        <tbody>
+            <tbody>
 
-        <?php
+                <?php
         $num = 0; // "num" sert à créer les numéros des lignes du tableau
-        $informations_objets = get_available_objets($searchWord); // on récupère les informations des objets disponibles de l'utilisateur
+        $informations_objets = get_available_objets($searchWord,$categorie); // on récupère les informations des objets disponibles de l'utilisateur
 
         if (sizeof($informations_objets) != 0) {
             foreach ($informations_objets as $infor) {
@@ -82,10 +89,10 @@ else{
                     $num += 1;
 
                     if ($num > $page * $DIV) // si on a atteint les objets de la page suivante, on s'arrête
-                        break;
+                    break;
 
                     if ($num <= ($page - 1) * $DIV) // si on parcourt les objets des pages précédentes, on continue
-                        continue;
+                    continue;
 
                     $id = $infor[2];
 
@@ -111,11 +118,11 @@ else{
 
                     //button "get email address"
                     print "<a class=\"btn btn-primary btn-lg pull-right\" href=\"$page_email\">
-                            <span class=\"glyphicon glyphicon-envelope\"></span> </a>";
+                    <span class=\"glyphicon glyphicon-envelope\"></span> </a>";
 
                     //button "demander l'objet"
                     print "<div id=\"demande\" class=\"btn btn-success btn-lg pull-right\" style=\"margin-right: 10px\" data-nom=\"$nom\" data-link=\"$page_demande_traiter\"> 
-                        Demander </div>";
+                    Demander </div>";
                     ?>
 
                     <?php
@@ -124,11 +131,11 @@ else{
                 }
             }
         } else
-            print "Aucun objet n'a été trouvé";
+        print "Aucun objet n'a été trouvé";
         ?>
 
-        </tbody>
-    </table>
+    </tbody>
+</table>
 </div>
 
 <!-- Pour les pages, on crée des boutons "précédent" et "suivant" -->
