@@ -13,10 +13,10 @@ print_r($_POST);
 if (verifFullfill()==0 && verifTitre()==0 && verifDescription()==0 && verifPhoto()==0)
 {
     global $DB;
-    $titre = $DB->quote(htmlspecialchars($_POST['titre']));
-    $description = $DB->quote(htmlspecialchars($_POST['description']));
+   /* $titre = $DB->quote(htmlspecialchars($_POST['titre']));
+    $description = $DB->quote(htmlspecialchars($_POST['description']));*/
     $owned = $_SESSION['login'];
-  	if(isset($_FILES['photo']['name']))
+  	if($_FILES['photo']['name'] != "")
   	{
   		print("ok\n");
   		$nom = md5(uniqid(rand(), true));
@@ -66,17 +66,15 @@ if (verifFullfill()==0 && verifTitre()==0 && verifDescription()==0 && verifPhoto
   			$query->bindValue(':id_objet', $idobjet, PDO::PARAM_INT);
   			$query->execute();
 		  }
-        // DÃ©but de la session
-      session_start ();
 
       // Redirection vers la page mesObjets si tout s'est bien passé
       echo "L'ajout s'est bien déroulé.\n";
       echo "<a href=\"../mesObjets.php\">Ma liste d'objets</a>";
-      header('location: ../mesObjets.php');
+      //header('location: ../mesObjets.php');
     }
     else
     {
-        echo "Il y a eu un problème lors de votre ajout d'objet, veuillez cliquer sur le lien ci erreur de requete\n";
+        echo "Il y a eu un problème lors de votre ajout d'objet (erreur de requete), veuillez cliquer sur le lien ci\n";
         echo "<a href=\"../Views/Ajout.php\">Page d'ajout d'objet</a>";
     }
 }
@@ -85,7 +83,7 @@ else
 {
     echo "verif photo egal à";
     echo verifPhoto();
-    echo "Il y a eu un problème lors de votre ajout d'objet, veuillez cliquer sur le lien ci nsm la pute les champs non valides\n";
+    echo "Il y a eu un problème lors de votre ajout d'objet (champs non valides), veuillez cliquer sur le lien ci \n";
     echo "<a href=\"../Views/Ajout.php\">Page d'ajout d'objet</a>";
 }
 
