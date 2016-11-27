@@ -10,4 +10,9 @@
 
 #modifObj .modal-body {
   max-height: 700px;
+  padding: 35px;
+}
+
+#modifObj-btn, #dismiss-button {
+  margin-top: 25px;
 }

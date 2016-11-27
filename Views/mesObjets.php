@@ -160,7 +160,7 @@ include "Views/modif2.php";
 
 
 
-                ?>
+        ?>
 
                 <!-- http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_modal_sm&stacked=h -->
                 <!-- Modal -->
@@ -199,37 +199,42 @@ include "Views/modif2.php";
                             </div>
 
                             <div class="modal-body">
-                                <form role="form" id="modifObj" method="POST" action="Controls/verificationObjectM.php">
-                                <div class="row">
-                                    <label for="titre">Nom d'objet :  </label>
-                                    </br>
-                                    <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre" value="<?php echo getnom($iid); ?>" required/>
-                                    <span class="errors" id="titreerror"></span>
-                                </div>
-                                </br>
-                                <div class="row">
-                                    <label for="description">Description de l'objet :</label>
-                                    </br>
-                                    <input type="textarea" class="form-control" id="description" name="description" placeholder="Description de votre objet" value="<?php echo getdescription($iid); ?>" >
-                                    <span class="errors" id="descriptionerror"></span>
-                                </div>
-                                </br>
-                                <div class="row">
-                                    <label for="description">Photo de l'objet :</label>
-                                    </br>
-                                    <img src="Images/Objets/<?php echo getphoto($iid); ?>"  width="150" height="150">
-                                    <button class="btn btn-default btn-file"><input type="file" id="photo" name="photo" /></button>
-                                    </br>
-                                </div>
-                                    <button type="submit" class="btn btn-default btn-success" id="modifObj" name="modifObj">Modifier l'objet</button>
+                                <form role="form" id="modifObj-form" method="POST" action="Controls/verificationObjectM.php">
+                                    <div class="row">
+                                    <div class="form-group">
+                                        <label for="titre">Nom d'objet :  </label>
+                                        </br>
+                                        <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre" value="<?php echo getnom($iid); ?>" required/>
+                                        <span class="errors" id="titreerror"></span>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="form-group">
+                                        <label for="description">Description de l'objet :</label>
+                                        </br>
+                                        <input type="textarea" class="form-control" id="description" name="description" placeholder="Description de votre objet" value="<?php echo getdescription($iid); ?>" >
+                                        <span class="errors" id="descriptionerror"></span>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="form-group">
+                                        <label for="description">Photo de l'objet :</label>
+                                        <div class="col-md-12">
+                                        <img src="Images/Objets/<?php echo getphoto($iid); ?>"  width="150" height="150">
+                                        <button class="btn btn-default btn-file"><input type="file" id="photo" name="photo" /></button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <p class="lead text-center">
+                                        <button type="submit" class="btn btn-lg btn-default btn-success" id="modifObj-btn" name="modifObj">Modifier l'objet</button>
+                                        <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button">Annuler</button>
+                                    </p>
                                     <span class="errors" id="formerror"></span>
-                                    <button type="button" class="btn btn-default btn-danger" data-dismiss="modal" id="dismiss-button">Annuler</button>
                                 </form>
                             </div>
-
                             <div class="modal-footer">
                             </div>
-                        </div>
+                            </div>
                     </div>
                 </div>
 

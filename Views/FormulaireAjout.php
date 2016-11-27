@@ -10,7 +10,7 @@
 <div class="content">
     <div class="wrapper">
         <div class="container" id="container-form">
-            <form role="form" id="ajout" method="POST" action="Controls/verificationObject.php" enctype="multipart/form-data">
+            <form role="form" method="POST" action="Controls/verificationObject.php" enctype="multipart/form-data">
 
                 <div class="row">
                     <fieldset class="field-border col-md-12">
