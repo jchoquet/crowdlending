@@ -9,10 +9,7 @@ function accepter(e, id_pret) {
 
     $.ajax({ url: 'Models/demandePretM.php',
         data: {action: 'accepter', id_pret: id_pret},
-        type: 'post',
-        success: function(output) {
-            alert(output);
-        }
+        type: 'post'
     });
 }
 

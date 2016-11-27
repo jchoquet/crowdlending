@@ -10,11 +10,12 @@ include __DIR__."/connexion.php";
 // L'id de l'utilisateur connecté est connu grâce à session_start() lancé au moment de la connexion
 
 
-if (isset($_POST['action']) && !empty($_POST['action'])) 
+if (isset($_POST['action']) && !empty($_POST['action']) && isset($_POST['id_pret']) && !empty($_POST['id_pret']))
 {
     $action = $_POST['action'];
+    $id_pret = $_POST['id_pret'];
     switch($action) {
-        case 'accepter': modif_accepter(); break;
+        case 'accepter': modif_accepter($id_pret); break;
         case 'refuser': modif_refuser(); break;
     }
 }
@@ -42,7 +43,10 @@ function get_waiting_pret()
 
 function modif_accepter($id_pret)
 {
-    echo 'aaa';
+    global $DB;
+    $date = date("Y-m-d");
+    $qr = $DB->exec("UPDATE pret SET accepted=\"$date\" WHERE id=\"$id_pret\";");
+    return $qr;
 }
 
 function modif_refuser($id_pret)
