@@ -121,7 +121,7 @@ include "Views/modif2.php";
                 print "<tr>";
                 print "<td>" . $num . "</td>";
 
-                $path_photo = "../Images/Objets/" . $infor[0];
+                $path_photo = "Images/Objets/" . $infor[0];
                 $nom = $infor[1];
 
                 print "<td>";
@@ -144,7 +144,7 @@ include "Views/modif2.php";
 
                 //$page_apres_modification = "mesObjets.php?page=" . $page . "&modifier=" . $infor[2];
 
-                $page_apres_modification="../Controls/verificationObjectM.php";
+                $page_apres_modification="Controls/verificationObjectM.php";
                 $iid=$infor[2];
 
 
@@ -193,29 +193,29 @@ include "Views/modif2.php";
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <label for="titre"> Modifier votre objet : <?php echo "$nom" ?> ! </label>
+                                <label for="titre">Modifier votre objet : <?php echo "$nom" ?> ! </label>
                                 <button type="button" class="close" data-dismiss="modal" id="closePopup">&times;</button>
                                 <h4 class="modal-title" id="nomObjetPopup"></h4>
                             </div>
 
                             <div class="modal-body">
-                                <form role="form" id="modifObj" method="POST" action="../Controls/verificationObjectM.php">
+                                <form role="form" id="modifObj" method="POST" action="Controls/verificationObjectM.php">
                                 <div class="row">
-                                    <label for="titre"> Nom d'objet :  </label>
+                                    <label for="titre">Nom d'objet :  </label>
                                     </br>
                                     <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre" value="<?php echo getnom($iid); ?>" required/>
                                     <span class="errors" id="titreerror"></span>
                                 </div>
                                 </br>
                                 <div class="row">
-                                    <label for="description"> Description de l'objet :</label>
+                                    <label for="description">Description de l'objet :</label>
                                     </br>
                                     <input type="textarea" class="form-control" id="description" name="description" placeholder="Description de votre objet" value="<?php echo getdescription($iid); ?>" >
                                     <span class="errors" id="descriptionerror"></span>
                                 </div>
                                 </br>
                                 <div class="row">
-                                    <label for="description"> Photo de l'objet :</label>
+                                    <label for="description">Photo de l'objet :</label>
                                     </br>
                                     <img src="/Images/Objets/<?php echo getphoto($iid); ?>"  width="150" height="150">
                                     <button class="btn btn-default btn-file"><input type="file" id="photo" name="photo" /></button>
@@ -223,7 +223,7 @@ include "Views/modif2.php";
                                 </div>
                                     <button type="submit" class="btn btn-default btn-success" id="modifObj" name="modifObj">Modifier l'objet</button>
                                     <span class="errors" id="formerror"></span>
-                                    <button type="button" class="btn btn-default btn-danger" data-dismiss="modal" id="dismiss-button"> Annuler </button>
+                                    <button type="button" class="btn btn-default btn-danger" data-dismiss="modal" id="dismiss-button">Annuler</button>
                                 </form>
                             </div>
 
