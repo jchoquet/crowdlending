@@ -1,17 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Anouar
- * Date: 22/11/2016
- * Time: 20:03
- */
 
-session_start();
 
-include __DIR__ . "/../Controls/mesObjetsCtrl.php";
-include __DIR__ . "/../Models/mesobjetsM.php";
-include __DIR__ . "/../Models/mesobjetsD.php";
-include __DIR__ . "/../Views/modif2.php";
+include "Controls/mesObjetsCtrl.php";
+include "Models/mesobjetsM.php";
+include "Models/mesobjetsD.php";
+include "Views/modif2.php";
 
 
 ?>
@@ -19,18 +12,18 @@ include __DIR__ . "/../Views/modif2.php";
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Mes objets</title>
+    <title>Lend it - Mes objets</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../Styles/bootstrap.css">
-    <link rel="stylesheet" href="../Styles/mesObjets.css">
-    <link rel="stylesheet" href="../Styles/popupObjets.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="../Scripts/jquery_library.js"></script>
-    <script src="../Scripts/bootstrap.js"></script>
-    <script type="text/javascript" src="../Scripts/ajout.js"></script>
-    <script type="text/javascript" src="../Scripts/mesObjetsS.js"></script>
+    <link rel="stylesheet" href="Styles/bootstrap.css">
+    <link rel="stylesheet" href="Styles/mesObjets.css">
+    <link rel="stylesheet" href="Styles/popupObjets.css">
+
+
+    <script src="Scripts/jquery_library.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="Scripts/ajout.js"></script>
+    <script type="text/javascript" src="Scripts/mesObjetsS.js"></script>
 
     <script>
         if ($(window).width() > 768)

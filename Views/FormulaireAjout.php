@@ -7,7 +7,7 @@ include 'Controls/ListeCategorie.php';
 ?>
 
 
-<form role="form" id="ajout" method="POST" action="../Controls/verificationObject.php">
+<form role="form" id="ajout" method="POST" action="Controls/verificationObject.php">
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
 
