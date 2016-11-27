@@ -136,16 +136,16 @@ include "Models/demandePretM.php";
     <?php $surplus = $num > $page * $DIV; ?> <!-- "surplus" sert à savoir s'il y a trop d'objets pour une seule page -->
     <ul class="pagination">
         <?php if ($page > 1): ?>
-            <li><a href="<?php echo "mesObjets.php?page=" . ($page - 1); ?>">«</a></li>
-            <li><a href="<?php echo "mesObjets.php?page=" . ($page - 1); ?>"><?php echo $page - 1; ?></a></li>
+            <li><a href="<?php echo "demandePret.php?page=" . ($page - 1); ?>">«</a></li>
+            <li><a href="<?php echo "demandePret.php?page=" . ($page - 1); ?>"><?php echo $page - 1; ?></a></li>
             <li class="active"><a href="#"><?php echo $page; ?></a></li>
         <?php endif; ?>
         <?php if ($surplus): ?>
             <?php if ($page == 1): ?>
                 <li class="active"><a href="#"><?php echo $page; ?></a></li>
             <?php endif; ?>
-            <li><a href="<?php echo "mesObjets.php?page=" . ($page + 1); ?>"><?php echo $page + 1; ?></a></li>
-            <li><a href="<?php echo "mesObjets.php?page=" . ($page + 1); ?>">»</a></li>
+            <li><a href="<?php echo "demandePret.php?page=" . ($page + 1); ?>"><?php echo $page + 1; ?></a></li>
+            <li><a href="<?php echo "demandePret.php?page=" . ($page + 1); ?>">»</a></li>
         <?php endif; ?>
     </ul>
 </div>
