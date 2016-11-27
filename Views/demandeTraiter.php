@@ -41,7 +41,7 @@ else {
 <div class="container content">
     <?php
     if (demande_traiter($objetId)) {
-        print "<h3> Votre demande a été bien envoyé </h3>";
+        print "<h3> Votre demande a bien été envoyé </h3>";
     }
     else {
         print "<h3> demande Error </h3>";
