@@ -148,15 +148,15 @@ include "Views/modif2.php";
                 $iid=$infor[2];
 
 
-                print "<div class=\"btn btn-success btn-lg\" data-toggle=\"modal\" data-target=\"#modifObj\" data-nom=\"$iid\" data-link=\"$page_apres_modification\">
-              <span class=\"glyphicon glyphicon-trash\"></span>
+                print "<div class=\"button-container\"><div id=\"modif-btn-list\" class=\"btn btn-success btn-lg\" data-toggle=\"modal\" data-target=\"#modifObj\" data-nom=\"$iid\" data-link=\"$page_apres_modification\">
+              <span class=\"glyphicon glyphicon-cog\"></span>
             </div>";
 
                 print "&nbsp; &nbsp;";
 
-                print "<div class=\"btn btn-danger btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
+                print "<div id=\"del-btn-list\" class=\"btn btn-danger btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
               <span class=\"glyphicon glyphicon-trash\"></span>
-            </div>";
+            </div></div>";
 
 
 
