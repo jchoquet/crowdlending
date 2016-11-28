@@ -5,7 +5,15 @@ include __DIR__ . '/../Models/connexion.php';
 $a = session_id();
 if(empty($a)) session_start();
 
-
+/*if(isset($_POST['iid'])) {
+    $iid = $_POST['iid'];
+    $nom = getnom($iid);
+    $photo = getphoto($iid);
+    $description = $getdescription($iid);
+    $reponse = array("nom" => $nom, "photo" => $photo, "description" => $description);
+    echo $reponse;
+}
+*/
 function getnom($idObjet)
 {
     global $DB;

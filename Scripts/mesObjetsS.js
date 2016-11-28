@@ -27,6 +27,48 @@ $(document).ready(function ()
             window.location = link;
         });
     });
+
+
+/*
+    $('#modifObj').on('show.bs.modal', function (event)
+    { // id of the modal with event
+        var button = $(event.relatedTarget); // Button that triggered the modal
+
+        var iid = button.data('nom');
+        var mess = "lol";
+
+        $.ajax({
+            type:'POST',
+            url:'../Views/modif2.php',
+            data:"iid="+iid,
+            success:function(array) {
+                var modal = $(this);
+
+                if(array["nom"] != "" && array["photo"] != "" && array["description"] != ""){
+                    mess = 'nsm';
+                }
+                else{
+                    mess = "oklm dans les bois";
+                }
+                modal.find('.modal-footer').text(mess);
+            }
+        });
+
+
+        // Update the modal's content.
+
+
+
+        // on modifie la page lorsque l'utilisateur clique sur le boutton "Supprimer l'objet"
+        $('#link-button').click(function()
+        {
+            var button = $(this);
+            window.location = link;
+        });
+    });
+*/
+
+
 });
 
 

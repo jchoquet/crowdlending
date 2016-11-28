@@ -248,6 +248,7 @@ include "Views/modif2.php";
                                 </form>
                             </div>
                             <div class="modal-footer">
+                            <p>test</p>
                             </div>
                             </div>
                     </div>
