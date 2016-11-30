@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: Julien
  * Date: 30/11/2016
- * Time: 17:30
+ * Time: 18:03
  */
 
 ?>
@@ -35,7 +35,7 @@
             <th>#</th>
             <th>Photo</th>
             <th>Nom</th>
-            <th>Demandé par...</th>
+            <th>Emprunté à ...</th>
             <th>Etat</th>
         </tr>
         </thead>
@@ -46,9 +46,9 @@
         $num = 0; // "num" sert à créer les numéros des lignes du tableau
         $informations_prets = get_historique_prets(); // on récupère les informations des objets disponibles de l'utilisateur
 
-        if (sizeof($informations_prets) != 0) 
+        if (sizeof($informations_prets) != 0)
         {
-            foreach ($informations_prets as $infor) 
+            foreach ($informations_prets as $infor)
             {
                 $num += 1;
 
@@ -83,7 +83,7 @@
 
                 print "<div class=\"espace btn pull-right\"></div>"; // pour qu'il y ait un espace entre les 2 boutons
                 // et sert à afficher le texte de résultat "Demande acceptée" ou "Demande refusée"
-                
+
 
                 print "</td>";
                 print "</tr>";
