@@ -24,7 +24,9 @@ include "Models/demandePretM.php";
     <script src="Scripts/bootstrap.js"></script>
 
     <!-- Script pour faire cacher les boutons après que l'utilisateur ait cliqué dessus -->
+    <script src="Scripts/config.js"></script>
     <script src="Scripts/demandePretS.js"></script>
+    <script src="Scripts/popupObjet.js"></script>
 
     <!-- Source CSS Bootstrap -->
     <link rel="stylesheet" href="Styles/bootstrap.css">
@@ -148,6 +150,34 @@ include "Models/demandePretM.php";
             <li><a href="<?php echo "demandePret.php?page=" . ($page + 1); ?>">»</a></li>
         <?php endif; ?>
     </ul>
+</div>
+
+<!-- Modal information objet-->
+
+<div id="myObject" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" id="closePopup">&times;</button>
+                <h4 class="modal-title" id="nomObjetPopup"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <img id="photoObjet" src="" class="picturePopup col-md-5"/>
+                    <div class="col-md-7">
+                        <h3>Description :</h3>
+                        <p id="descriptionObjet"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="closeModalObject">Close</button>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 
