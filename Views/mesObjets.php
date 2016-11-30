@@ -130,7 +130,7 @@ include "Models/mesobjetsM.php";
                 } else
                     $page_after_delete = "mesObjets.php?page=" . $page . "&delete=" . $infor[2];
 
-                print "<div class=\"btn btn-danger btn-lg pull-right\" data-toggle=\"modal\" data-target=\"#myModal\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
+                print "<div class=\"btn btn-danger btn-lg pull-right\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
               <span class=\"glyphicon glyphicon-trash\"></span>
             </div>";
 

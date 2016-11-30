@@ -30,7 +30,7 @@
 
 <body>
 
-    <?php include __DIR__."./formulaireInscription.php"; ?>
+    <?php include __DIR__."/formulaireInscription.php"; ?>
 
     <!-- Modal -->
     <div id="pbInscription" class="modal fade" role="dialog">
