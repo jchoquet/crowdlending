@@ -6,6 +6,8 @@
  * Time: 18:03
  */
 
+include_once __DIR__ . "/affichage_etat.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -14,11 +16,11 @@
     <script>
         if ($(window).width() > 768)
         {
-            <?php $DIV = 5; ?> /* tablet : 8 */
+            <?php $DIV = 2; ?> /* tablet : 8 */
         }
         if ($(window).width() > 992) /* ordi : 10 */
         {
-            <?php $DIV = 5; ?>
+            <?php $DIV = 2; ?>
         }
     </script>
 </head>
@@ -26,7 +28,7 @@
 
 
 <div class="container content">
-    <h2>Historique des demandes de prêts</h2>
+    <h2>Historique des demandes d'emprunts</h2>
 
     <p>Liste des demandes :</p>
     <table class="table table-hover">
@@ -44,7 +46,7 @@
 
         <?php
         $num = 0; // "num" sert à créer les numéros des lignes du tableau
-        $informations_prets = get_historique_prets(); // on récupère les informations des objets disponibles de l'utilisateur
+        $informations_prets = get_historique_emprunts(); // on récupère les informations des objets disponibles de l'utilisateur
 
         if (sizeof($informations_prets) != 0)
         {
@@ -70,6 +72,7 @@
                 $path_photo = "Images/Objets/" . $infor[1];
                 $nom = $infor[2];
                 $username_borrower = $infor[4];
+                $etat = $infor[5];
 
                 print "<td class='imgObj'>";
                 print "<img src=\"$path_photo\" class=\"img-thumbnail\" alt=\"$nom\" width=\"76\" height=\"59\">"; // on réduit la taille des images
@@ -79,13 +82,9 @@
 
                 print "<td class='username_borrower'>" . $username_borrower . "</td>";
 
-                print "<td class='choix_pret'>";
+                print "<td class='etat'>" . affichage_etat($etat) . "</td>";
 
-                print "<div class=\"espace btn pull-right\"></div>"; // pour qu'il y ait un espace entre les 2 boutons
-                // et sert à afficher le texte de résultat "Demande acceptée" ou "Demande refusée"
-
-
-                print "</td>";
+                
                 print "</tr>";
             }
         }
@@ -102,16 +101,16 @@
     <?php $surplus = $num > $page * $DIV; ?> <!-- "surplus" sert à savoir s'il y a trop d'objets pour une seule page -->
     <ul class="pagination">
         <?php if ($page > 1): ?>
-            <li><a href="<?php echo "demandePret.php?page=" . ($page - 1); ?>">«</a></li>
-            <li><a href="<?php echo "demandePret.php?page=" . ($page - 1); ?>"><?php echo $page - 1; ?></a></li>
+            <li><a href="#">«</a></li>
+            <li><a href="#"><?php echo $page - 1; ?></a></li>
             <li class="active"><a href="#"><?php echo $page; ?></a></li>
         <?php endif; ?>
         <?php if ($surplus): ?>
             <?php if ($page == 1): ?>
                 <li class="active"><a href="#"><?php echo $page; ?></a></li>
             <?php endif; ?>
-            <li><a href="<?php echo "demandePret.php?page=" . ($page + 1); ?>"><?php echo $page + 1; ?></a></li>
-            <li><a href="<?php echo "demandePret.php?page=" . ($page + 1); ?>">»</a></li>
+            <li><a href="#"><?php echo $page + 1; ?></a></li>
+            <li><a href="#">»</a></li>
         <?php endif; ?>
     </ul>
 </div>

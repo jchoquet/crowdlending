@@ -6,6 +6,8 @@
  * Time: 17:30
  */
 
+include_once __DIR__ . "/affichage_etat.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -70,6 +72,7 @@
                 $path_photo = "Images/Objets/" . $infor[1];
                 $nom = $infor[2];
                 $username_borrower = $infor[4];
+                $etat = $infor[5];
 
                 print "<td class='imgObj'>";
                 print "<img src=\"$path_photo\" class=\"img-thumbnail\" alt=\"$nom\" width=\"76\" height=\"59\">"; // on réduit la taille des images
@@ -79,13 +82,9 @@
 
                 print "<td class='username_borrower'>" . $username_borrower . "</td>";
 
-                print "<td class='choix_pret'>";
-
-                print "<div class=\"espace btn pull-right\"></div>"; // pour qu'il y ait un espace entre les 2 boutons
-                // et sert à afficher le texte de résultat "Demande acceptée" ou "Demande refusée"
+                print "<td class='etat'>" . affichage_etat($etat) . "</td>";
                 
-
-                print "</td>";
+                
                 print "</tr>";
             }
         }
@@ -102,16 +101,16 @@
     <?php $surplus = $num > $page * $DIV; ?> <!-- "surplus" sert à savoir s'il y a trop d'objets pour une seule page -->
     <ul class="pagination">
         <?php if ($page > 1): ?>
-            <li><a href="<?php echo "demandePret.php?page=" . ($page - 1); ?>">«</a></li>
-            <li><a href="<?php echo "demandePret.php?page=" . ($page - 1); ?>"><?php echo $page - 1; ?></a></li>
+            <li><a href="#">«</a></li>
+            <li><a href="#"><?php echo $page - 1; ?></a></li>
             <li class="active"><a href="#"><?php echo $page; ?></a></li>
         <?php endif; ?>
         <?php if ($surplus): ?>
             <?php if ($page == 1): ?>
                 <li class="active"><a href="#"><?php echo $page; ?></a></li>
             <?php endif; ?>
-            <li><a href="<?php echo "demandePret.php?page=" . ($page + 1); ?>"><?php echo $page + 1; ?></a></li>
-            <li><a href="<?php echo "demandePret.php?page=" . ($page + 1); ?>">»</a></li>
+            <li><a href="#"><?php echo $page + 1; ?></a></li>
+            <li><a href="#">»</a></li>
         <?php endif; ?>
     </ul>
 </div>
