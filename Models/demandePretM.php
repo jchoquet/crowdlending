@@ -35,7 +35,7 @@ function get_waiting_pret()
     $query = "SELECT pret.id AS id_pret, objet.path_photo, objet.nom AS nom_objet, id_objet, username FROM pret
   JOIN objet ON pret.id_objet=objet.id
   JOIN utilisateur ON pret.id_borrower=utilisateur.id
-  WHERE objet.id_owner=\"$id\" AND accepted IS NULL
+  WHERE objet.id_owner=\"$id\" AND isAccepted=0
   ORDER BY id_pret ASC;";
     // La boucle qui suit récupère les informations des objets disponibles de l'utilisateur
     foreach ($DB->query($query) as $row)
@@ -50,14 +50,15 @@ function modif_accepter($id_pret)
 {
     global $DB;
     $date = date("Y-m-d");
-    $qr = $DB->exec("UPDATE pret SET accepted=\"$date\" WHERE id=\"$id_pret\";");
+    $qr = $DB->exec("UPDATE pret SET isAccepted=1, date_accepted=\"$date\" WHERE id=\"$id_pret\";");
     return $qr;
 }
 
 function modif_refuser($id_pret, $id_objet)
 {
     global $DB;
-    $qr_delete = $DB->exec("DELETE FROM pret WHERE id=\"$id_pret\";");
+    $date = date("Y-m-d");
+    $qr_delete = $DB->exec("UPDATE pret SET isAccepted=-1, date_refused=\"$date\" WHERE id=\"$id_pret\";");
     $qr_update = $DB->exec("UPDATE objet SET isAvailable=1 WHERE id=\"$id_objet\";");
     return array($qr_delete, $qr_update);
 }
