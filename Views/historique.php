@@ -38,7 +38,7 @@ include "Models/historiqueM.php";
 
 <div class="container">
 
-    <h2><br></h2>
+    <h2><br></h2> <!-- pour que les onglets ne soient pas masqués par le header -->
 
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#onglet_prets">Mes prêts</a></li>
@@ -50,7 +50,7 @@ include "Models/historiqueM.php";
         <?php include "onglet_prets.php"; ?>
     </div>
     <div id="onglet_emprunts" class="tab-pane fade">
-        <?php include "onglet_prets.php"; ?>
+        <?php include "onglet_emprunts.php"; ?>
     </div>
     </div>
 </div>
