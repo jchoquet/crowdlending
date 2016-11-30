@@ -6,6 +6,7 @@
  * Time: 17:21
  */
 
+include "Controls/mesObjetsCtrl.php";
 include "Models/historiqueM.php";
 
 ?>
@@ -37,20 +38,22 @@ include "Models/historiqueM.php";
 
 <div class="container">
 
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#onglet_prets">Mes prêts</a></li>
-    <li><a data-toggle="tab" href="#onglet_emprunts">Mes emprunts</a></li>
-  </ul>
+    <h2><br></h2>
 
-  <div class="tab-content">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#onglet_prets">Mes prêts</a></li>
+        <li><a data-toggle="tab" href="#onglet_emprunts">Mes emprunts</a></li>
+    </ul>
+
+    <div class="tab-content">
     <div id="onglet_prets" class="tab-pane fade in active">
         <?php include "onglet_prets.php"; ?>
     </div>
     <div id="onglet_emprunts" class="tab-pane fade">
-      <h3>Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h3>Menu 1</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
-  </div>
+    </div>
 </div>
 
 
