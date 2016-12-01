@@ -19,7 +19,7 @@ $(document).ready(function(){
         input.val(log);
     });
 
-    /* variables ajout */
+    /* variables profil */
 
     var nom = "";
     var prenom = "";
@@ -190,12 +190,11 @@ $(document).ready(function(){
         else{
             $("#formerror").html("");
             $.ajax({
-
                 type:'POST',
                 url:'../Controls/verificationProfil.php',
                 data:"nom="+nom+"&prenom="+prenom+"&email="+email+"&oldmdp="+omdp+"&nmdp="+nmdp+"&username="+username,
-                success:function(msg) {
-
+                success:function(msg)
+                {
                     if(msg == "OK"){
                         window.location.replace("../Views/monCompte.php");
                     }

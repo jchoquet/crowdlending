@@ -71,20 +71,20 @@ $code_postale = get_commune($id_commune);
                 <!-- END SIDEBAR USER TITLE -->
                 <!-- SIDEBAR BUTTONS -->
                 <div class="profile-userbuttons">
-                    <button type="button" class="btn btn-success btn-sm">Modifier</button>
+                    <button type="button" class="btn btn-success btn-sm" href="../Views/monCompte.php">Modifier</button>
                     <button type="button" class="btn btn-danger btn-sm">Supprimer</button>
                 </div>
                 <!-- END SIDEBAR BUTTONS -->
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
-                            <a href="#">
+                        <li>
+                            <a href="../Views/profil.php">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Overview </a>
                         </li>
-                        <li>
-                            <a href="#">
+                        <li class="active">
+                            <a href="../Views/monCompte.php">
                                 <i class="glyphicon glyphicon-user"></i>
                                 Account Settings </a>
                         </li>
@@ -99,26 +99,37 @@ $code_postale = get_commune($id_commune);
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
+                            <label  for="omdp" > Nom : </label>
                             <input type="text" name="nom" id="nom" class="form-control input-lg" Value="<?php echo $nom; ?>" placeholder="Nom" tabindex="1" required/>
                             <span class="errors" id="nomerror"></span>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
+                            <label  for="omdp" > Prenom : </label>
                             <input type="text" name="prenom" id="prenom" class="form-control input-lg" Value="<?php echo $prenom; ?>" placeholder="Prenom" tabindex="2" required/>
                             <span class="errors" id="prenomerror"></span>
                         </div>
                     </div>
                 </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-2 col-md-6">
                 <div class="form-group">
+                    <label  for="omdp" > Username : </label>
                     <input type="text" name="username" id="username" class="form-control input-lg" Value="<?php echo $username; ?>" placeholder="username" tabindex="3" required/>
                     <span class="errors" id="usernameerror"></span>
                 </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group">
+                    <label  for="omdp" > E-mail : </label>
                     <input type="email" name="email" id="email" class="form-control input-lg" Value="<?php echo $email; ?>" placeholder="Email" tabindex="4">
                     <span class="errors" id="emailerror"></span>
                 </div>
+                </div>
+            </div>
                 <div class="form-group">
+                    <label  for="omdp" > Adresse : </label>
                     <input type="text" name="adresse" id="adresse" class="form-control input-lg" Value="<?php echo $adresse; ?>" placeholder="Adresse" tabindex="5">
                     <span class="errors" id="adresseerror"></span>
                 </div>
@@ -126,12 +137,14 @@ $code_postale = get_commune($id_commune);
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group">
+                    <label  for="omdp" > Numéro de téléphone  : </label>
                     <input type="text" name="phone" id="phone" class="form-control input-lg" Value="<?php echo $numero_telephone; ?>" placeholder="Numéro de téléphone" tabindex="6">
                     <span class="errors" id="phoneerror"></span>
                 </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group">
+                    <label  for="omdp" > Commune : </label>
                     <input type="text" name="commune" id="commune" class="form-control input-lg" Value="<?php echo $code_postale; ?>" placeholder="Commune" tabindex="8">
                     <span class="errors" id="communeerror"></span>
                     <datalist id="commune">
@@ -178,13 +191,13 @@ $code_postale = get_commune($id_commune);
                     </div>
                 </div>
 
-
+                <div class="form-group">
                 <div class="profile-userbuttons">
                     <button type="submit" class="btn btn-md btn-default btn-success" id="modifProf" name="modifProf">Modifier le profil</button>
                     <span class="errors" id="formerror"></span>
                     <button type="button" class="btn btn-md btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button>
                 </div>
-                <span class="errors" id="formerror"></span>
+                </div>
             </form>
             </div>
         </div>
