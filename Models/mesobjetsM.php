@@ -8,10 +8,10 @@
 
 
 include __DIR__."/connexion.php";
-// L'id de l'utilisateur connecté est connu grà¢ce à  session_start() lancé au moment de la connexion
+// L'id de l'utilisateur connectÃ© est connu grÃ Â¢ce Ã Â  session_start() lancÃ© au moment de la connexion
 
 
-// Renvoie le nom de l'objet qui va être modifié, d'id "id_to_modifier"
+// Renvoie le nom de l'objet qui va Ãªtre modifiÃ©, d'id "id_to_modifier"
 function objet_to_modifier($id_to_modifier)
 {
     global $DB;

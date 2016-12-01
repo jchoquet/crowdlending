@@ -85,6 +85,7 @@ $(document).ready(function(){
 		}
 	});
 
+
 	$("#modifObj").click(function() {
 
 		if( titre == "" )
@@ -111,6 +112,5 @@ $(document).ready(function(){
 			});
 		}
 	});
-
 
 });

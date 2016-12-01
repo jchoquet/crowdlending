@@ -228,13 +228,10 @@ include "Views/modif2.php";
                                                 <span class="btn btn-info"><span class="glyphicon glyphicon-picture"></span>
                                                     Sélectionner une photo <input type="file" id="photo" name="photo" style="display: none;"/>
                                                 </span>
-                                                </span>
                                                 </label>
                                                 <input type="text" class="form-control" readonly="" value="Aucun fichier choisi" />
                                             </div>
                                         </div>
-
-
                                     </div>
                                     </div>
 
