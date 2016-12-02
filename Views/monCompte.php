@@ -52,29 +52,20 @@ $code_postale = get_commune($id_commune);
 
 <div class="container-fluid content">
     <div class="row">
-        <div class="col-sm-3 profile-sidebar">
+        <div class="col-sm-3 col-md-2 profile-sidebar">
 
             <!-- SIDEBAR USERPIC -->
-            <div class="profile-userpic">
+            <div class="thumbnail">
                 <img src="../Images/Users/<?php echo $path_photo ?>" class="img-responsive" alt="">
+                <div class="caption profile-usertitle">
+                    <p class="profile-usertitle-name"><?php echo $username; ?></p>
+                </div>
             </div>
             <!-- END SIDEBAR USERPIC -->
 
-            <!-- SIDEBAR USER TITLE -->
-            <div class="profile-usertitle">
-                <div class="profile-usertitle-name">
-                    <?php echo $username; ?>
-                </div>
-                <div class="profile-usertitle-job">
-                    <?php echo $nom; ?><?php echo " " ?><?php echo $prenom; ?>
-                </div>
-            </div>
-            <!-- END SIDEBAR USER TITLE -->
-
             <!-- SIDEBAR BUTTONS -->
             <div class="profile-userbuttons">
-                <button type="button" class="btn btn-success btn-sm" href="../Views/monCompte.php">Modifier</button>
-                <button type="button" class="btn btn-danger btn-sm">Supprimer</button>
+                <button type="button" class="btn-sm btn-info" href="#">Voir mon profil public</button>
             </div>
             <!-- END SIDEBAR BUTTONS -->
 
@@ -82,13 +73,13 @@ $code_postale = get_commune($id_commune);
             <div class="profile-usermenu">
                 <ul class="nav page-step-menu">
                     <li>
-                        <a href="#" data-page-step="#page-step-1" class="active"><i class="glyphicon glyphicon-home"></i>Mon compte</a>
+                        <a href="#" data-page-step="#page-step-1" class="active"><i class="glyphicon glyphicon-user"></i>Aperçu</a>
                     </li>
                     <li>
-                        <a href="#" data-page-step="#page-step-2"><i class="glyphicon glyphicon-user"></i>Modifier mes informations</a>
+                        <a href="#" data-page-step="#page-step-2"><i class="glyphicon glyphicon-wrench"></i>Modifier</a>
                     </li>
                     <li>
-                        <a href="#" data-page-step="#page-step-3"><i class="glyphicon glyphicon-user"></i>Suppression</a>
+                        <a href="#" data-page-step="#page-step-3"><i class="glyphicon glyphicon-trash"></i>Supprimer</a>
                     </li>
                 </ul>
             </div>
@@ -96,14 +87,14 @@ $code_postale = get_commune($id_commune);
         </div>
 
         <!-- Contenu pour afficher le profil -->
-        <div class="col-sm-9 page-step" id="page-step-1">
+        <div class="col-sm-9 col-md-10 page-step" id="page-step-1">
             <div class="profile-content">
             <p>TODO</p>
             </div>
         </div>
 
         <!-- Contenu pour modifier son profil -->
-        <div class="col-sm-9 page-step" id="page-step-2">
+        <div class="col-sm-9 col-md-10 page-step" id="page-step-2">
             <div class="profile-content">
                 <form role="form" id="modifProf" method="POST" action="../Controls/verificationProfil.php">
                     <div class="row">
@@ -213,7 +204,7 @@ $code_postale = get_commune($id_commune);
         </div>
 
         <!-- Contenu pour supprimer son compte -->
-        <div class="col-sm-9 page-step" id="page-step-3">
+        <div class="col-sm-9 col-md-10 page-step" id="page-step-3">
             <div class="profile-content">
             <p>TODO</p>
             </div>
