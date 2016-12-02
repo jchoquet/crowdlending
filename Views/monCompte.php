@@ -65,15 +65,15 @@ $code_postale = get_commune($id_commune);
 
             <!-- SIDEBAR BUTTONS -->
             <div class="profile-userbuttons">
-                <button type="button" class="btn-sm btn-info" href="#">Voir mon profil public</button>
+                <button type="button" class="btn btn-sm btn-info" href="#">Voir mon profil public</button>
             </div>
             <!-- END SIDEBAR BUTTONS -->
 
             <!-- SIDEBAR MENU -->
             <div class="profile-usermenu">
                 <ul class="nav page-step-menu">
-                    <li>
-                        <a href="#" data-page-step="#page-step-1" class="active"><i class="glyphicon glyphicon-user"></i>Aperçu</a>
+                    <li class="active">
+                        <a href="#" data-page-step="#page-step-1"><i class="glyphicon glyphicon-user"></i>Aperçu</a>
                     </li>
                     <li>
                         <a href="#" data-page-step="#page-step-2"><i class="glyphicon glyphicon-wrench"></i>Modifier</a>
