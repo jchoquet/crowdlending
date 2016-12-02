@@ -12,8 +12,8 @@ $(document).ready(function(){
       $('.page-step').hide();
       $($target).show();
 
-      $("ul.page-step-menu li a[data-page-step]").removeClass("active");
-      $("ul.page-step-menu li a[data-page-step='"+$target+"']").addClass("active");
+      $("ul.page-step-menu li a[data-page-step]").parent().removeClass("active");
+      $("ul.page-step-menu li a[data-page-step='"+$target+"']").parent().addClass("active");
 
     });
 
