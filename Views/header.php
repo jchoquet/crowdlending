@@ -22,7 +22,7 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#">Mon compte</a></li>
+            <li><a href="monCompte.php">Mon compte</a></li>
             <li><a href="mesObjets.php">Mes objets</a></li>
             <li><a href="#">Mon historique</a></li>
           </ul>

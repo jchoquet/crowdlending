@@ -1,6 +1,6 @@
 <?php
 
-include "../Models/monProfil.php";
+include "Models/monProfil.php";
 
 ?>
 
@@ -10,31 +10,31 @@ include "../Models/monProfil.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Lend it - Mon profil </title>
+    <title>Lend it - Mon compte</title>
     <meta name="description" content="Page de Profil">
     <meta name="author" content="Mahrous Anouar">
 
     <!-- Source CSS Bootstrap -->
-    <link rel="stylesheet" href="../Styles/bootstrap.css">
+    <link rel="stylesheet" href="Styles/bootstrap.css">
 
     <!-- Source css pour le design du site -->
-    <link rel="stylesheet" href="../Styles/base.css">
+    <link rel="stylesheet" href="Styles/base.css">
 
     <!-- Source pour le formulaire dajout -->
-    <link rel="stylesheet" href="../Styles/monprofil.css">
+    <link rel="stylesheet" href="Styles/monprofil.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Source jquery -->
-    <script src="../Scripts/jquery_library.js"></script>
+    <script src="Scripts/jquery_library.js"></script>
     <!-- Source JavaScript Bootstrap -->
-    <script src="../Scripts/bootstrap.js"></script>
-    <script src="../Scripts/profil.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/profil.js"></script>
 
 </head>
 
 <body>
 
-<?php include("../Views/header.php"); ?>
+<?php include("Views/header.php"); ?>
 
 <?php
 $informations = get_info();
@@ -56,7 +56,7 @@ $code_postale = get_commune($id_commune);
 
             <!-- SIDEBAR USERPIC -->
             <div class="thumbnail">
-                <img src="../Images/Users/<?php echo $path_photo ?>" class="img-responsive" alt="">
+                <img src="Images/Users/<?php echo $path_photo ?>" class="img-responsive" alt="">
                 <div class="caption profile-usertitle">
                     <p class="profile-usertitle-name"><?php echo $username; ?></p>
                 </div>
@@ -96,7 +96,7 @@ $code_postale = get_commune($id_commune);
         <!-- Contenu pour modifier son profil -->
         <div class="col-sm-9 col-md-10 page-step" id="page-step-2">
             <div class="profile-content">
-                <form role="form" id="modifProf" method="POST" action="../Controls/verificationProfil.php">
+                <form role="form" id="modifProf" method="POST" action="Controls/verificationProfil.php">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
@@ -149,7 +149,7 @@ $code_postale = get_commune($id_commune);
                             <input type="text" name="commune" id="commune" class="form-control input-lg" Value="<?php echo $code_postale; ?>" placeholder="Commune" tabindex="8">
                             <span class="errors" id="communeerror"></span>
                             <datalist id="commune">
-                                <?php include __DIR__ . "/../Models/autocomplete_commune.php"; ?>
+                                <?php include "Models/autocomplete_commune.php"; ?>
                             </datalist>
                         </div>
                         </div>
@@ -180,7 +180,7 @@ $code_postale = get_commune($id_commune);
 
                     <div class="form-group">
                         <div class="col-md-12">
-                            <img src="../Images/Objets/<?php echo $path_photo ?>"  width="150" height="150">
+                            <img src="Images/Users/<?php echo $path_photo ?>"  width="150" height="150">
                             <div class="input-group">
                                 <label class="input-group-btn" for="photo">
                                     <span class="btn btn-info"><span class="glyphicon glyphicon-picture"></span>

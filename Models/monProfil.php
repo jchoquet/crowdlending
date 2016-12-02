@@ -1,7 +1,6 @@
 <?php
 
-include "../Models/connexion.php";
-session_start();
+include "Models/connexion.php";
 
 function get_info()
 {
