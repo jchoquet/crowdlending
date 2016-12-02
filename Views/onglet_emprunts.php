@@ -30,8 +30,6 @@ include_once __DIR__ . "/affichage_etat.php";
 <div class="container content">
     <h2>Historique des demandes d'emprunts</h2>
 
-    <?php print($page_emprunts); ?>
-
     <p>Liste des demandes :</p>
     <table class="table table-hover">
         <thead>
