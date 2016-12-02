@@ -54,10 +54,10 @@ include_once __DIR__ . "/affichage_etat.php";
             {
                 $num += 1;
 
-                if ($num > $page * $DIV) // si on a atteint les objets de la page suivante, on s'arrête
+                if ($num > $page_prets * $DIV) // si on a atteint les objets de la page suivante, on s'arrête
                     break;
 
-                if ($num <= ($page - 1) * $DIV) // si on parcourt les objets des pages précédentes, on continue
+                if ($num <= ($page_prets - 1) * $DIV) // si on parcourt les objets des pages précédentes, on continue
                     continue;
 
                 $id_pret = $infor[0];
@@ -98,19 +98,19 @@ include_once __DIR__ . "/affichage_etat.php";
 
 <!-- Pour les pages, on crée des boutons "précédent" et "suivant" -->
 <div class="text-center">
-    <?php $surplus = $num > $page * $DIV; ?> <!-- "surplus" sert à savoir s'il y a trop d'objets pour une seule page -->
+    <?php $surplus = $num > $page_prets * $DIV; ?> <!-- "surplus" sert à savoir s'il y a trop d'objets pour une seule page -->
     <ul class="pagination">
-        <?php if ($page > 1): ?>
-            <li><a href="#">«</a></li>
-            <li><a href="#"><?php echo $page - 1; ?></a></li>
-            <li class="active"><a href="#"><?php echo $page; ?></a></li>
+        <?php if ($page_prets > 1): ?>
+            <li><a href="?page_prets=<?php echo $page_prets - 1; ?>">«</a></li>
+            <li><a href="?page_prets=<?php echo $page_prets - 1; ?>"><?php echo $page_prets - 1; ?></a></li>
+            <li class="active"><a href="#"><?php echo $page_prets; ?></a></li>
         <?php endif; ?>
         <?php if ($surplus): ?>
-            <?php if ($page == 1): ?>
-                <li class="active"><a href="#"><?php echo $page; ?></a></li>
+            <?php if ($page_prets == 1): ?>
+                <li class="active"><a href="#"><?php echo $page_prets; ?></a></li>
             <?php endif; ?>
-            <li><a href="#"><?php echo $page + 1; ?></a></li>
-            <li><a href="#">»</a></li>
+            <li><a href="?page_prets=<?php echo $page_prets + 1; ?>"><?php echo $page_prets + 1; ?></a></li>
+            <li><a href="?page_prets=<?php echo $page_prets + 1; ?>">»</a></li>
         <?php endif; ?>
     </ul>
 </div>

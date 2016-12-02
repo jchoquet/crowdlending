@@ -6,7 +6,7 @@
  * Time: 17:21
  */
 
-include "Controls/mesObjetsCtrl.php";
+include "Controls/historiqueCtrl.php";
 include "Models/historiqueM.php";
 
 ?>
@@ -22,6 +22,8 @@ include "Models/historiqueM.php";
     <script src="Scripts/jquery_library.js"></script>
     <!-- Source JavaScript Bootstrap -->
     <script src="Scripts/bootstrap.js"></script>
+
+    <script src="Scripts/historiqueS.js"></script>
 
     <!-- Source CSS Bootstrap -->
     <link rel="stylesheet" href="Styles/bootstrap.css">
@@ -41,8 +43,8 @@ include "Models/historiqueM.php";
     <h2><br></h2> <!-- pour que les onglets ne soient pas masqués par le header -->
 
     <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#onglet_prets">Mes prêts</a></li>
-        <li><a data-toggle="tab" href="#onglet_emprunts">Mes emprunts</a></li>
+        <li class="active"><a href="#onglet_prets">Mes prêts</a></li>
+        <li><a href="#onglet_emprunts">Mes emprunts</a></li>
     </ul>
 
     <div class="tab-content">
