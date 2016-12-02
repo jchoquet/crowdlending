@@ -1,3 +1,9 @@
+<?php
+if (!isset($_POST['username']))
+    header("Location: Views/connexion.php")
+?>
+
+
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
 
