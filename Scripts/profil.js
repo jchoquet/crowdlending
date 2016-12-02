@@ -1,5 +1,22 @@
 $(document).ready(function(){
 
+
+    $('.page-step').hide();
+    $('#page-step-1').show();
+
+    $(document).on('click', 'a[data-page-step]', function(e) {
+
+      var $this   = $(this)
+      var $target = $this.attr('data-page-step')
+
+      $('.page-step').hide();
+      $($target).show();
+
+      $("ul.page-step-menu li a[data-page-step]").removeClass("active");
+      $("ul.page-step-menu li a[data-page-step='"+$target+"']").addClass("active");
+
+    });
+
     $(document).on('change', ':file', function() {
         var input = $(this);
         if (input.val())

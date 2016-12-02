@@ -30,27 +30,6 @@ include "../Models/monProfil.php";
     <script src="../Scripts/bootstrap.js"></script>
     <script src="../Scripts/profil.js"></script>
 
-    <script>
-        (function($) {
-            "use strict";
-
-            $('.page-step').hide();
-            $('#page-step-0').show();
-
-            $(document).on('click', 'a[data-page-step]', function(e) {
-
-              var $this   = $(this)
-              var $target = $this.attr('data-page-step')
-
-              $('.page-step').hide();
-              $($target).show();
-
-              $("ul.page-step-menu li a[data-page-step]").removeClass("active");
-              $("ul.page-step-menu li a[data-page-step='"+$target+"']").addClass("active");
-
-            });
-        })(jQuery);
-    </script>
 </head>
 
 <body>
@@ -103,7 +82,7 @@ $code_postale = get_commune($id_commune);
             <div class="profile-usermenu">
                 <ul class="nav page-step-menu">
                     <li>
-                        <a href="#" data-page-step="#page-step-1"><i class="glyphicon glyphicon-home"></i>Mon compte</a>
+                        <a href="#" data-page-step="#page-step-1" class="active"><i class="glyphicon glyphicon-home"></i>Mon compte</a>
                     </li>
                     <li>
                         <a href="#" data-page-step="#page-step-2"><i class="glyphicon glyphicon-user"></i>Modifier mes informations</a>
