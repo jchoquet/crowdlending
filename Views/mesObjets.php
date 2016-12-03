@@ -52,46 +52,21 @@ include "Views/modif2.php";
         $nom = objet_to_delete($id_to_delete);
 
         if (delete_objet($id_to_delete))
-        {
             print "L'objet \"$nom\" a bien été supprimé";
-        }
+        
         else
-            if (!$pageWasRefreshed) {
+            if (!$pageWasRefreshed)
                 print "<strong > Erreur !</strong > L'objet \"$nom\" n'a pas été supprimé";
-            }
+        
         $_REQUEST['delete'] = NULL;
     }
-
-    /*if (isset($_REQUEST['modifier']))
+    
+    if (!empty($_SESSION['message'])) 
     {
-        $id_to_modifier = $_REQUEST['modifier'];
-        $nom = objet_to_modifier($id_to_modifier);
-
-        $titre = $_POST['titre'];
-        $description = $_POST['description'];
-        $prix = 0;
-        $isAvailable = 1;
-        $path_photo = 'photo';
-
-
-        if (modifier_objet($id_to_modifier , $titre , $prix , $isAvailable , $path_photo , $description)){
-            print "<div class='alert alert-success alert-dismissible'>";
-            print "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
-            print "L'objet \"$nom\" a bien été modifié";
-            print "</div >";}
-        else
-            if (!$pageWasRefreshed){
-                print "<div class='alert alert-danger alert-dismissible'>";
-                print "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
-                print "<strong > Erreur !</strong > L'objet \"$nom\" n'a pas été modifié";
-                print "</div >";}
-        $_REQUEST['modifier'] = NULL;
-    }*/
-
+        echo $_SESSION['message'];
+        $_SESSION['message'] = NULL;
+    } 
     ?>
-
-    <?php if(!empty($_SESSION['message'])) {
-        echo $_SESSION['message'];} ?>
 
     <p>Liste de mes objets :</p>
     <table class="table table-hover">
