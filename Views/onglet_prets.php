@@ -39,6 +39,7 @@ include_once __DIR__ . "/affichage_etat.php";
             <th>Nom</th>
             <th>Demandé par...</th>
             <th>Etat</th>
+            <th>Recevoir l'objet</th>
         </tr>
         </thead>
 
@@ -73,6 +74,8 @@ include_once __DIR__ . "/affichage_etat.php";
                 $nom = $infor[2];
                 $username_borrower = $infor[4];
                 $etat = $infor[5];
+                $isReturned = $infor[6];
+                $pageTraiter = "demandeTraiter.php?id=".$id_pret."&type=2";
 
                 print "<td class='imgObj'>";
                 print "<img src=\"$path_photo\" class=\"img-thumbnail\" alt=\"$nom\" width=\"76\" height=\"59\">"; // on réduit la taille des images
@@ -82,7 +85,18 @@ include_once __DIR__ . "/affichage_etat.php";
 
                 print "<td class='username_borrower'>" . $username_borrower . "</td>";
 
-                print "<td class='etat'>" . affichage_etat($etat) . "</td>";
+                print "<td class='etat'>" . affichage_etat($etat,$isReturned) . "</td>";
+
+                print "<td>";
+                if($isReturned == 0 && $etat== 1)
+                {
+                    print "
+                            <div id=\"confirmer\" class=\"btn btn-success\"  data-nom=\"$nom\" data-link=\"$pageTraiter\">
+                                <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span> confirmer
+                            </div>
+                          ";
+                }
+                print "</td>";
                 
                 
                 print "</tr>";
@@ -115,5 +129,28 @@ include_once __DIR__ . "/affichage_etat.php";
     </ul>
 </div>
 
+<!-- Modal pour button "confirmer"-->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Message d'avertissement</h4>
+            </div>
+            <div class="modal-body">
+                <p id="messageConfirmation"></p>
+                <p><br/>Êtes-vous sûr de vouloir continuer ?</p>
+            </div>
+            <div class="modal-footer">
+                <a id="link-button" role="button" class="btn btn-success">Confirmer</a>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="dismiss-button">
+                    Annuler
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

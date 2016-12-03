@@ -7,7 +7,7 @@
  */
 
 // Prend en argument la valeur de l'attribut isAccepted d'un prêt et renvoie l'état correspondant
-function affichage_etat($etat)
+function affichage_etat($etat, $isReturned)
 {
     switch ($etat)
     {
@@ -18,7 +18,17 @@ function affichage_etat($etat)
             return "En attente";
             break;
         case 1:
-            return "Demande acceptée";
-            break;
+            if ($isReturned == -1)
+            {
+                return "Demande acceptée";
+            }
+            if ($isReturned == 0)
+            {
+                return "Rendre en cours";
+            }
+            if ($isReturned == 1)
+            {
+                return "Déja rendu";
+            }
     }
 }
