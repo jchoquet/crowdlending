@@ -187,9 +187,9 @@ $code_postale = get_commune($id_commune);
 
                     <div class="form-group">
                     <div class="profile-userbuttons">
-                        <button type="submit" class="btn btn-lg btn-default btn-success" id="modifProf" name="modifProf">Modifier le profil</button>
+                        <button type="submit" class="btn btn-lg btn-default btn-success" id="modifProf" name="modifProf">Modifier mon profil</button>
                         <span class="errors" id="formerror"></span>
-                        <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button>
+                        <!-- <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button> -->
                     </div>
                     </div>
                 </form>
