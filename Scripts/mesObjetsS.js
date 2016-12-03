@@ -39,7 +39,7 @@ $(document).ready(function ()
 
         $.ajax({
             type:'POST',
-            url:'../Views/modif2.php',
+            url:'../Models/mesObjetsGet.php',
             data:"iid="+iid,
             success:function(array) {
                 var modal = $(this);

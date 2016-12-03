@@ -4,7 +4,7 @@
 include "Controls/mesObjetsCtrl.php";
 include "Models/mesobjetsM.php";
 include "Models/mesobjetsD.php";
-include "Views/modif2.php";
+include "Models/mesObjetsGet.php";
 
 
 ?>
@@ -176,7 +176,7 @@ include "Views/modif2.php";
                             </div>
 
                             <div class="modal-body">
-                                <form role="form" id="modifObj-form" method="POST" action="Controls/verificationObjectM.php">
+                                <form role="form" id="modifObj-form" method="POST" action="Controls/verificationObjectM.php" enctype="multipart/form-data">
                                     <div class="row">
                                     <div class="form-group">
                                         <label for="titre">Nom d'objet :  </label>
