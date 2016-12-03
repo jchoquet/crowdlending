@@ -28,7 +28,7 @@ function getnom($idObjet)
     $req->bindValue(':idObjet', $idObjet);
     $req->execute();
     $row = $req->fetch();
-    echo $row['nom'];
+    return $row['nom'];
 }
 
 function getphoto($idObjet)
@@ -38,7 +38,7 @@ function getphoto($idObjet)
     $req->bindValue(':idObjet', $idObjet);
     $req->execute();
     $row = $req->fetch();
-    echo $row['path_photo'];
+    return $row['path_photo'];
 }
 
 function getdescription($idObjet)
@@ -48,7 +48,7 @@ function getdescription($idObjet)
     $req->bindValue(':idObjet', $idObjet);
     $req->execute();
     $row = $req->fetch();
-    echo $row['description'];
+    return $row['description'];
 }
 
 

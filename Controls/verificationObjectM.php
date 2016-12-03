@@ -1,42 +1,47 @@
 <?php
 
 include __DIR__ . '/../Models/connexion.php';
-
-
-session_start();
-// L'id de l'utilisateur connecté est connu grà¢ce à  session_start() lancé au moment de la connexion
+include __DIR__ . "/../Models/mesObjetsGet.php";
+include __DIR__ . "/../Models/mesobjetsM.php";
 
 
 $titre = $_POST['titre'];
 $description = $_POST['description'];
 $id_to_modifier = $_POST['identifiantObjet']; // l'id de l'objet qu'on doit récuperer !!
-$id = $_SESSION['login'];
-$path_photo = 'no_image.png'; // le path  de la photo en attendant le document final de khushas
-$isAvailable = 1;
-$prix = 0;
+//$id = $_SESSION['login'];
+//$path_photo = 'no_image.png'; // le path  de la photo en attendant le document final de khushas
+//$isAvailable = 1;
+//$prix = 0;
+
+if($_FILES['photo']['name'] != "")
+{
+    // Création d'un nom aléatoire pour la photo
+    $nom = md5(uniqid(rand(), true));
+    $extension_upload = strtolower(  substr(  strrchr($_FILES['photo']['name'], '.')  ,1)  );
+    $path_photo = $nom . "." . $extension_upload;
+    $moving = move_uploaded_file($_FILES['photo']['tmp_name'],"../Images/Objets/" . $path_photo);
+    
+    // Suppression de l'ancien fichier de photo s'il ne s'agit pas de la photo par défaut
+    $ancien_path_photo = getphoto($id_to_modifier);
+    if ($ancien_path_photo != "no_image.png")
+    {
+        $path_to_delete = "../Images/Objets/" . $ancien_path_photo;
+        if (is_writable($path_to_delete))
+            unlink($path_to_delete);
+    }
+}
+else
+    $path_photo = getphoto($id_to_modifier);
 
 
 
 if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
 {
-    global $DB;
-
    /* $titre = $DB->quote(htmlspecialchars($_POST['titre']));
     $description = $DB->quote(htmlspecialchars($_POST['description']));*/
 
-    $sql = $DB->prepare("UPDATE objet SET id=\"$id_to_modifier\" , nom =\"$titre\", prix =\"$prix\", path_photo = \"$path_photo\" ,  id_owner=\"$id\" , isAvailable =\"$isAvailable\" ,description = \"$description\" WHERE id=\"$id_to_modifier\"");
+    $result = modifier_objet($id_to_modifier, $titre, $path_photo, $description);
 
-   /* $sql = $DB->prepare("UPDATE objet SET id=:ido, nom=:titre, prix=:prix, path_photo=:path_photo, id_owner=:ids, isAvailable=:isAvailable, description=:description WHERE id=:ido");
-    $sql->bindParam(':ido', $id_to_modifier);
-    $sql->bindParam(':titre',$titre);
-    $sql->bindParam(':prix', $prix);
-    $sql->bindParam(':path_photo', $path_photo);
-    $sql->bindParam(':ids', $id);
-    $sql->bindParam(':isAvailable', $isAvailable);
-    $sql->bindParam(':description', $description);*/
-
-    //Execution de la requÃªte d'enregistrement de l'utilisateur
-    $result = $sql->execute();
     //Redirection vers la page d'accueil si tout s'est bien passÃ©
     if($result)
     {
