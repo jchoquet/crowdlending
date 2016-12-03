@@ -40,10 +40,10 @@ if (verifFullfill() == 0  && verifEmail() == 0 && verifUsername() == 0) {
     //Si des villes ont été trouvées, on stocke l'ID qui lui correspond dans $id_commune
     if ($result) {
         echo "cool";
-        header('location: ../acceuil.php');
+        header('location: ../monCompte.php');
     } else {
         echo "not cool";
-        header('location: ../ajout.php');
+        header('location: ../monCompte.php');
     }
 }
 else {
