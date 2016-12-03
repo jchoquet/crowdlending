@@ -92,7 +92,7 @@ include_once __DIR__ . "/affichage_etat.php";
                 {
                     print "
                             <div id=\"confirmer\" class=\"btn btn-success\"  data-nom=\"$nom\" data-link=\"$pageTraiter\">
-                                <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span> confirmer
+                                <span class=\"glyphicon glyphicon-thumbs-up\" aria-hidden=\"true\"></span> confirmer
                             </div>
                           ";
                 }
