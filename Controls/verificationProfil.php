@@ -8,7 +8,7 @@ $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
 $username = $_POST['username'];
 $numero_telephone = $_POST['phone'];
-$address = $_POST['address'];
+$adresse = $_POST['adresse'];
 $email = $_POST['email'];
 $commune = $_POST['commune'];
 $id = $_SESSION['login'];
@@ -35,7 +35,7 @@ if (verifFullfill() == 0  && verifEmail() == 0 && verifUsername() == 0) {
     $mdp=$_POST['nmdp'];
     $safemdp = password_hash($mdp, PASSWORD_DEFAULT);
     //Préparation de la requête d'insertion du nouvel utilisateur
-    $sql = $DB->prepare("UPDATE utilisateur SET username=\"$username\" , hash_password =\"$safemdp\", prenom =\"$prenom\", nom =\"$nom\", email =\"$email\", id_commune = \"$id_commune\" ,  adresse=\"$adresse\"  ,description = \"$description\" WHERE id=\"$id\"");
+    $sql = $DB->prepare("UPDATE utilisateur SET username=\"$username\" , hash_password =\"$safemdp\", prenom =\"$prenom\", nom =\"$nom\", email =\"$email\", id_commune = \"$id_commune\" ,  adresse=\"$adresse\" WHERE id=\"$id\"");
     $result = $sql->execute();
     //Si des villes ont été trouvées, on stocke l'ID qui lui correspond dans $id_commune
     if ($result) {
@@ -57,9 +57,9 @@ function verifFullfill()
     $prenom = $DB->quote($_POST['prenom']);
     $email = $DB->quote($_POST['email']);
     $phone = $DB->quote($_POST['phone']);
-    $address = $DB->quote($_POST['address']);
+    $adresse = $DB->quote($_POST['adresse']);
     $commune = $DB->quote($_POST['commune']);
-    if( $username == "" || $nom == "" || $prenom == "" ||  $phone == "" || $address == "" || $commune == "")
+    if( $username == "" || $nom == "" || $prenom == "" ||  $phone == "" || $adresse == "" || $commune == "")
     {
         return 1;
     }
