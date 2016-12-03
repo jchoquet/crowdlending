@@ -66,6 +66,12 @@ function preteur_confirmer($pretId)
         $statement_update -> bindValue(':pretId',$pretId);
         $statement_update -> execute();
 
+        $date_retour = date("Y-m-d");
+        $enregistrement_date_retour = $DB -> prepare("UPDATE pret SET date_returned=:date_retour WHERE id=:pretId;");
+        $enregistrement_date_retour -> bindValue(':date_retour', $date_retour);
+        $enregistrement_date_retour -> bindValue(':pretId', $pretId);
+        $enregistrement_date_retour -> execute();
+
         //get object's id.
         $result = $DB->query("SELECT id_objet FROM pret WHERE id = \"$pretId\";")->fetch();
         $objetId = $result['id_objet'];
