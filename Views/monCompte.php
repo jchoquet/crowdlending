@@ -65,7 +65,7 @@ $code_postale = get_commune($id_commune);
 
             <!-- SIDEBAR BUTTONS -->
             <div class="profile-userbuttons">
-                <button type="button" class="btn btn-sm btn-info" href="#">Voir mon profil public</button>
+                <button type="button" class="btn btn-sm btn-info" href="#">Profil public</button>
             </div>
             <!-- END SIDEBAR BUTTONS -->
 
@@ -97,90 +97,83 @@ $code_postale = get_commune($id_commune);
         <div class="col-sm-9 col-md-10 page-step" id="page-step-2">
             <div class="profile-content">
                 <form role="form" id="modifProf" method="POST" action="Controls/verificationProfil.php">
+
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group">
-                                <label  for="omdp" > Nom : </label>
-                                <input type="text" name="nom" id="nom" class="form-control input-lg" Value="<?php echo $nom; ?>" placeholder="Nom" tabindex="1" required/>
-                                <span class="errors" id="nomerror"></span>
-                            </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+                            <label  for="omdp">Nom :</label>
+                            <input type="text" name="nom" id="nom" class="form-control" Value="<?php echo $nom; ?>" placeholder="Nom" tabindex="1" required/>
+                            <span class="errors" id="nomerror"></span>
                         </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group">
-                                <label  for="omdp" > Prenom : </label>
-                                <input type="text" name="prenom" id="prenom" class="form-control input-lg" Value="<?php echo $prenom; ?>" placeholder="Prenom" tabindex="2" required/>
-                                <span class="errors" id="prenomerror"></span>
-                            </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+                            <label for="omdp" >Prenom :</label>
+                            <input type="text" name="prenom" id="prenom" class="form-control" Value="<?php echo $prenom; ?>" placeholder="Prenom" tabindex="2" required/>
+                            <span class="errors" id="prenomerror"></span>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-2 col-md-6">
-                        <div class="form-group">
-                            <label  for="omdp" > Username : </label>
-                            <input type="text" name="username" id="username" class="form-control input-lg" Value="<?php echo $username; ?>" placeholder="username" tabindex="3" required/>
+
+                        <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+                            <label  for="omdp" >Username :</label>
+                            <input type="text" name="username" id="username" class="form-control" Value="<?php echo $username; ?>" placeholder="username" tabindex="3" required/>
                             <span class="errors" id="usernameerror"></span>
                         </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                        <div class="form-group">
-                            <label  for="omdp" > E-mail : </label>
-                            <input type="email" name="email" id="email" class="form-control input-lg" Value="<?php echo $email; ?>" placeholder="Email" tabindex="4">
+
+                        <div class="col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label  for="omdp" >E-mail :</label>
+                            <input type="email" name="email" id="email" class="form-control" Value="<?php echo $email; ?>" placeholder="Email" tabindex="4">
                             <span class="errors" id="emailerror"></span>
                         </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-6 form-group">
+                            <label  for="omdp" >Adresse :</label>
+                            <input type="text" name="adresse" id="adresse" class="form-control" Value="<?php echo $adresse; ?>" placeholder="Adresse" tabindex="5">
+                            <span class="errors" id="adresseerror"></span>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label  for="omdp" > Adresse : </label>
-                        <input type="text" name="adresse" id="adresse" class="form-control input-lg" Value="<?php echo $adresse; ?>" placeholder="Adresse" tabindex="5">
-                        <span class="errors" id="adresseerror"></span>
                     </div>
 
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                        <div class="form-group">
-                            <label  for="omdp" > Numéro de téléphone  : </label>
-                            <input type="text" name="phone" id="phone" class="form-control input-lg" Value="<?php echo $numero_telephone; ?>" placeholder="Numéro de téléphone" tabindex="6">
+                        <div class="col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="omdp" >Numéro de téléphone :</label>
+                            <input type="text" name="phone" id="phone" class="form-control" Value="<?php echo $numero_telephone; ?>" placeholder="Numéro de téléphone" tabindex="6">
                             <span class="errors" id="phoneerror"></span>
                         </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                        <div class="form-group">
-                            <label  for="omdp" > Commune : </label>
-                            <input type="text" name="commune" id="commune" class="form-control input-lg" Value="<?php echo $code_postale; ?>" placeholder="Commune" tabindex="8">
+
+                        <div class="col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="omdp" >Commune :</label>
+                            <input type="text" name="commune" id="commune" class="form-control" Value="<?php echo $code_postale; ?>" placeholder="Commune" tabindex="7">
                             <span class="errors" id="communeerror"></span>
                             <datalist id="commune">
                                 <?php include "Models/autocomplete_commune.php"; ?>
                             </datalist>
                         </div>
-                        </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label  for="omdp" >Ancien mot de passe : </label>
-                        <input class="form-control" type="password" name="Mot de passe" id="omdp" />
-                        <div class="col-sm-4 errors" id="oldMdperror"></div>
                     </div>
 
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group">
-                                <label  for="nmdp" >Nouveau mot de passe : </label>
-                                <input class="form-control" id="nmdp" type="password" name="New mot de passe" />
-                                <div class="col-sm-4 errors" id="newMdperror"></div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group">
-                                <label  for="mdpc" >Confirmez nouveau mot de passe : </label>
-                                <input class="form-control" id="mdpc" type="password" name="Conf new mot de passe"  />
-                                <div class="col-sm-4 errors" id="cnewMdperror"></div>
-                            </div>
+                        <div class="col-xs-12 col-md-6 form-group">
+                            <label  for="omdp" >Ancien mot de passe :</label>
+                            <input class="form-control" type="password" name="Mot de passe" id="omdp"  tabindex="8"/>
+                            <div class="errors" id="oldMdperror"></div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 form-group">
+                            <label  for="nmdp" >Nouveau mot de passe :</label>
+                            <input class="form-control" id="nmdp" type="password" name="New mot de passe"  tabindex="9"/>
+                            <div class="errors" id="newMdperror"></div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 form-group">
+                            <label  for="mdpc" >Confirmez le nouveau mot de passe :</label>
+                            <input class="form-control" id="mdpc" type="password" name="Conf new mot de passe"  tabindex="10"/>
+                            <div class="errors" id="cnewMdperror"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <!-- <div class="col-md-4 col-lg-2 hidden-xs hidden-sm">
                             <img src="Images/Users/<?php echo $path_photo ?>"  width="150" height="150">
+                        </div> -->
+                        <div class="col-xs-12 from-group">
                             <div class="input-group">
                                 <label class="input-group-btn" for="photo">
                                     <span class="btn btn-info"><span class="glyphicon glyphicon-picture"></span>
@@ -194,9 +187,9 @@ $code_postale = get_commune($id_commune);
 
                     <div class="form-group">
                     <div class="profile-userbuttons">
-                        <button type="submit" class="btn btn-md btn-default btn-success" id="modifProf" name="modifProf">Modifier le profil</button>
+                        <button type="submit" class="btn btn-lg btn-default btn-success" id="modifProf" name="modifProf">Modifier le profil</button>
                         <span class="errors" id="formerror"></span>
-                        <button type="button" class="btn btn-md btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button>
+                        <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button>
                     </div>
                     </div>
                 </form>
