@@ -3,6 +3,35 @@
  */
 
 $(function(){
+
+    // pop-up "Rendre"
+    $('#rendre').click(function (e) {
+        $("#newModal").modal();
+        e.stopPropagation();
+        $("#messageConfirmation").html("Vous allez rendre l'objet '" + this.getAttribute('data-nom') + "'.");
+
+        var link = this.getAttribute('data-link'); // Extract info from data-* attributes
+
+        $('#link-button1').click(function () {
+            window.location = link;
+        });
+    });
+
+    // pop-up "Confirmer recevoir"
+    $('#confirmer').click(function (e) {
+        $("#myModal").modal();
+        e.stopPropagation();
+        $("#messageConfirmation").html("Vous allez confirmer recevoir l'objet '" + this.getAttribute('data-nom') + "'.");
+
+        var link = this.getAttribute('data-link'); // Extract info from data-* attributes
+
+        $('#link-button').click(function () {
+            window.location = link;
+        });
+    });
+
+
+
     var hash = window.location.hash;
     var location = window.location.toString();
 
@@ -18,6 +47,10 @@ $(function(){
         $('ul.nav a[href="' + "#onglet_prets" + '"]').tab('show');
     }
 
+    $('#dismiss-button').click(function(){
+        $("#myModal").modal('hide');
+    });
+
 
     $('.nav-tabs a').click(function (e) { // affichage des onglets
         $(this).tab('show');
@@ -25,4 +58,11 @@ $(function(){
         window.location.hash = this.hash;
         $('html,body').scrollTop(scrollmem);
     });
+});
+
+
+// Fermeture du popup si l'utilisateur appuie sur la touche "echap"
+$(document).keyup(function (e) {
+    if (e.keyCode == 27) $("#myModal").modal('hide');
+    e.stopPropagation();
 });
