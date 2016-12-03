@@ -189,7 +189,7 @@ include "Views/modif2.php";
                                     <div class="form-group">
                                         <label for="description">Description de l'objet :</label>
                                         </br>
-                                        <input type="textarea" class="form-control" id="description" name="description" placeholder="Description de votre objet" value="<?php echo getdescription($iid); ?>" >
+                                        <textarea class="form-control" id="description" name="description"><?php echo getdescription($iid); ?></textarea>
                                         <span class="errors" id="descriptionerror"></span>
                                     </div>
                                     </div>
@@ -202,7 +202,6 @@ include "Views/modif2.php";
                                                 <label class="input-group-btn" for="photo">
                                                 <span class="btn btn-info"><span class="glyphicon glyphicon-picture"></span>
                                                     Sélectionner une photo <input type="file" id="photo" name="photo" style="display: none;"/>
-                                                </span>
                                                 </span>
                                                 </label>
                                                 <input type="text" class="form-control" readonly="" value="Aucun fichier choisi" />
