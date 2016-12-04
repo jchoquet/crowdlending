@@ -21,7 +21,7 @@ $id_commune = -1;
 
 
 // Redirection vers la page d'accueil si tous les tests sont passés, ou vers la page d'inscription sinon
-if (verifFullfill() == 0  && verifPassword() && verifEmail() == 0 && verifUsername() == 0)
+if (verifFullfill() == 0  && verifPassword() && verifEmail() == 0 && verifUsername() == 0 && verifPhone()==0)
 {
     global $DB;
 
