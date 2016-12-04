@@ -199,7 +199,31 @@ $code_postale = get_commune($id_commune);
         <!-- Contenu pour supprimer son compte -->
         <div class="col-sm-9 col-md-10 page-step" id="page-step-3">
             <div class="profile-content">
-            <p>TODO</p>
+
+                <div class="form-group col-md-12 form-group">
+                    <label  for="omdp" >Username :</label>
+                    <input type="text" name="username" id="username" class="form-control" Value="<?php echo $username; ?>" placeholder="username" tabindex="3" required/>
+                    <span class="errors" id="usernameerror"></span>
+                </div>
+
+                <div class="form-group col-md-12 form-group">
+                    <label  for="omdp" >E-mail :</label>
+                    <input type="email" name="email" id="email" class="form-control" Value="<?php echo $email; ?>" placeholder="Email" tabindex="4">
+                    <span class="errors" id="emailerror"></span>
+                </div>
+
+                <div class="form-group col-md-12 form-group">
+                    <label for="motif"> Motif :</label>
+                    <textarea class="form-control" id="motif" name="motif" placeholder="Pourquoi souhaitez-vous supprimer votre compte ? " ></textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="profile-userbuttons">
+                        <button type="submit" class="btn btn-lg btn-default btn-danger" id="delete" name="delete">Supprimer mon compte</button>
+                        <span class="errors" id="formerror"></span>
+                        <!-- <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button> -->
+                    </div>
             </div>
         </div>
 
