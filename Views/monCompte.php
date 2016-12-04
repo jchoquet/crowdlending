@@ -92,16 +92,6 @@ $code_postale = get_commune($id_commune);
         <div class="col-sm-9 col-md-10 page-step" id="page-step-1">
             <div class="profile-content">
                 <div class="container-fluid content">
-                    <?php
-                    if($id == $idprofil)
-                    {
-                        echo '<h1 class="page-header">Votre profil, vu par les autres</h1>';
-                    }
-                    else
-                    {
-                        echo '<h1 class="page-header">Profil de '.$username.'</h1>';
-                    }
-                    ?>
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-lg-4">
                             <div class="thumbnail">
