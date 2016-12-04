@@ -26,13 +26,12 @@
 <body>
 
 <?php include("Views/header.php"); ?>
-<?php $username = $_GET['username']; ?>
-
-
 
 <div class="container-fluid content">
-  <p> Profil de <?php echo $username; ?></p>
+  <p> Profil de <?php echo $informations[0][2]; ?></p>
 </div>
 
-</body>
+<?php include('Views/footer.php'); ?>
+
+</body>;
 </html>
