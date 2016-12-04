@@ -1,21 +1,21 @@
 <?php
 
-
+session_start();
 include "Models/monProfil.php";
 
-
-$informations = get_info();
+$username = $_GET['username'];
 $id = $_SESSION['login'];
-$idprofil = $informations[0][8];
-$path_photo =$informations[0][4];
-$username = $informations[0][0];
+$informations = get_infos_by_username($username);
+$idprofil = $informations[0][0];
 $nom = $informations[0][1];
 $prenom = $informations[0][2];
 $email = $informations[0][3];
-$adresse= $informations[0][5];
-$numero_telephone= $informations[0][6];
-$id_commune= $informations[0][7];
+$path_photo = "Images/Users/".$informations[0][4];
+$adresse = $informations[0][5];
+$numero_telephone = $informations[0][6];
+$id_commune = $informations[0][7];
 $code_postale = get_commune($id_commune);
+
 
 ?>
 
@@ -66,7 +66,7 @@ $code_postale = get_commune($id_commune);
             <img src="<?php echo $path_photo; ?>" alt='avatar' >
         </div>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4" id="infos">
+    <div class="col-xs-12 col-sm-6 col-md-4Z" id="infos">
         <ul>
           <li><span class="etiquette">Nom :</span><?php echo $nom; ?></li>
           <li><span class="etiquette">Prénom :</span><?php echo $prenom; ?></li>
