@@ -101,7 +101,6 @@ $code_postale = get_commune($id_commune);
     </div>
   </div>
 </div>
-
 <?php include('Views/footer.php'); ?>
 
 </body>;
