@@ -114,3 +114,15 @@ body {
     float: right;
     color: red;
 }
+
+/* Bouton profil public */
+
+.profile-userbuttons a {
+    text-decoration: none;
+    color: white;
+}
+
+.profile-userbuttons a:hover {
+    text-decoration: none;
+    color: white;
+}
