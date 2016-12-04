@@ -32,6 +32,8 @@ $code_postale = get_commune($id_commune);
     <!-- Source css pour le design du site -->
     <link rel="stylesheet" href="Styles/base.css">
 
+    <link rel="stylesheet" href="Styles/view_profil.css">
+
     <!-- Source pour le formulaire dajout -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -50,31 +52,54 @@ $code_postale = get_commune($id_commune);
   <?php
     if($id == $idprofil)
     {
-      echo '<h1 class="page-header">Votre profil, vu par les autres</h1>';
+      echo '<h2 class="page-header">Votre profil, vu par les autres</h2>';
     }
     else
     {
-      echo '<h1 class="page-header">Profil de '.$username.'</h1>';
+      echo '<h2 class="page-header">Profil de '.$username.'</h2>';
     }
   ?>
  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-lg-4">
+    <div class="col-xs-12 col-sm-4 col-md-offset-1 col-md-2">
         <div class="thumbnail">
             <img src="<?php echo $path_photo; ?>" alt='avatar' >
         </div>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4Z" id="infos">
-        <ul>
-          <li><span class="etiquette">Nom :</span><?php echo $nom; ?></li>
-          <li><span class="etiquette">Prénom :</span><?php echo $prenom; ?></li>
-          <li><span class="etiquette">Nom d'utilisateur :</span><?php echo $username; ?></li>
-          <li><span class="etiquette">Email :</span><?php echo $email; ?></li>
-          <li><span class="etiquette">Adresse :</span><?php echo $adresse; ?></li>
-          <li><span class="etiquette">Numéro :</span><?php echo $numero_telephone; ?></li>
-          <li><span class="etiquette">Commune :</span><?php echo $code_postale; ?></li>
-        </ul>
+    <div class="col-xs-12 col-sm-8 col-md-offset-1 col-md-6" id="infos">
+      <table class="table table-user-information">
+        <tbody>
+            <tr>
+              <td>Nom</td>
+              <td><?php echo $nom; ?></td>
+            </tr>
+            <tr>
+              <td>Prénom</td>
+              <td><?php echo $prenom; ?></td>
+            </tr>
+            <tr>
+              <td>Nom d'utilisateur</td>
+              <td><?php echo $username; ?></td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td><?php echo $email; ?></td>
+            </tr>
+            <tr>
+              <td>Adresse</td>
+              <td><?php echo $adresse; ?></td>
+            </tr>
+            <tr>
+              <td>Numéro</td>
+              <td><?php echo $numero_telephone; ?></td>
+            </tr>
+            <tr>
+              <td>Commune</td>
+              <td><?php echo $code_postale; ?></td>
+            </tr>
+        </tbody>
+      </table>
     </div>
- </div>
+  </div>
 </div>
 
 <?php include('Views/footer.php'); ?>
