@@ -38,6 +38,8 @@ include "Models/monProfil.php";
 
 <?php
 $informations = get_info();
+$id = $_SESSION['login'];
+$idprofil = $informations[0][8];
 $path_photo =$informations[0][4];
 $username = $informations[0][0];
 $nom = $informations[0][1];
@@ -89,7 +91,36 @@ $code_postale = get_commune($id_commune);
         <!-- Contenu pour afficher le profil -->
         <div class="col-sm-9 col-md-10 page-step" id="page-step-1">
             <div class="profile-content">
-            <p>TODO</p>
+                <div class="container-fluid content">
+                    <?php
+                    if($id == $idprofil)
+                    {
+                        echo '<h1 class="page-header">Votre profil, vu par les autres</h1>';
+                    }
+                    else
+                    {
+                        echo '<h1 class="page-header">Profil de '.$username.'</h1>';
+                    }
+                    ?>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                                <img src="Images/Users/<?php echo $path_photo ?>" alt='avatar' >
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4" id="infos">
+                            <ul>
+                                <li><span class="etiquette">Nom :</span><?php echo $nom; ?></li>
+                                <li><span class="etiquette">Prénom :</span><?php echo $prenom; ?></li>
+                                <li><span class="etiquette">Nom d'utilisateur :</span><?php echo $username; ?></li>
+                                <li><span class="etiquette">Email :</span><?php echo $email; ?></li>
+                                <li><span class="etiquette">Adresse :</span><?php echo $adresse; ?></li>
+                                <li><span class="etiquette">Numéro :</span><?php echo $numero_telephone; ?></li>
+                                <li><span class="etiquette">Commune :</span><?php echo $code_postale; ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
