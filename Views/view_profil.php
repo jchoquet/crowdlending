@@ -1,16 +1,21 @@
 <?php
 
+
+include "Models/monProfil.php";
+
+
+$informations = get_info();
 $id = $_SESSION['login'];
-$idprofil = $informations[0][1];
-$nom = $informations[0][2];
-$prenom = $informations[0][3];
-$email = $informations[0][4];
-$path_photo = "Images/Users/".$informations[0][5];
-$adresse = $informations[0][6];
-$numero = $informations[0][7];
-$id_commune = $informations[0][8];
-$commune = get_commune($id_commune);
-$username = $_GET['username'];
+$idprofil = $informations[0][8];
+$path_photo =$informations[0][4];
+$username = $informations[0][0];
+$nom = $informations[0][1];
+$prenom = $informations[0][2];
+$email = $informations[0][3];
+$adresse= $informations[0][5];
+$numero_telephone= $informations[0][6];
+$id_commune= $informations[0][7];
+$code_postale = get_commune($id_commune);
 
 ?>
 
@@ -58,18 +63,18 @@ $username = $_GET['username'];
  <div class="row">
     <div class="col-xs-12 col-sm-6 col-lg-4">
         <div class="thumbnail">
-            <img src=<?php echo $path_photo; ?> alt='avatar' >
+            <img src="<?php echo $path_photo; ?>" alt='avatar' >
         </div>
     </div>
-    <div class="col-xs-12 col-sm-6 col-lg-4" id="infos">
+    <div class="col-xs-12 col-sm-6 col-md-4" id="infos">
         <ul>
           <li><span class="etiquette">Nom :</span><?php echo $nom; ?></li>
           <li><span class="etiquette">Prénom :</span><?php echo $prenom; ?></li>
           <li><span class="etiquette">Nom d'utilisateur :</span><?php echo $username; ?></li>
           <li><span class="etiquette">Email :</span><?php echo $email; ?></li>
           <li><span class="etiquette">Adresse :</span><?php echo $adresse; ?></li>
-          <li><span class="etiquette">Numéro :</span><?php echo $numero; ?></li>
-          <li><span class="etiquette">Commune :</span><?php echo $commune; ?></li>
+          <li><span class="etiquette">Numéro :</span><?php echo $numero_telephone; ?></li>
+          <li><span class="etiquette">Commune :</span><?php echo $code_postale; ?></li>
         </ul>
     </div>
  </div>
