@@ -1,3 +1,20 @@
+<?php
+
+$id = $_SESSION['login'];
+$idprofil = $informations[0][1];
+$nom = $informations[0][2];
+$prenom = $informations[0][3];
+$email = $informations[0][4];
+$path_photo = "Images/Users/".$informations[0][5];
+$adresse = $informations[0][6];
+$numero = $informations[0][7];
+$id_commune = $informations[0][8];
+$commune = get_commune($id_commune);
+$username = $_GET['username'];
+
+?>
+
+
 <html lang="fr">
 <head>
     <meta charset="utf-8"/>
@@ -28,7 +45,34 @@
 <?php include("Views/header.php"); ?>
 
 <div class="container-fluid content">
-  <p> Profil de <?php echo $informations[0][2]; ?></p>
+  <?php
+    if($id == $idprofil)
+    {
+      echo '<h1 class="page-header">Votre profil, vu par les autres</h1>';
+    }
+    else
+    {
+      echo '<h1 class="page-header">Profil de '.$username.'</h1>';
+    }
+  ?>
+ <div class="row">
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+        <div class="thumbnail">
+            <img src=<?php echo $path_photo; ?> alt='avatar' >
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-4" id="infos">
+        <ul>
+          <li><span class="etiquette">Nom :</span><?php echo $nom; ?></li>
+          <li><span class="etiquette">Prénom :</span><?php echo $prenom; ?></li>
+          <li><span class="etiquette">Nom d'utilisateur :</span><?php echo $username; ?></li>
+          <li><span class="etiquette">Email :</span><?php echo $email; ?></li>
+          <li><span class="etiquette">Adresse :</span><?php echo $adresse; ?></li>
+          <li><span class="etiquette">Numéro :</span><?php echo $numero; ?></li>
+          <li><span class="etiquette">Commune :</span><?php echo $commune; ?></li>
+        </ul>
+    </div>
+ </div>
 </div>
 
 <?php include('Views/footer.php'); ?>
