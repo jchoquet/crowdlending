@@ -1,8 +1,5 @@
 <?php
 
-session_start();
-include "Models/monProfil.php";
-
 $username = $_GET['username'];
 $id = $_SESSION['login'];
 $informations = get_infos_by_username($username);
