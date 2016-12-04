@@ -21,4 +21,15 @@ function get_infos_by_username($username)
     }
     return $informations;
 }
+
+function get_commune($idCommune)
+{
+    global $DB;
+    $req = $DB->prepare("SELECT nom FROM commune WHERE id=\"$idCommune\";");
+    $req->bindValue(':idCommune', $idCommune);
+    $req->execute();
+    $row = $req->fetch();
+    return $row['nom'];
+}
+
 ?>
