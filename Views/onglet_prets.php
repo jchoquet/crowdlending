@@ -162,5 +162,11 @@ include_once __DIR__ . "/affichage_etat.php";
         </div>
     </div>
 </div>
+
+<div class="disclaimer">
+	<p> Veuillez mettre à jour le statut d'un prêt en cliquant sur le pouce lorsque vous avez rendu l'objet.</p>
+	<p> En cas de litige, veuillez contactez un administrateur du site.</p>
+</div>
+
 </body>
 </html>
