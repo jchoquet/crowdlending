@@ -2,9 +2,24 @@
  * Created by Julien on 14/11/2016.
  */
 
+$(document).ready(function () {
+    $('#boutonSuppression').click(function (e) {
+        $("#myModal").modal();
+        e.stopPropagation();
+        $("#messageConfirmation").html("Vous êtes sur le point de supprimer l'objet '" + this.getAttribute('data-nom') + "'.");
+        var link = this.getAttribute('data-link'); // Extract info from data-* attributes
+        $('#link-button').click(function () {
+            window.location = link;
+        });
+    });
+    $('#dismiss-button').click(function(){
+        $("#myModal").modal('hide');
+    });
+});
+
 // http://fellowtuts.com/jquery/bootstrap-dynamic-modal-popup-with-dynamic-data-content/
 
-$(document).ready(function ()
+/*$(document).ready(function ()
 {
     $('#myModal').on('show.bs.modal', function (event)
     { // id of the modal with event
@@ -29,7 +44,7 @@ $(document).ready(function ()
     });
 
 
-/*
+/!*
     $('#modifObj').on('show.bs.modal', function (event)
     { // id of the modal with event
         var button = $(event.relatedTarget); // Button that triggered the modal
@@ -66,10 +81,10 @@ $(document).ready(function ()
             window.location = link;
         });
     });
-*/
+*!/
 
 
-});
+});*/
 
 
 // Fermeture du popup si l'utilisateur appuie sur la touche "echap"
