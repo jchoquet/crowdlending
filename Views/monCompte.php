@@ -67,7 +67,7 @@ $code_postale = get_commune($id_commune);
 
             <!-- SIDEBAR BUTTONS -->
             <div class="profile-userbuttons">
-                <button type="button" class="btn btn-sm btn-info"><a href="view_profil.php?username=<?php echo $username; ?>">Profil public</a></button>
+                <a href="view_profil.php?username=<?php echo $username; ?>"><button type="button" class="btn btn-sm btn-info">Profil public</button></a>
             </div>
             <!-- END SIDEBAR BUTTONS -->
 
