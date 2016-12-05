@@ -9,6 +9,10 @@
 include "Controls/historiqueCtrl.php";
 include "Models/historiqueM.php";
 
+if(isset($_GET['etat'])){ //Si un état de filtre est sélectionné
+    $etatRequis = $_GET['etat'];
+}
+
 ?>
 
 <!DOCTYPE html>

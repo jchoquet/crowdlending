@@ -30,6 +30,16 @@ include_once __DIR__ . "/affichage_etat.php";
 <div class="container content">
     <h2>Historique des demandes d'emprunts</h2>
 
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filtrer par :
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="./historique?etat=En+attente#onglet_emprunts">En attente</a></li>
+            <li><a href="./historique?etat=css#onglet_emprunts">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+        </ul>
+    </div>
+
     <p>Liste des demandes :</p>
     <table class="table table-hover">
         <thead>
