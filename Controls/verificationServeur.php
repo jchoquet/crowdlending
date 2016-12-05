@@ -82,7 +82,7 @@ function verifPhone()
 	{
 		$_POST['phone'] = htmlspecialchars($_POST['phone']);
 
-		if (preg_match("#^0[1-79]([ ]?[0-9]{2}){4}$#", $_POST['telephone']))
+		if (preg_match("#^0[1-79]([ ]?[0-9]{2}){4}$#", $_POST['phone']))
 		{
 			return 0;
 		}
