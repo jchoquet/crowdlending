@@ -57,7 +57,7 @@ $(document).ready(function(){
 			$.ajax({
 
 				type:'POST',
-				url:'ConnexionVerif.php',
+				url:'../Controls/ConnexionVerif.php',
 				data:"mdp="+mdpc+"&id="+idc,
 				success:function(msg) {
 

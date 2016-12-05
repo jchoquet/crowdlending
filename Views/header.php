@@ -1,5 +1,5 @@
 <?php
-if (!isset($_POST['username']))
+if (!isset($_SESSION['login']))
     header("Location: Views/connexion.php")
 ?>
 
@@ -42,5 +42,5 @@ if (!isset($_POST['username']))
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-    
+
 </nav>
