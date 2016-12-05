@@ -7,3 +7,12 @@
     max-height: 350px;
     overflow-y: auto;
 }
+
+#modifObj .modal-body {
+  max-height: 700px;
+  padding: 35px;
+}
+
+#modifObj-btn, #dismiss-button2 {
+  margin-top: 25px;
+}

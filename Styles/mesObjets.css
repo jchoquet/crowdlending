@@ -15,3 +15,7 @@
 .pagination li a:hover {
   color: #31b0d5;;
 }
+
+.button-container {
+  float: right;
+}
