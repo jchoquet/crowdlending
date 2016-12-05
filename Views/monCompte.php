@@ -60,7 +60,7 @@ $code_postale = get_commune($id_commune);
             <div class="thumbnail">
                 <img src="Images/Users/<?php echo $path_photo ?>" class="img-responsive" alt="">
                 <div class="caption profile-usertitle">
-                    <p class="profile-usertitle-name"><?php echo $username; ?></p>
+                    <p class="profile-usertitle-name">@<?php echo $username; ?></p>
                 </div>
             </div>
             <!-- END SIDEBAR USERPIC -->
@@ -91,24 +91,45 @@ $code_postale = get_commune($id_commune);
         <!-- Contenu pour afficher le profil -->
         <div class="col-sm-9 col-md-10 page-step" id="page-step-1">
             <div class="profile-content">
-                <div class="container-fluid content">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-lg-4">
-                            <div class="thumbnail">
-                                <img src="Images/Users/<?php echo $path_photo ?>" alt='avatar' >
-                            </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="thumbnail">
+                            <img src="Images/Users/<?php echo $path_photo ?>" alt='avatar' >
                         </div>
-                        <div class="col-xs-12 col-sm-6 col-lg-4" id="infos">
-                            <ul>
-                                <li><span class="etiquette">Nom :</span><?php echo $nom; ?></li>
-                                <li><span class="etiquette">Prénom :</span><?php echo $prenom; ?></li>
-                                <li><span class="etiquette">Nom d'utilisateur :</span><?php echo $username; ?></li>
-                                <li><span class="etiquette">Email :</span><?php echo $email; ?></li>
-                                <li><span class="etiquette">Adresse :</span><?php echo $adresse; ?></li>
-                                <li><span class="etiquette">Numéro :</span><?php echo $numero_telephone; ?></li>
-                                <li><span class="etiquette">Commune :</span><?php echo $code_postale; ?></li>
-                            </ul>
-                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-8 col-md-offset-1 col-md-6" id="infos">
+                        <table class="table table-user-information">
+                            <tbody>
+                            <tr>
+                                <td>Nom</td>
+                                <td><?php echo $nom; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Prénom</td>
+                                <td><?php echo $prenom; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Nom d'utilisateur</td>
+                                <td>@<?php echo $username; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td><?php echo $email; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Adresse</td>
+                                <td><?php echo $adresse; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Numéro</td>
+                                <td><?php echo $numero_telephone; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Commune</td>
+                                <td><?php echo $code_postale; ?></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
