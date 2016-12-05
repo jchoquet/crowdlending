@@ -209,8 +209,6 @@ include "Models/mesObjetsGet.php";
                                                 <input type="text" class="form-control" readonly="" value="Aucun fichier choisi" />
                                             </div>
                                         </div>
-
-
                                     </div>
                                     </div>
 
