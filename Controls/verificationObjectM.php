@@ -47,7 +47,7 @@ if (verifFullfill()== 0 && verifTitre()== 0 && verifDescription()== 0)
     {
 
         // Redirection vers la page mes objets si tout s'est bien passÃ©
-        $message = "L'objet ".$titre." a bien été modifié";
+        $message = "L'objet ".$titre." a bien été modifié.";
         $_SESSION['message'] = $message;
         header('location: ../mesObjets.php');
 
