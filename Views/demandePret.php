@@ -14,7 +14,7 @@ include "Models/demandePretM.php";
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Lend it - Demandes de prêts en cours</title>
+    <title>Lend it - Mes objets demandés</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -50,7 +50,7 @@ include "Models/demandePretM.php";
 <?php include("header.php"); ?>
 
 <div class="container content">
-    <h2>Demandes de prêts en cours</h2>
+    <h2>Mes objets demandés</h2>
 
     <p>Liste des demandes :</p>
     <table class="table table-hover">
