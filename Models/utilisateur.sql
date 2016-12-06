@@ -12,4 +12,4 @@ id_commune MEDIUMINT(8) UNSIGNED,
 isAdmin TINYINT DEFAULT 0,
 CONSTRAINT check_utilisateur_isAdmin CHECK (isAdmin=0 OR isAdmin=1),
 CONSTRAINT fk_utilisateur_commune FOREIGN KEY (id_commune) REFERENCES commune(id)
-);
+)ENGINE=InnoDB;
