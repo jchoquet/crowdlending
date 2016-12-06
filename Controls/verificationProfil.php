@@ -63,21 +63,18 @@ if (verifFullfill() == 0  && verifEmail() == 0 && verifUsername() == 0) {
     // Enregistrement du nouvel utilisateur dans la BD
     $mdp=$_POST['nmdp'];
     $safemdp = password_hash($mdp, PASSWORD_DEFAULT);
-    //Préparation de la requête d'insertion du nouvel utilisateur
-    $sql = $DB->prepare("UPDATE utilisateur SET username=\"$username\" , hash_password =\"$safemdp\", prenom =\"$prenom\", nom =\"$nom\", email =\"$email\", id_commune = \"$id_commune\" , adresse=\"$adresse\" , path_photo=\"$path_photo\" WHERE id=\"$id\";");
-    $result = $sql->execute();
+    // Requête de modification des informations de l'utilisateur
+    $result = modif_utilisateur($username, $safemdp, $prenom, $nom, $email, $id_commune, $adresse, $path_photo, $id);
     //Si des villes ont été trouvées, on stocke l'ID qui lui correspond dans $id_commune
-    if ($result) {
-        echo "cool";
+    if ($result)
         header('location: ../monCompte.php');
-    } else {
-        echo "not cool";
+    else
         header('location: ../monCompte.php');
-    }
 }
-else {
+else
     echo "Il y a eu un problème lors de votre modification , veuillez cliquer sur le lien ci\n";
-}
+
+
 function verifFullfill()
 {
     global $DB;
@@ -88,7 +85,7 @@ function verifFullfill()
     $phone = $DB->quote($_POST['phone']);
     $adresse = $DB->quote($_POST['adresse']);
     $commune = $DB->quote($_POST['commune']);
-    if( $username == "" || $nom == "" || $prenom == "" ||  $phone == "" || $adresse == "" || $commune == "")
+    if( $username == "" || $nom == "" || $prenom == "" ||  $email == "" || $phone == "" || $adresse == "" || $commune == "")
     {
         return 1;
     }
