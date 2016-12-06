@@ -37,4 +37,8 @@ $qr = $DB->exec($sql);
 // Ajout de la table "categorisation"
 $sql = file_get_contents('categorisation.sql');
 $qr = $DB->exec($sql);
+
+// Remplissage de la table "categorie"
+$sql = file_get_contents('insert_categories.sql');
+$qr = $DB->exec($sql);
 ?>
