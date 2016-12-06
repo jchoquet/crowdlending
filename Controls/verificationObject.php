@@ -25,14 +25,12 @@ if (verifFullfill()==0 && verifTitre()==0 && verifDescription()==0 && verifPhoto
       $path_photo = 'no_image.png';
 
 
-    $isAvailable = 1;
     $prix = 0;
-    $sql = $DB->prepare("INSERT INTO objet (nom,prix, path_photo, id_owner, isAvailable, description) VALUES (:titre, :prix , :path_photo , :owned, :isAvailable, :description);");
+    $sql = $DB->prepare("INSERT INTO objet (nom,prix, path_photo, id_owner, description) VALUES (:titre, :prix , :path_photo , :owned, :description);");
     $sql->bindValue(':titre',$titre, PDO::PARAM_STR);
     $sql->bindValue(':prix', $prix , PDO::PARAM_INT);
     $sql->bindValue(':path_photo', $path_photo, PDO::PARAM_STR);
     $sql->bindValue(':owned', $owned, PDO::PARAM_INT);
-    $sql->bindValue(':isAvailable', $isAvailable, PDO::PARAM_INT);
     $sql->bindValue(':description', $description, PDO::PARAM_STR);
 
     //Execution de la requÃªte d'enregistrement de l'utilisateur
