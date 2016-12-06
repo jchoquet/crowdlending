@@ -1,13 +1,13 @@
 <?php
 
-include "Models/connexion.php";
+include __DIR__. "/../Models/connexion.php";
 
 function get_info()
 {
     global $DB;
     $ident = $_SESSION['login'];
     $informations = array();
-    foreach ($DB->query("SELECT username, nom, prenom, email,path_photo, adresse, numero_telephone,id_commune,id FROM utilisateur WHERE id=\"$ident\";") as $row)
+    foreach ($DB->query("SELECT username, nom, prenom, email, path_photo, adresse, numero_telephone, id_commune, id FROM utilisateur WHERE id=\"$ident\";") as $row)
     {
         array_push($informations, array($row['username'],$row['nom'],$row['prenom'], $row['email'],$row['path_photo'], $row['adresse'], $row['numero_telephone'], $row['id_commune'], $row['id']));
     }

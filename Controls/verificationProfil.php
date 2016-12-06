@@ -1,5 +1,7 @@
 <?php
 include __DIR__ . '/../Models/connexion.php';
+include __DIR__ . "/../Models/monProfil.php";
+
 session_start();
 
 
@@ -27,6 +29,33 @@ if(isset($_POST['oldmdp']) && !isset($_POST['nmdp']))
     }
 }
 
+$ancien_path_photo = get_info()[0][4];
+print($ancien_path_photo);
+if($_FILES['photo']['name'] != "")
+{
+    // Création d'un nom aléatoire pour la photo
+    $nom_photo = md5(uniqid(rand(), true));
+    $extension_upload = strtolower(  substr(  strrchr($_FILES['photo']['name'], '.')  ,1)  );
+    $path_photo = $nom_photo . "." . $extension_upload;
+    $moving = move_uploaded_file($_FILES['photo']['tmp_name'],"../Images/Users/" . $path_photo);
+
+    // Suppression de l'ancien fichier de photo s'il ne s'agit pas de la photo par défaut
+    if ($ancien_path_photo != "no_avatar.jpeg")
+    {
+        print("\nok1");
+        $path_to_delete = "../Images/Users/" . $ancien_path_photo;
+        print($path_to_delete);
+        print(is_writable($path_to_delete));
+        if (is_writable($path_to_delete))
+        {
+            unlink($path_to_delete);
+            print("\nok2");
+        }
+    }
+}
+else
+    $path_photo = $ancien_path_photo;
+
 
 // Redirection vers la page d'accueil si tous les tests sont passés, ou vers la page d'inscription sinon
 if (verifFullfill() == 0  && verifEmail() == 0 && verifUsername() == 0) {
@@ -35,7 +64,7 @@ if (verifFullfill() == 0  && verifEmail() == 0 && verifUsername() == 0) {
     $mdp=$_POST['nmdp'];
     $safemdp = password_hash($mdp, PASSWORD_DEFAULT);
     //Préparation de la requête d'insertion du nouvel utilisateur
-    $sql = $DB->prepare("UPDATE utilisateur SET username=\"$username\" , hash_password =\"$safemdp\", prenom =\"$prenom\", nom =\"$nom\", email =\"$email\", id_commune = \"$id_commune\" ,  adresse=\"$adresse\" WHERE id=\"$id\"");
+    $sql = $DB->prepare("UPDATE utilisateur SET username=\"$username\" , hash_password =\"$safemdp\", prenom =\"$prenom\", nom =\"$nom\", email =\"$email\", id_commune = \"$id_commune\" , adresse=\"$adresse\" , path_photo=\"$path_photo\" WHERE id=\"$id\";");
     $result = $sql->execute();
     //Si des villes ont été trouvées, on stocke l'ID qui lui correspond dans $id_commune
     if ($result) {

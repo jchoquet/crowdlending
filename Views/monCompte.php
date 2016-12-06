@@ -138,7 +138,7 @@ $code_postale = get_commune($id_commune);
         <!-- Contenu pour modifier son profil -->
         <div class="col-sm-9 col-md-10 page-step" id="page-step-2">
             <div class="profile-content">
-                <form role="form" id="modifProf" method="POST" action="Controls/verificationProfil.php">
+                <form role="form" id="modifProf" method="POST" action="Controls/verificationProfil.php" enctype="multipart/form-data">
 
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-4 form-group">
