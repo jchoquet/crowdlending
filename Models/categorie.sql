@@ -3,4 +3,4 @@ CREATE TABLE categorie(
   nom VARCHAR(255) NOT NULL,
   description TEXT,
   path_photo VARCHAR(255)
-);
+)ENGINE=InnoDB;

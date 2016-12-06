@@ -8,4 +8,4 @@ isAvailable TINYINT DEFAULT 1,
 description TEXT,
 CONSTRAINT check_object_isAvailable CHECK (isAvailable=0 OR isAvailable=1),
 CONSTRAINT fk_objet_owner FOREIGN KEY (id_owner) REFERENCES utilisateur(id) ON DELETE CASCADE
-);
+)ENGINE=InnoDB;

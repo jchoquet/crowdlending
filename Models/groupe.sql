@@ -3,4 +3,4 @@ id INTEGER PRIMARY KEY AUTO_INCREMENT,
 nom VARCHAR(255) NOT NULL,
 description TEXT,
 path_photo VARCHAR(255)
-);
+)ENGINE=InnoDB;
