@@ -51,21 +51,21 @@ else {
     <?php
     if ($type == 0) {
         if (demande_traiter($objetId)) {
-            print "<h3> Votre demande a bien été envoyé </h3>";
+            print "<h3> Votre demande a bien été envoyée. </h3>";
         } else {
             print "<h3> demande Error </h3>";
         }
     }
     else if ($type == 1) {
         if (emprunteur_return($pretId)) {
-            print "<h3> Votre demande a bien été envoyé </h3>";
+            print "<h3> Votre demande a bien été envoyée. </h3>";
         } else {
             print "<h3> Error </h3>";
         }
     }
     else if ($type == 2) {
         if (preteur_confirmer($pretId)) {
-            print "<h3> Votre demande a bien été envoyé </h3>";
+            print "<h3> Votre demande a bien été envoyée. </h3>";
         } else {
             print "<h3> Error </h3>";
         }
