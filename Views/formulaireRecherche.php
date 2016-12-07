@@ -66,7 +66,7 @@ include __DIR__ . '/../Controls/ListeCategorie.php';
 							<div class="form-group">
 								<label for="categorie" > Catégorie </label>
 								<br><select name="categorie" id="categorie" onchange="fetch_select_Categorie(this.value);"></br>
-									<option>Selectionner une catégorie</option>
+									<option id="defaultOption">Selectionner une catégorie</option>
 									<?php printSelect($tab); ?>
 								</select>
 							</div>
