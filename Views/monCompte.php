@@ -180,9 +180,9 @@ $code_postale = get_commune($id_commune);
 
                         <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                             <label for="omdp" >Commune :</label>
-                            <input type="text" name="commune" id="commune" class="form-control" Value="<?php echo $code_postale; ?>" placeholder="Commune" tabindex="7">
+                            <input type="text" name="commune" id="commune" class="form-control" list="noms_communes" Value="<?php echo $code_postale; ?>" placeholder="Commune" tabindex="7">
                             <span class="errors" id="communeerror"></span>
-                            <datalist id="commune">
+                            <datalist id="noms_communes">
                                 <?php include "Models/autocomplete_commune.php"; ?>
                             </datalist>
                         </div>
@@ -272,6 +272,5 @@ $code_postale = get_commune($id_commune);
 
     </div> <!-- fermeture du row general -->
 </div> <!-- fermeture du content -->
-
 </body>
 </html>

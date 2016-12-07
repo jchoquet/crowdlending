@@ -14,7 +14,7 @@ $adresse = $_POST['adresse'];
 $email = $_POST['email'];
 $commune = $_POST['commune'];
 $id = $_SESSION['login'];
-$id_commune = 33454;
+$id_commune = -1;
 $pwd=$_SESSION['pwd'];
 
 
@@ -63,6 +63,30 @@ if (verifFullfill() == 0  && verifEmail() == 0 && verifUsername() == 0) {
     // Enregistrement du nouvel utilisateur dans la BD
     $mdp=$_POST['nmdp'];
     $safemdp = password_hash($mdp, PASSWORD_DEFAULT);
+
+    //Préparation de la requête de recherche de l'id de la ville de l'utilisateur
+    $reqId = $DB -> prepare("SELECT id FROM commune WHERE nom = :commune");
+    $reqId->bindValue(':commune',substr($commune, 0, -5));
+
+    //Execution et récupération de cet id
+    $reqId->execute();
+
+    //Si des villes ont été trouvées, on stocke l'ID qui lui correspond dans $id_commune
+    if ($reqId->rowCount() > 0)
+    {
+        $check = $reqId->fetch(PDO::FETCH_ASSOC);
+        global $id_commune;
+        $id_commune = $check['id'];
+    }
+    else
+    {
+        //Cas où la commune n'a pas été trouvée
+        $erreur = "commune";
+        header("Location: ../Controls/inscription.php?err=$erreur");
+    }
+
+
+
     // Requête de modification des informations de l'utilisateur
     $result = modif_utilisateur($username, $safemdp, $prenom, $nom, $email, $id_commune, $adresse, $path_photo, $id);
     //Si des villes ont été trouvées, on stocke l'ID qui lui correspond dans $id_commune
