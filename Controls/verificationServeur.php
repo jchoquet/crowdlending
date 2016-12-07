@@ -78,18 +78,13 @@ function verifUsername()
 
 function verifPhone()
 {
-	if (isset($_POST['phone']))
+	if (isset($_POST['phone']) && $_POST['phone'] != "")
 	{
-		$_POST['phone'] = htmlspecialchars($_POST['phone']);
+		$phone = htmlspecialchars($_POST['phone']);
 
-		if (preg_match("#^0[1-79]([ ]?[0-9]{2}){4}$#", $_POST['phone']))
-		{
-			return 0;
-		}
-		else
-		{
-			return 1;
-		}
+		return !(preg_match("#^0[1-79]([ ]?[0-9]{2}){4}$#", $phone));
 	}
+	
+	return 0;
 }
 ?>
