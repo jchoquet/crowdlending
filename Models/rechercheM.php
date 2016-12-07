@@ -25,7 +25,7 @@ function get_available_objets($word,$categorie) //En fonction de l'id de l'objet
     }
 
     else{
-        foreach ($DB->query("SELECT objet.path_photo, objet.nom, objet.id, id_owner FROM categorisation JOIN objet ON objet.id=id_objet JOIN categorie ON categorie.id=id_categorie WHERE isAvailable=1 AND objet.nom LIKE \"%$word%\"; AND categorie.nom=\"$categorie\";") as $row)
+        foreach ($DB->query("SELECT objet.path_photo, objet.nom, objet.id, id_owner FROM categorisation JOIN objet ON objet.id=id_objet JOIN categorie ON categorie.id=id_categorie WHERE isAvailable=1 AND objet.nom LIKE \"%$word%\" AND categorie.nom=\"$categorie\";") as $row)
         {
             array_push($informations_objets, array($row['path_photo'], $row['nom'], $row['id'], $row['id_owner']));
         }
