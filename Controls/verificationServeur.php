@@ -84,7 +84,8 @@ function verifPhone()
 
 		return !(preg_match("#^0[1-79]([ ]?[0-9]{2}){4}$#", $phone));
 	}
-	
-	return 0;
+
+	else
+		return 0;
 }
 ?>
