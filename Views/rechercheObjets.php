@@ -16,8 +16,10 @@ if(isset($_GET['searchWord'])){
 }
 
 if(isset($_GET['categorie'])){
-    if($_GET['categorie']!="Selectionner une categorie")
+    if($_GET['categorie']!="Selectionner une catégorie")
+    {
         $categorie = $_GET['categorie'];
+    }
     else{
         $categorie="";
     }
