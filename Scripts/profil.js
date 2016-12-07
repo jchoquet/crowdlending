@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
     $('.page-step').hide();
     $('#page-step-1').show();
 
