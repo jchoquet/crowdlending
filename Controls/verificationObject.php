@@ -38,30 +38,31 @@ if (verifFullfill()==0 && verifTitre()==0 && verifDescription()==0 && verifPhoto
     //Redirection vers la page d'accueil si tout s'est bien passÃ©
     if($result)
     {
-		  if($_POST['categorie'] != 0){
-  			$queryObjet = $DB->prepare("SELECT id FROM objet WHERE id_owner=:owned AND nom=:titre;");
-  			$queryObjet->bindValue(':owned',$owned, PDO::PARAM_INT);
-  			$queryObjet->bindValue(':titre',$titre, PDO::PARAM_STR);
-  			$queryObjet->execute();
-  			$result = $queryObjet->fetch();
-  			$idobjet = $result['id'];
+	  		if (isset($_POST['categorie']))
+			{
+				$queryObjet = $DB->prepare("SELECT id FROM objet WHERE id_owner=:owned AND nom=:titre;");
+				$queryObjet->bindValue(':owned',$owned, PDO::PARAM_INT);
+				$queryObjet->bindValue(':titre',$titre, PDO::PARAM_STR);
+				$queryObjet->execute();
+				$result = $queryObjet->fetch();
+				$idobjet = $result['id'];
 
 
-  			$querycate = $DB->prepare("SELECT id FROM categorie WHERE nom=:titre;");
-  			$querycate->bindValue(':titre',$_POST['categorie'], PDO::PARAM_STR);
-  			$querycate->execute();
-  			$result = $querycate->fetch();
-  			$idcategorie = $result['id'];
+				$querycate = $DB->prepare("SELECT id FROM categorie WHERE nom=:titre;");
+				$querycate->bindValue(':titre',$_POST['categorie'], PDO::PARAM_STR);
+				$querycate->execute();
+				$result = $querycate->fetch();
+				$idcategorie = $result['id'];
 
 
-  			$query = $DB->prepare("INSERT INTO categorisation (id_categorie,id_objet) VALUES (:id_categorie, :id_objet);");
-  			$query->bindValue(':id_categorie',$idcategorie, PDO::PARAM_STR);
-  			$query->bindValue(':id_objet', $idobjet, PDO::PARAM_INT);
-  			$query->execute();
-		  }
+				$query = $DB->prepare("INSERT INTO categorisation (id_categorie,id_objet) VALUES (:id_categorie, :id_objet);");
+				$query->bindValue(':id_categorie',$idcategorie, PDO::PARAM_STR);
+				$query->bindValue(':id_objet', $idobjet, PDO::PARAM_INT);
+				$query->execute();
+		  	}
 
       // Redirection vers la page mesObjets si tout s'est bien passé
-      $_SESSION['message'] = "L'ajout s'est bien déroulé";
+      $_SESSION['message'] = "L'ajout s'est bien déroulé.";
       header('location: ../mesObjets.php');
     }
     else
