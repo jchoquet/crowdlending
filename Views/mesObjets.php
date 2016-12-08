@@ -187,11 +187,9 @@ include "Models/mesObjetsGet.php";
                                 <h4 class="modal-title">Message d'avertissement</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Vous allez supprimer l'objet <?php echo $nom; ?>.</p>
-                                <p> êtes-vous sûr de vouloir continuer ?</p>
                             </div>
                             <div class="modal-footer">
-                                <a id="link-button" role="button" class="btn btn-defaul btn-danger">Supprimer l'objet</a>
+                                <a id="link-button" role="button" class="btn btn-default btn-danger">Supprimer l'objet</a>
                                 <button type="button" class="btn btn-default btn-success" data-dismiss="modal" id="dismiss-button">
                                     Annuler
                                 </button>
