@@ -6,7 +6,7 @@ include __DIR__ . '/../Controls/ListeCategorie.php';
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Lend it - Mes objets</title>
+    <title>Lend it - Rechercher</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,74 +20,58 @@ include __DIR__ . '/../Controls/ListeCategorie.php';
 
     <!-- Source css pour le design du site -->
     <link rel="stylesheet" href="Styles/base.css">
-    <!-- Source css pour cette page -->
-    <link rel="stylesheet" href="Styles/mesObjets.css">
-    <link rel="stylesheet" href="Styles/popupObjets.css">
 
-    <script>
-        if ($(window).width() > 768)
-        {
-            <?php $DIV = 5; ?> /* tablet : 8 */
-        }
-        if ($(window).width() > 992) /* ordi : 10 */
-        {
-            <?php $DIV = 5; ?>
-        }
-    </script>
+    <!-- Source css pour cette page -->
+    <link rel="stylesheet" href="Styles/formulaireRecherche.css">
+
 </head>
 <body>
 	<?php include __DIR__ . '/../Views/header.php'; ?>
-	<form role="form" id="addobject" method="GET" action="rechercheObjets.php">
-		<div class="site-wrapper">
-			<div class="site-wrapper-inner">
-				<!-- FlÃ¨che retour landing page -->
-				<div id="arrow-container">
-					<a href="../acceuil.php"><i class="material-icons md-36 md-light">arrow_back</i></a>
-				</div>
-				<div class="container">
-					</br><p>
-					<fieldset class="field-border col-md-offset-2 col-md-7">
-						<legend class="field-border">Recherche un objet à emprunter !</legend>
-					</fieldset>
-					</p>
-					</br>
-					<div class="row">
-						<div class="col-md-offset-2 col-md-7">
-							<div class="form-group">
-								<label for="searchWord">Nom de l'objet : </label>
-								<input type="text" class="form-control" id="searchWord" name="searchWord" placeholder="ex: Tournevis, Poisson Rouge, ..." value="" required/>
-								<span class="errors" id="titreerror"></span>
-							</div>
-						</div>
-					</div>
-					</br>
-					<div class="row">
-						<div class="col-md-offset-2 col-md-7">
-							<div class="form-group">
-								<label for="categorie" > Catégorie </label>
-								<br><select name="categorie" id="categorie" onchange="fetch_select_Categorie(this.value);"></br>
-									<option id="defaultOption">Selectionner une catégorie</option>
-									<?php printSelect($tab); ?>
-								</select>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						</br></br>
-						<p><div class="col-md-offset-5  col-md-1">
-							<button type="submit" class="btn btn-primary" id="ajout">Valider la recherche</button>
-							<span class="errors" id="formerror"></span>
-						</div></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-	</form>
+
+  <div class="content">
+    <div class="wrapper">
+      <div class="container" id="container-form">
+        <form role="form" id="addobject" method="GET" action="rechercheObjets.php">
+
+          <div class="row">
+  					<fieldset class="field-border col-md-12">
+  						<legend class="field-border">Recherche un objet à emprunter !</legend>
+  					</fieldset>
+  				</div>
+
+  				<div class="row">
+  					<div class="form-group col-md-12">
+  							<label for="searchWord">Nom de l'objet : </label>
+  							<input type="text" class="form-control" id="searchWord" name="searchWord" placeholder="ex: Tournevis, Poisson Rouge, ..." value="" required/>
+  							<span class="errors" id="titreerror"></span>
+  					</div>
+  				</div>
+
+  				<div class="row">
+  					<div class="form-group col-md-12">
+  						<label for="categorie" > Catégorie </label>
+            </div>
+            <div class="form-group col-md-6">
+  						<select name="categorie" id="categorie" class="form-control" onchange="fetch_select_Categorie(this.value);">
+  							<option id="defaultOption">Selectionner une catégorie</option>
+  							<?php printSelect($tab); ?>
+  						</select>
+  				  </div>
+          </div>
+
+
+          <p class="lead text-center">
+            <button type="submit" class="btn btn-md btn-success" id="ajout" name="ajout">Valider la recherche</button>
+          </p>
+          <span class="errors" id="formerror"></span>
+
+	      </form>
+      </div>
+    </div>
+  </div>
+
 	<?php include __DIR__ . '/../Views/footer.php'; ?>
 </body>
 
 <script type="text/javascript" src="Scripts/config.js"></script>
-<script type="text/javascript" src="Scripts/popupObjet.js"></script>
-
 </html>
