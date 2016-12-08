@@ -304,10 +304,11 @@ if (isset($_SESSION['message']) && !$pageWasRefreshed)
                     <?php
                 }
                 ?>
-        </div>
+            </div>
 
 
-    </div> <!-- fermeture du row general -->
-</div> <!-- fermeture du content -->
+        </div> <!-- fermeture du row general -->
+    </div> <!-- fermeture du content -->
+</div>
 </body>
 </html>
