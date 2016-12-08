@@ -50,19 +50,6 @@ $numero_telephone= $informations[0][6];
 $id_commune= $informations[0][7];
 $code_postal = get_commune($id_commune);
 
-
-$pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'];
-if (isset($_SESSION['message_suppression']) && !$pageWasRefreshed)
-{
-    ?>
-    <div class="alert alert-danger alert-dismissable fade in" >
-        <a href = "#" class="close" data-dismiss = "alert" aria-label = "close" >&times;</a >
-        <?php echo $_SESSION['message_suppression']; ?>
-    </div >
-    <?php
-    unset($_SESSION['message']);
-}
-
 ?>
 
 
@@ -258,13 +245,13 @@ if (isset($_SESSION['message_suppression']) && !$pageWasRefreshed)
 
                 <div class="form-group col-md-12 form-group">
                     <label  for="omdp" >Username :</label>
-                    <input type="text" name="username" id="username" class="form-control" Value="<?php echo $username; ?>" placeholder="username" tabindex="3" required/>
+                    <input type="text" name="username" id="username" class="form-control" Value="<?php echo $username; ?>" placeholder="username" tabindex="3" readonly/>
                     <span class="errors" id="usernameerror"></span>
                 </div>
 
                 <div class="form-group col-md-12 form-group">
                     <label  for="omdp" >E-mail :</label>
-                    <input type="email" name="email" id="email" class="form-control" Value="<?php echo $email; ?>" placeholder="Email" tabindex="4">
+                    <input type="email" name="email" id="email" class="form-control" Value="<?php echo $email; ?>" placeholder="Email" tabindex="4" readonly>
                     <span class="errors" id="emailerror"></span>
                 </div>
 
@@ -277,12 +264,17 @@ if (isset($_SESSION['message_suppression']) && !$pageWasRefreshed)
                 <?php
                 if (nb_prets_emprunts_actifs($id) != 0)
                 {
-                    $_SESSION['message_suppression'] = "<strong>Vous avez des prêts ou des emprunts en cours.<br>Veuillez les terminer avant de pouvoir supprimer votre compte.</strong>";
+                    ?>
+                    <div class="alert alert-danger" >
+                        <strong>Vous avez des prêts ou des emprunts en cours.<br>Veuillez les terminer avant de pouvoir supprimer votre compte.</strong>
+                    </div >
+                    <?php
+
                     ?>
                     <div class="form-group">
                         <div class="profile-userbuttons">
-                            <a href="monCompte.php" class="btn btn-lg btn-default btn-danger" id="delete" name="delete">Supprimer
-                                mon compte</a>
+                            <button class="btn btn-lg btn-default btn-danger" disabled>Supprimer
+                                mon compte</button>
                             <span class="errors" id="formerror"></span>
                             <!-- <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button> -->
                         </div>
