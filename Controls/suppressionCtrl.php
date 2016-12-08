@@ -34,18 +34,9 @@ if (sizeof($photos_objets) != 0)
 }
 
 if (suppression_compte($id_user))
-{
-    print "Votre compte a été supprimé.<br>Redirection vers la page d'accueil.";
-    sleep(3);
     header("Location: ../Controls/deconnexion.php");
-}
 
 else
-{
-    print "Erreur lors de la suppression de votre compte";
-    sleep(3);
     header("Location: ../monCompte.php");
-
-}
 
 ?>
