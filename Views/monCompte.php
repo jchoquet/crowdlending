@@ -48,7 +48,21 @@ $email = $informations[0][3];
 $adresse= $informations[0][5];
 $numero_telephone= $informations[0][6];
 $id_commune= $informations[0][7];
-$code_postale = get_commune($id_commune);
+$code_postal = get_commune($id_commune);
+
+
+$pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'];
+if (isset($_SESSION['message']) && !$pageWasRefreshed)
+{
+    ?>
+    <div class="alert alert-danger alert-dismissable fade in" >
+        <a href = "#" class="close" data-dismiss = "alert" aria-label = "close" >&times;</a >
+        <?php echo $_SESSION['message']; ?>
+    </div >
+    <?php
+    $_SESSION['message'] = NULL;
+}
+
 ?>
 
 
@@ -126,7 +140,7 @@ $code_postale = get_commune($id_commune);
                             </tr>
                             <tr>
                                 <td>Commune</td>
-                                <td><?php echo $code_postale; ?></td>
+                                <td><?php echo $code_postal; ?></td>
                             </tr>
                             </tbody>
                         </table>
@@ -180,7 +194,7 @@ $code_postale = get_commune($id_commune);
 
                         <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                             <label for="omdp" >Commune :</label>
-                            <input type="text" name="commune" id="commune" class="form-control" list="noms_communes" Value="<?php echo $code_postale; ?>" placeholder="Commune" tabindex="7">
+                            <input type="text" name="commune" id="commune" class="form-control" list="noms_communes" Value="<?php echo $code_postal; ?>" placeholder="Commune" tabindex="7">
                             <span class="errors" id="communeerror"></span>
                             <datalist id="noms_communes">
                                 <?php include "Models/autocomplete_commune.php"; ?>
@@ -254,19 +268,42 @@ $code_postale = get_commune($id_commune);
                     <span class="errors" id="emailerror"></span>
                 </div>
 
-                <div class="form-group col-md-12 form-group">
+                <!--<div class="form-group col-md-12 form-group">
                     <label for="motif"> Motif :</label>
                     <textarea class="form-control" id="motif" name="motif" placeholder="Pourquoi souhaitez-vous supprimer votre compte ? " ></textarea>
-                </div>
+                </div>-->
 
 
-                <div class="form-group">
-                    <div class="profile-userbuttons">
-                        <button type="submit" class="btn btn-lg btn-default btn-danger" id="delete" name="delete">Supprimer mon compte</button>
-                        <span class="errors" id="formerror"></span>
-                        <!-- <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button> -->
+                <?php
+                if (nb_prets_emprunts_actifs($id) != 0)
+                {
+                    $_SESSION['message'] = "<strong>Vous avez des prêts ou des emprunts en cours.<br>Veuillez les terminer avant de pouvoir supprimer votre compte.</strong>";
+                    ?>
+                    <div class="form-group">
+                        <div class="profile-userbuttons">
+                            <a href="monCompte.php" class="btn btn-lg btn-default btn-danger" id="delete" name="delete">Supprimer
+                                mon compte</a>
+                            <span class="errors" id="formerror"></span>
+                            <!-- <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button> -->
+                        </div>
                     </div>
-            </div>
+                    <?php
+                }
+
+                else
+                {
+                    ?>
+                    <div class="form-group">
+                        <div class="profile-userbuttons">
+                            <button class="btn btn-lg btn-default btn-danger" id="delete" name="delete">Supprimer
+                                mon compte</button>
+                            <span class="errors" id="formerror"></span>
+                            <!-- <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button> -->
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
         </div>
 
 
