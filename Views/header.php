@@ -22,7 +22,7 @@ if (!isset($_SESSION['login']))
       <ul class="nav navbar-nav">
         <li class="active"><a href="acceuil.php"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
         <li><a href="ajout.php"><span class="glyphicon glyphicon-plus"></span> Ajouter un objet</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-search"></span> Rechercher un objet</a></li>
+        <li><a href="rechercheObjets.php"><span class="glyphicon glyphicon-search"></span> Rechercher un objet</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-bell"></span> Faire une demande</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION["username"]; ?>
@@ -31,7 +31,7 @@ if (!isset($_SESSION['login']))
           <ul class="dropdown-menu">
             <li><a href="monCompte.php">Mon compte</a></li>
             <li><a href="mesObjets.php">Mes objets</a></li>
-            <li><a href="#">Mon historique</a></li>
+            <li><a href="historique.php">Mes échanges</a></li>
           </ul>
         </li>
       </ul>
