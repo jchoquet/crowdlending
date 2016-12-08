@@ -35,4 +35,15 @@ function get_commune($idCommune)
 
 }
 
+
+// Renvoie le nombre de prêts et d'emprunts en cours d'un utilisateur
+// Sert à savoir si un utilisateur peut supprimer son compte
+function nb_prets_emprunts_actifs($id_user)
+{
+    global $DB;
+    $nb_prets_actifs = $DB -> query("SELECT COUNT(pret.id) FROM pret JOIN objet ON pret.id_objet = objet.id JOIN utilisateur ON objet.id_owner = utilisateur.id WHERE utilisateur.id=\"$id_user\" AND isAccepted=1 AND isReturned!=1;") -> fetch()[0];
+    $nb_emprunts_actifs = $DB -> query("SELECT COUNT(id) FROM pret WHERE id_borrower=\"$id_user\" AND isAccepted=1 AND isReturned!=1;") -> fetch()[0];
+    return $nb_prets_actifs + $nb_emprunts_actifs;
+}
+
 ?>
