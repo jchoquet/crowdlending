@@ -46,4 +46,28 @@ function nb_prets_emprunts_actifs($id_user)
     return $nb_prets_actifs + $nb_emprunts_actifs;
 }
 
+
+// Renvoie le path_photo de l'image de profil d'un utilisateur
+function photo_user($id_user)
+{
+    global $DB;
+    return $DB -> query("SELECT path_photo FROM utilisateur WHERE id=\"$id_user\";") -> fetch()[0];
+}
+
+// Renvoie les paths des photos de tous les objets appartenant à un utilisateur
+function all_photos_objects($id_user)
+{
+    global $DB;
+    return $DB -> query("SELECT path_photo FROM objet WHERE id_owner=\"$id_user\";") -> fetch();
+}
+
+
+// Supprime l'utilisateur de la base de données
+// Tout ce qui est lié à cet utilisateur sera supprimé (objets, prêts)
+function suppression_compte($id_user)
+{
+    global $DB;
+    return $DB -> exec("DELETE FROM utilisateur WHERE id=\"$id_user\";");
+}
+
 ?>
