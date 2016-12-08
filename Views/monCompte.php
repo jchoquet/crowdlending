@@ -304,11 +304,11 @@ $code_postal = get_commune($id_commune);
                                         </div>
                                         <div class="modal-body">
                                             <p>Vous allez supprimer votre compte.</p>
-                                            <p>Cette action est définitive.</p>
+                                            <p><strong>Cette action est définitive.</strong></p>
                                             <p>Etes-vous sûr de vouloir continuer ?</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <a id="link-button" role="button" class="btn btn-default btn-danger">Supprimer l'objet</a>
+                                            <a href="Controls/suppressionCtrl.php" id="link-button" role="button" class="btn btn-default btn-danger">Supprimer mon compte</a>
                                             <button type="button" class="btn btn-default btn-success" data-dismiss="modal" id="dismiss-button">
                                                 Annuler
                                             </button>
