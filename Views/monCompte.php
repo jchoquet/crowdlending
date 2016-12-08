@@ -287,12 +287,36 @@ $code_postal = get_commune($id_commune);
                     ?>
                     <div class="form-group">
                         <div class="profile-userbuttons">
-                            <button class="btn btn-lg btn-default btn-danger" id="delete" name="delete" data-toggle="modal" data-target=\"#modal_suppression\">Supprimer
-                                mon compte</button>
+                            <div class="btn btn-lg btn-default btn-danger" id="delete" name="delete" data-toggle="modal" data-target="#myModal">Supprimer
+                                mon compte</div>
                             <span class="errors" id="formerror"></span>
                             <!-- <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button> -->
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <h4 class="modal-title" id="myModalLabel">Suppression de compte</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Vous allez supprimer votre compte.</p>
+                                            <p>Cette action est définitive.</p>
+                                            <p>Etes-vous sûr de vouloir continuer ?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a id="link-button" role="button" class="btn btn-default btn-danger">Supprimer l'objet</a>
+                                            <button type="button" class="btn btn-default btn-success" data-dismiss="modal" id="dismiss-button">
+                                                Annuler
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
                     <?php
                 }
                 ?>
@@ -302,32 +326,6 @@ $code_postal = get_commune($id_commune);
         </div> <!-- fermeture du row general -->
     </div> <!-- fermeture du content -->
 </div>
-
-
-<div class="modal fade" id="modal_suppression" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Suppression de compte</h4>
-            </div>
-            <div class="modal-body">
-                <p>Vous allez supprimer votre compte.</p>
-                <p>Cette action est définitive.</p>
-                <p>Etes-vous sûr de vouloir continuer ?</p>
-            </div>
-            <div class="modal-footer">
-                <a id="link-button" role="button" class="btn btn-default btn-danger">Supprimer l'objet</a>
-                <button type="button" class="btn btn-default btn-success" data-dismiss="modal" id="dismiss-button">
-                    Annuler
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 </body>
 </html>
