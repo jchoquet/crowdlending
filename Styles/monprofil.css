@@ -98,13 +98,6 @@ body {
     background: #fff;
 }
 
-/* Bouton changement d'image */
-
-/*@media (min-width: 992px) {
-    .input-group {
-        margin-top: 50px;
-    }
-}*/
 
 .content {
     margin-top: 20px;
@@ -125,4 +118,34 @@ body {
 .profile-userbuttons a:hover {
     text-decoration: none;
     color: white;
+}
+
+/* Barre de navigation xs */
+
+.btn-nav {
+    margin-bottom: 10px;
+}
+
+.btn-nav .btn {
+    margin-top: 3px;
+    border: none;
+}
+
+.btn-nav .btn:hover {
+  background-color: #fafcfd;
+}
+
+.btn-nav .btn:hover a, .btn-nav .btn:hover span {
+    color: #5bc0de;
+}
+
+.btn-nav a {
+    color: #93a3b5;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.btn-nav span {
+    color: #93a3b5;
 }

@@ -53,9 +53,36 @@ $code_postale = get_commune($id_commune);
 
 
 <div class="container-fluid content">
-    <div class="row">
-        <div class="col-sm-3 col-md-2 profile-sidebar">
 
+    <!-- Menu pour les devices xs -->
+    <div class="row">
+        <div class="col-xs-12 menu-xs visible-xs">
+            <div class="row btn-nav btn-step-menu">
+                <div class="col-xs-offset-1 col-xs-10">
+                    <button type="button" class="btn btn-default active">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <a href="#" data-page-step="#page-step-1">Apercu</a>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-wrench"></span>
+                    <a href="#" data-page-step="#page-step-2">Modifier</a>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-trash"></span>
+                    <a href="#" data-page-step="#page-step-3">Supprimer</a>
+                    </button>
+                    <button type="button" class="btn btn-default" >
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <a href="view_profil.php?username=<?php echo $username; ?>">Profil public</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <!-- sidebar pour les devices sm, md et lg -->
+        <div class="col-sm-3 col-md-2 profile-sidebar hidden-xs">
             <!-- SIDEBAR USERPIC -->
             <div class="thumbnail">
                 <img src="Images/Users/<?php echo $path_photo ?>" class="img-responsive" alt="">
@@ -89,7 +116,7 @@ $code_postale = get_commune($id_commune);
         </div>
 
         <!-- Contenu pour afficher le profil -->
-        <div class="col-sm-9 col-md-10 page-step" id="page-step-1">
+        <div class="col-xs-12 col-sm-9 col-md-10 page-step" id="page-step-1">
             <div class="profile-content">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-lg-4">
