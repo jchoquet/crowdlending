@@ -58,7 +58,12 @@ function photo_user($id_user)
 function all_photos_objects($id_user)
 {
     global $DB;
-    return $DB -> query("SELECT path_photo FROM objet WHERE id_owner=\"$id_user\";") -> fetch();
+    $paths_photos = array();
+    foreach ($DB -> query("SELECT path_photo FROM objet WHERE id_owner=\"$id_user\";") as $row)
+    {
+        array_push($paths_photos, $row['path_photo']);
+    }
+    return $paths_photos;
 }
 
 
