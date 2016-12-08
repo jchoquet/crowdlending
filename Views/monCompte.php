@@ -52,15 +52,15 @@ $code_postal = get_commune($id_commune);
 
 
 $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'];
-if (isset($_SESSION['message']) && !$pageWasRefreshed)
+if (isset($_SESSION['message_suppression']) && !$pageWasRefreshed)
 {
     ?>
     <div class="alert alert-danger alert-dismissable fade in" >
         <a href = "#" class="close" data-dismiss = "alert" aria-label = "close" >&times;</a >
-        <?php echo $_SESSION['message']; ?>
+        <?php echo $_SESSION['message_suppression']; ?>
     </div >
     <?php
-    $_SESSION['message'] = NULL;
+    unset($_SESSION['message']);
 }
 
 ?>
@@ -277,7 +277,7 @@ if (isset($_SESSION['message']) && !$pageWasRefreshed)
                 <?php
                 if (nb_prets_emprunts_actifs($id) != 0)
                 {
-                    $_SESSION['message'] = "<strong>Vous avez des prêts ou des emprunts en cours.<br>Veuillez les terminer avant de pouvoir supprimer votre compte.</strong>";
+                    $_SESSION['message_suppression'] = "<strong>Vous avez des prêts ou des emprunts en cours.<br>Veuillez les terminer avant de pouvoir supprimer votre compte.</strong>";
                     ?>
                     <div class="form-group">
                         <div class="profile-userbuttons">
@@ -295,7 +295,7 @@ if (isset($_SESSION['message']) && !$pageWasRefreshed)
                     ?>
                     <div class="form-group">
                         <div class="profile-userbuttons">
-                            <button class="btn btn-lg btn-default btn-danger" id="delete" name="delete">Supprimer
+                            <button class="btn btn-lg btn-default btn-danger" id="delete" name="delete" data-toggle="modal" data-target=\"#modal_suppression\">Supprimer
                                 mon compte</button>
                             <span class="errors" id="formerror"></span>
                             <!-- <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button> -->
@@ -310,5 +310,32 @@ if (isset($_SESSION['message']) && !$pageWasRefreshed)
         </div> <!-- fermeture du row general -->
     </div> <!-- fermeture du content -->
 </div>
+
+
+<div class="modal fade" id="modal_suppression" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Suppression de compte</h4>
+            </div>
+            <div class="modal-body">
+                <p>Vous allez supprimer votre compte.</p>
+                <p>Cette action est définitive.</p>
+                <p>Etes-vous sûr de vouloir continuer ?</p>
+            </div>
+            <div class="modal-footer">
+                <a id="link-button" role="button" class="btn btn-default btn-danger">Supprimer l'objet</a>
+                <button type="button" class="btn btn-default btn-success" data-dismiss="modal" id="dismiss-button">
+                    Annuler
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </body>
 </html>
