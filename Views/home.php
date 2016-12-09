@@ -14,11 +14,23 @@
 
     <!-- Source css pour le design du site -->
     <link rel="stylesheet" href="Styles/base.css">
+    <!-- Source css pour la page -->
+    <link rel="stylesheet" href="Styles/home.css">
+
   </head>
 
   <body>
 
     <?php include("header.php"); ?>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-xs-12">
+                <img class="img-responsive" src="Images/home.png" alt="">
+            </div>
+        </div>
+    </div>
+
     <?php include("footer.php"); ?>
 
     <!-- Source jquery -->
