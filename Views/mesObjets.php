@@ -187,11 +187,9 @@ include "Models/mesObjetsGet.php";
                                 <h4 class="modal-title">Message d'avertissement</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Vous allez supprimer l'objet <?php echo $nom; ?>.</p>
-                                <p> êtes-vous sûr de vouloir continuer ?</p>
                             </div>
                             <div class="modal-footer">
-                                <a id="link-button" role="button" class="btn btn-defaul btn-danger">Supprimer l'objet</a>
+                                <a id="link-button" role="button" class="btn btn-default btn-danger">Supprimer l'objet</a>
                                 <button type="button" class="btn btn-default btn-success" data-dismiss="modal" id="dismiss-button">
                                     Annuler
                                 </button>
@@ -201,7 +199,7 @@ include "Models/mesObjetsGet.php";
                 </div>
 
 
-                <div class="modal fade" id="modifObj" role="dialog">
+                <div class="modal fade" id="modifObj" role="dialog" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -255,7 +253,6 @@ include "Models/mesObjetsGet.php";
                                 </form>
                             </div>
                             <div class="modal-footer">
-                            <p>test</p>
                             </div>
                             </div>
                     </div>
