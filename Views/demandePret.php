@@ -99,7 +99,7 @@ include "Models/demandePretM.php";
 
                 print "<td class='nomObj'>" . $nom . "</td>";
 
-                print "<td class='username_borrower'>" . $username_borrower . "</td>";
+                print "<td class='username_borrower'><a href='view_profil.php?username=$username_borrower'>" . $username_borrower . "</a></td>";
 
                 print "<td class='choix_pret'>";
 
@@ -122,7 +122,7 @@ include "Models/demandePretM.php";
                 print "</td>";
                 print "</tr>";
             }
-        } 
+        }
         else
             print "Vous n'avez aucune demande de prêt.";
         ?>
