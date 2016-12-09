@@ -106,15 +106,10 @@ else{
                     print "<td class='supObj'>";
 
                     $page_email = "emailPreteur.php?owner=".$infor[3];
-                    $page_demande_traiter = "demandeTraiter.php?id=".$infor[3]."&type=0";
 
                     //button "get email address"
                     print "<a class=\"btn btn-primary btn-lg pull-right\" href=\"$page_email\">
                     <span class=\"glyphicon glyphicon-envelope\"></span> </a>";
-
-                    //button "demander l'objet"
-                    print "<div id=\"demande\" class=\"btn btn-success btn-lg pull-right\" style=\"margin-right: 10px\" data-nom=\"$nom\" data-link=\"$page_demande_traiter\"> 
-                    Demander </div>";
                     ?>
 
                     <?php
