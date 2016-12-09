@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Lend it - A propos</title>
-    <meta name="description" content="Page de Profil">
-    <meta name="author" content="Mahrous Anouar">
 
     <!-- Source CSS Bootstrap -->
     <link rel="stylesheet" href="Styles/bootstrap.css">
