@@ -32,7 +32,10 @@
             <h2>Notre <strong>projet</strong></h2>
         </div>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed leo nec erat rutrum tincidunt. Phasellus id rutrum mauris, quis efficitur neque. Aenean pretium neque euismod urna iaculis molestie. Nam maximus, orci eleifend posuere malesuada, velit turpis semper eros, id eleifend nibh velit non turpis. Nulla commodo non nisl quis molestie. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi orci risus, sagittis ut pharetra et, gravida feugiat neque. Nunc nibh nulla, imperdiet at quam vel, dapibus porta nunc. Vestibulum cursus et nulla et consequat. Fusce tincidunt fringilla erat id scelerisque. Quisque fermentum nisl sed ligula vulputate ornare.</p>
+        <p>
+            Lend it est une plateforme collaborative qui propose le <a href="ajout.php"> partage d'objets</a> gratuits en libre-service entre particuliers. La plateforme est sécurisée et vous permet de réaliser des économies tout en préservant l'environnement grâce à une consommation plus raisonnée.
+        </p>
+
 
         <div class="heading">
             <h2>Notre<strong> équipe</strong></h2>
