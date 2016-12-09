@@ -293,11 +293,14 @@ $code_postale = get_commune($id_commune);
                         <span class="errors" id="formerror"></span>
                         <!-- <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button> -->
                     </div>
+                </div>
             </div>
         </div>
 
-
-    </div> <!-- fermeture du row general -->
+</div>
 </div> <!-- fermeture du content -->
+
+<?php include("Views/footer.php"); ?>
+
 </body>
 </html>
