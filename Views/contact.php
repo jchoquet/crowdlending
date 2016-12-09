@@ -27,17 +27,6 @@
 
 <?php include("Views/header.php"); ?>
 
-<!-- <div class="container content">
-    <div class="row">
-      <div class="col-md-2"> </div>
-      <div class="col-md-8">
-        <h1>Nous contacter</h1>
-        <p class="lead">Vous avez-une question, une réclamation ou vous souhaitez simplement obtenir plus d'informations ?</p>
-        <p>Vous pouvez contacter l'équipe de modération / administration aux coordonnées suivantes</p>
-    </div>
-    </div>
-</div> -->
-
     <div class="container content">
 
         <div class="heading">
@@ -47,7 +36,29 @@
         <p class="lead">Vous avez une question, une réclamation ou vous souhaitez simplement obtenir plus d'informations ?</p>
         <p>Vous pouvez contacter l'équipe de modération / administration aux coordonnées suivantes :</p>
 
+        <div class="container icones">
+            <div class="row text-center">
+                <div class="col-sm-4 col-xs-6 third-box">
+                    <h1><span class="glyphicon glyphicon-send"></span></h1>
+                    <h3>E-mail</h3>
+                    <p>info@yourdomain.com</p><br>
+                </div>
+
+                <div class="col-sm-4 col-xs-6 first-box">
+                    <h1><span class="glyphicon glyphicon-earphone"></span></h1>
+                    <h3>Téléphone</h3>
+                    <p>+880-1700-987654</p><br>
+                </div>
+
+                <div class="col-sm-4 col-xs-6 second-box">
+                    <h1><span class="glyphicon glyphicon-home"></span></h1>
+                    <h3>Adresse</h3>
+                    <p>1036 Gulshan Road</p><br>
+                </div>
+            </div>
+        </div>
     </div>
+
 
 <?php include ("Views/footer.php"); ?>
 

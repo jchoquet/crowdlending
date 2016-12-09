@@ -41,3 +41,9 @@ p {
     text-align: center;
     margin-bottom: 50px;
 }
+
+/* Icones */
+
+.icones .glyphicon {
+  color: #31b0d5;
+}
