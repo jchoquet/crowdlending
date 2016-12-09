@@ -45,7 +45,7 @@
             <div class="col-sm-2">
                 <div class="team-members">
                     <div class="team-avatar">
-                        <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member1.png" alt="">
+                        <img class="img-responsive" src="Images/no_photo.jpg" alt="">
                     </div>
                     <div class="team-desc">
                         <h4>Anouar Mahrous</h4>
@@ -56,7 +56,7 @@
             <div class="col-sm-2">
                 <div class="team-members">
                     <div class="team-avatar">
-                        <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member2.png" alt="">
+                        <img class="img-responsive" src="Images/no_photo.jpg" alt="">
                     </div>
                     <div class="team-desc">
                         <h4>Julie Choquet</h4>
@@ -67,7 +67,7 @@
             <div class="col-sm-2">
                 <div class="team-members">
                     <div class="team-avatar">
-                        <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member3.png" alt="">
+                        <img class="img-responsive" src="Images/wadidi.jpg" alt="">
                     </div>
                     <div class="team-desc">
                         <h4>Mehdi Khadir</h4>
@@ -78,7 +78,7 @@
             <div class="col-sm-2">
                 <div class="team-members">
                     <div class="team-avatar">
-                        <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member3.png" alt="">
+                        <img class="img-responsive" src="Images/no_photo.jpg" alt="">
                     </div>
                     <div class="team-desc">
                         <h4>Tibault Louet</h4>
@@ -89,7 +89,7 @@
             <div class="col-sm-2">
                 <div class="team-members">
                     <div class="team-avatar">
-                        <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member3.png" alt="">
+                        <img class="img-responsive" src="Images/julien.jpg" alt="">
                     </div>
                     <div class="team-desc">
                         <h4>Julien Rousse</h4>
@@ -100,7 +100,7 @@
             <div class="col-sm-2">
                 <div class="team-members">
                     <div class="team-avatar">
-                        <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member3.png" alt="">
+                        <img class="img-responsive" src="Images/no_photo.jpg" alt="">
                     </div>
                     <div class="team-desc">
                         <h4>Quihao Qian</h4>
