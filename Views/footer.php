@@ -8,7 +8,6 @@
         <ul>
             <li><a href="apropos.php">A propos</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="#">La fine équipe</a></li>
         </ul>
       </div>
     </div>
