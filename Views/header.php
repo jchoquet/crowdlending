@@ -31,6 +31,7 @@ if (!isset($_SESSION['login']))
           <ul class="dropdown-menu">
             <li><a href="monCompte.php">Mon compte</a></li>
             <li><a href="mesObjets.php">Mes objets</a></li>
+            <li><a href="demandePret.php">Mes objets demandés</a></li>
             <li><a href="historique.php">Mes échanges</a></li>
           </ul>
         </li>
