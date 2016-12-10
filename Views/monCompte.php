@@ -29,6 +29,7 @@ include "Models/monProfil.php";
     <!-- Source JavaScript Bootstrap -->
     <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/profil.js"></script>
+    <script src="Scripts/config.js"></script>
 
 </head>
 

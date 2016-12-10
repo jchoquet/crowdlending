@@ -14,9 +14,13 @@ $adresse = $_POST['adresse'];
 $email = $_POST['email'];
 $commune = $_POST['commune'];
 $id = $_SESSION['login'];
-$id_commune = -1;
 $pwd=$_SESSION['pwd'];
 
+//get id_commune of this utilisateur
+$reqId = $DB -> prepare("SELECT id_commune FROM utilisateur WHERE id = :userid");
+$reqId ->bindValue(':userid',$id);
+$reqId->execute();
+$id_commune = $reqId->fetch()['id_commune'];
 
 if(isset($_POST['oldmdp']) && !isset($_POST['nmdp']))
 {
@@ -30,7 +34,7 @@ if(isset($_POST['oldmdp']) && !isset($_POST['nmdp']))
 }
 
 $ancien_path_photo = get_info()[0][4];
-print($ancien_path_photo);
+//print($ancien_path_photo);
 if($_FILES['photo']['name'] != "")
 {
     // Création d'un nom aléatoire pour la photo
@@ -78,22 +82,15 @@ if (verifFullfill() == 0  && verifEmail() == 0 && verifUsername() == 0) {
         global $id_commune;
         $id_commune = $check['id'];
     }
-    else
-    {
-        //Cas où la commune n'a pas été trouvée
-        $erreur = "commune";
-        header("Location: ../Controls/inscription.php?err=$erreur");
-    }
-
-
 
     // Requête de modification des informations de l'utilisateur
     $result = modif_utilisateur($username, $safemdp, $prenom, $nom, $email, $id_commune, $adresse, $path_photo, $id);
     //Si des villes ont été trouvées, on stocke l'ID qui lui correspond dans $id_commune
     if ($result)
-        header('location: ../monCompte.php');
-    else
-        header('location: ../monCompte.php');
+        header('Location:../monCompte.php');
+    else{
+        header('Location:../monCompte.php');
+    }
 }
 else
     echo "Il y a eu un problème lors de votre modification , veuillez cliquer sur le lien ci\n";
