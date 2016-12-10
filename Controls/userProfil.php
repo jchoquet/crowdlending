@@ -11,7 +11,7 @@
     }
     else
     {
-      header('location: acceuil.php');
+      header('location: NoUser.php');
     }
   }
   else
