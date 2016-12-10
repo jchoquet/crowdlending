@@ -179,11 +179,6 @@ $code_postale = get_commune($id_commune);
                             <span class="errors" id="prenomerror"></span>
                         </div>
 
-                        <div class="col-xs-12 col-sm-6 col-md-4 form-group">
-                            <label  for="omdp" >Username :</label>
-                            <input type="text" name="username" id="username" class="form-control" Value="<?php echo $username; ?>" placeholder="username" tabindex="3" required/>
-                            <span class="errors" id="usernameerror"></span>
-                        </div>
 
                         <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                             <label  for="omdp" >E-mail :</label>
