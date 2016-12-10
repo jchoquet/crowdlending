@@ -8,6 +8,8 @@
 
 include __DIR__ . "/../Models/rechercheM.php";
 
+session_start();
+
 //Récupération des variables entrées en $_GET
 
 if(isset($_GET['owner'])){
