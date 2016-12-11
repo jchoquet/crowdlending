@@ -66,9 +66,8 @@ if (verifFullfill()==0 && verifTitre()==0 && verifDescription()==0 && verifPhoto
 		  }
 
       // Redirection vers la page d'accueil si tout s'est bien passé
-      echo "Votre demande a bien été prise en compte.\n";
-      echo "<a href=\"../acceuil.php\">Accueil</a>";
-      //header('location: ../mesObjets.php');
+      	$_SESSION['message'] = "Votre besoin a bien été enregistré.";
+		header('location: ../mesBesoins.php');
     }
     else
     {

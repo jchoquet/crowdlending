@@ -46,6 +46,32 @@ include "Models/mesBesoinsGet.php";
 
 <div class="container content">
     <h2>Mes besoins</h2>
+    
+    <?php
+    if (!empty($_SESSION['message']))
+    {
+    if (strpos($_SESSION['message'], "problème") === false)
+    {
+    ?>
+    <div class="alert alert-success alert-dismissable fade in" >
+        <a href = "#" class="close" data-dismiss = "alert" aria-label = "close" >&times;</a >
+        <?php echo $_SESSION['message']; ?>
+    </div >
+    <?php
+    }
+    else
+    {
+        ?>
+        <div class="alert alert-danger alert-dismissable fade in" >
+            <a href = "#" class="close" data-dismiss = "alert" aria-label = "close" >&times;</a >
+            <?php echo $_SESSION['message']; ?>
+        </div >
+        <?php
+    }
+
+    $_SESSION['message'] = NULL;
+    }
+    ?>
 
     <?php
     $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'];
