@@ -32,7 +32,8 @@ try
 
 			}
 			else
-				echo "Erreur identifiant ou mot de passe";
+				echo "Erreur identifiant ou mot de passe. Pour revenir à la page d'accueil, veuillez cliquer sur le lien suivant \n";
+				echo "<a href=\"../index.php\">Accueil</a>";
 		}
 	}
 
