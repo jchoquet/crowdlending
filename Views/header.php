@@ -25,12 +25,12 @@ if (!isset($_SESSION['login']))
         <li><a href="rechercheObjets.php"><span class="glyphicon glyphicon-search"></span> Rechercher un objet</a></li>
           
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-bell"></span> Demandes
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-bell"></span>Besoins
           <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-              <li><a href="#">Consulter les demandes</a></li>
-              <li><a href="#">Faire une demande</a></li>
+              <li><a href="rechercheBesoins.php">Consulter les besoins</a></li>
+              <li><a href="besoin.php">Exprimer un besoin/a></li>
           </ul>
         </li>
 
@@ -43,6 +43,7 @@ if (!isset($_SESSION['login']))
             <li><a href="mesObjets.php">Mes objets</a></li>
             <li><a href="demandePret.php">Mes demandes en attente</a></li>
             <li><a href="historique.php">Mes échanges</a></li>
+            <li><a href="mesBesoins.php">Mes besoins</a></li>
           </ul>
         </li>
       </ul>
