@@ -90,5 +90,8 @@ $(document).ready(function () {
 // Fermeture du popup si l'utilisateur appuie sur la touche "echap"
 $(document).keyup(function(e)
 {
-    if (e.keyCode == 27) $("#dismiss-button").click();
+    if (e.keyCode == 27) {
+        $("#dismiss-button").click();
+        $("#dismiss-button2").click();
+    }
 });

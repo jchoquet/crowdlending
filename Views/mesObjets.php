@@ -333,7 +333,6 @@ include "Models/mesObjetsGet.php";
                 </form>
             </div>
             <div class="modal-footer">
-                <p>test</p>
             </div>
         </div>
     </div>
