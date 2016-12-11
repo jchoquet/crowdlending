@@ -34,8 +34,8 @@ include_once __DIR__ . "/affichage_etat.php";
             <span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="./historique?etat=En+attente#onglet_emprunts">En attente</a></li>
-            <li><a href="./historique?etat=css#onglet_emprunts">CSS</a></li>
-            <li><a href="#">JavaScript</a></li>
+            <li><a href="./historique?etat=Demande+acceptée#onglet_emprunts">Demande acceptée</a></li>
+            <li><a href="./historique?etat=Demande+refusée#onglet_emprunts">Demande refusée</a></li>
         </ul>
     </div>
 

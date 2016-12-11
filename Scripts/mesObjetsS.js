@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function () {
-    $('#boutonSuppression').click(function (e) {
+    $('.boutonSuppression').click(function (e) {
         $("#myModal").modal();
         e.stopPropagation();
         $("#messageConfirmation").html("Vous êtes sur le point de supprimer l'objet '" + this.getAttribute('data-nom') + "'.");

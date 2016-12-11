@@ -175,7 +175,7 @@ include "Models/mesObjetsGet.php";
 
                 print "&nbsp; &nbsp;";
                 
-                print "<div id=\"boutonSuppression\" class=\"btn btn-danger btn-lg pull-right\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
+                print "<div id=\"boutonSuppression\" class=\"btn btn-danger btn-lg pull-right boutonSuppression\" data-nom=\"$nom\" data-link=\"$page_after_delete\">
             <span class=\"glyphicon glyphicon-trash\"></span>
         </div>";
 

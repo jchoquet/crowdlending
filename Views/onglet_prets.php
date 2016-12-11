@@ -26,35 +26,35 @@ include_once __DIR__ . "/affichage_etat.php";
 <body>
 
 
-<div class="container content">
-    <h2>Historique des demandes de prêts</h2>
+    <div class="container content">
+        <h2>Historique des demandes de prêts</h2>
 
-    <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filtrer par :
-            <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a href="./historique?etat=En+attente">En attente</a></li>
-            <li><a href="./historique?etat=css">CSS</a></li>
-            <li><a href="#">JavaScript</a></li>
-        </ul>
-    </div>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filtrer par :
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                <li><a href="./historique?etat=En+attente">En attente</a></li>
+                    <li><a href="./historique?etat=Demande+acceptée">Demande acceptée</a></li>
+                    <li><a href="./historique?etat=Demande+refusée">Demande refusée</a></li>
+                </ul>
+            </div>
 
-    <p>Liste des demandes :</p>
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Photo</th>
-            <th>Nom</th>
-            <th>Demandé par...</th>
-            <th>Etat</th>
-            <th>Recevoir l'objet</th>
-        </tr>
-        </thead>
+            <p>Liste des demandes :</p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Photo</th>
+                        <th>Nom</th>
+                        <th>Demandé par...</th>
+                        <th>Etat</th>
+                        <th>Recevoir l'objet</th>
+                    </tr>
+                </thead>
 
-        <tbody>
+                <tbody>
 
-        <?php
+                    <?php
         $num = 0; // "num" sert à créer les numéros des lignes du tableau
         $informations_prets = get_historique_prets(); // on récupère les informations des objets disponibles de l'utilisateur
 
@@ -63,10 +63,10 @@ include_once __DIR__ . "/affichage_etat.php";
                 $num += 1;
 
                 if ($num > $page_prets * $DIV) // si on a atteint les objets de la page suivante, on s'arrête
-                    break;
+                break;
 
                 if ($num <= ($page_prets - 1) * $DIV) // si on parcourt les objets des pages précédentes, on continue
-                    continue;
+                continue;
 
                 $id_pret = $infor[0];
                 $id_objet = $infor[3];
@@ -100,10 +100,10 @@ include_once __DIR__ . "/affichage_etat.php";
                     print "<td>";
                     if ($isReturned == 0 && $etat == 1) {
                         print "
-                            <div id=\"confirmer\" class=\"btn btn-success\"  data-nom=\"$nom\" data-link=\"$pageTraiter\">
-                                <span class=\"glyphicon glyphicon-thumbs-up\" aria-hidden=\"true\"></span> confirmer
-                            </div>
-                          ";
+                        <div id=\"confirmer\" class=\"btn btn-success\"  data-nom=\"$nom\" data-link=\"$pageTraiter\">
+                            <span class=\"glyphicon glyphicon-thumbs-up\" aria-hidden=\"true\"></span> confirmer
+                        </div>
+                        ";
                     }
                     print "</td>";
 
@@ -112,11 +112,11 @@ include_once __DIR__ . "/affichage_etat.php";
                 }
             }
         } else
-            print "Vous n'avez aucune demande de prêt.";
+        print "Vous n'avez aucune demande de prêt.";
         ?>
 
-        </tbody>
-    </table>
+    </tbody>
+</table>
 </div>
 
 <!-- Pour les pages, on crée des boutons "précédent" et "suivant" -->
