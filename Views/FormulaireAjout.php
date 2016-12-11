@@ -63,7 +63,7 @@
                 </div>
 
                 <p class="lead text-center">
-                     <button type="submit" class="btn btn-md btn-success" id="ajout" name="ajout">Enregistrer mon anonce</button>
+                     <button type="submit" class="btn btn-md btn-success" id="ajout" name="ajout">Enregistrer mon annonce</button>
                 </p>
                 <span class="errors" id="formerror"></span>
 

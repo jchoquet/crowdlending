@@ -37,7 +37,7 @@ include_once __DIR__ . "/affichage_etat.php";
                     <li><a href="./historique?etat=Demande+acceptée#onglet_emprunts">Demande acceptée</a></li>
                     <li><a href="./historique?etat=Demande+refusée#onglet_emprunts">Demande refusée</a></li>
                     <li><a href="./historique?etat=Rendre+en+cours#onglet_emprunts">Rendre en cours</a></li>
-                    <li><a href="./historique?etat=Déja+rendu#onglet_emprunts">Déja rendu</a></li>
+                    <li><a href="./historique?etat=Déjà+rendu#onglet_emprunts">Déjà rendu</a></li>
                 </ul>
             </div>
 

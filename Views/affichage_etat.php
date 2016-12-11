@@ -28,7 +28,7 @@ function affichage_etat($etat, $isReturned)
             }
             if ($isReturned == 1)
             {
-                return "Déja rendu";
+                return "Déjà rendu";
             }
     }
 }
