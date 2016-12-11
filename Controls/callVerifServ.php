@@ -19,9 +19,10 @@ $email = $_POST['email'];
 $commune = $_POST['commune'];
 $id_commune = -1;
 
+$path_photo = 'no_avatar.jpeg';
 
 // Redirection vers la page d'accueil si tous les tests sont passés, ou vers la page d'inscription sinon
-if (verifFullfill() == 0  && verifPassword() && verifEmail() == 0 && verifUsername() == 0)
+if (verifFullfill() == 0  && verifPassword() && verifEmail() == 0 && verifUsername() == 0 && verifPhone()==0)
 {
     global $DB;
 
@@ -31,7 +32,7 @@ if (verifFullfill() == 0  && verifPassword() && verifEmail() == 0 && verifUserna
     // Enregistrement du nouvel utilisateur dans la BD
 
     //Préparation de la requête d'insertion du nouvel utilisateur
-    $sql = $DB->prepare("INSERT INTO utilisateur (username, prenom, nom, email, hash_password, id_commune, adresse, numero_telephone) VALUES (:username, :prenom, :nom, :email, :hashpassword, :id_commune, :adresse, :numero_telephone)");
+    $sql = $DB->prepare("INSERT INTO utilisateur (username, prenom, nom, email, hash_password, id_commune, adresse, numero_telephone, path_photo) VALUES (:username, :prenom, :nom, :email, :hashpassword, :id_commune, :adresse, :numero_telephone, :path_photo)");
     $sql->bindValue(':username',$username, PDO::PARAM_STR);
     $sql->bindValue(':prenom', $prenom, PDO::PARAM_STR);
     $sql->bindValue(':nom', $nom, PDO::PARAM_STR);
@@ -39,7 +40,7 @@ if (verifFullfill() == 0  && verifPassword() && verifEmail() == 0 && verifUserna
     $sql->bindValue(':hashpassword', $hashpassword, PDO::PARAM_STR);
     $sql->bindValue('adresse', $address, PDO::PARAM_STR);
     $sql->bindValue('numero_telephone', $phone, PDO::PARAM_STR);
-
+    $sql->bindValue(':path_photo', $path_photo, PDO::PARAM_STR);
 
     //Préparation de la requête de recherche de l'id de la ville de l'utilisateur
     $reqId = $DB -> prepare("SELECT id FROM commune WHERE nom = :commune");

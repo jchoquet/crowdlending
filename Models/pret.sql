@@ -5,8 +5,10 @@ id_objet INTEGER,
 isAccepted TINYINT DEFAULT 0,
 date_accepted DATE DEFAULT NULL,
 date_refused DATE DEFAULT NULL,
+isReturned TINYINT DEFAULT -1,
 date_returned DATE DEFAULT NULL,
 CONSTRAINT check_pret_isAccepted CHECK (isAccepted=-1 OR isAccepted=0 OR isAccepted=1),
+CONSTRAINT check_pret_isReturned CHECK (isReturned=-1 OR isReturned=0 OR isReturned=1),
 CONSTRAINT fk_pret_borrower FOREIGN KEY (id_borrower) REFERENCES utilisateur(id) ON DELETE CASCADE,
 CONSTRAINT fk_pret_objet FOREIGN KEY (id_objet) REFERENCES objet(id) ON DELETE CASCADE
-);
+)ENGINE=InnoDB;

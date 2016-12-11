@@ -16,8 +16,10 @@ if(isset($_GET['searchWord'])){
 }
 
 if(isset($_GET['categorie'])){
-    if($_GET['categorie']!="Selectionner une categorie")
+    if($_GET['categorie']!="Selectionner une catégorie")
+    {
         $categorie = $_GET['categorie'];
+    }
     else{
         $categorie="";
     }
@@ -115,7 +117,7 @@ else{
                     print "<td class='supObj'>";
 
                     $page_email = "emailPreteur.php?owner=".$infor[3];
-                    $page_demande_traiter = "demandeTraiter.php?id=".$infor[3];
+                    $page_demande_traiter = "demandeTraiter.php?id=".$infor[2]."&type=0";
 
                     //button "get email address"
                     print "<a class=\"btn btn-primary btn-lg pull-right\" href=\"$page_email\">

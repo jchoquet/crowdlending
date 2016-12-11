@@ -52,18 +52,51 @@ include "Models/mesObjetsGet.php";
         $nom = objet_to_delete($id_to_delete);
 
         if (delete_objet($id_to_delete))
-            print "L'objet \"$nom\" a bien été supprimé";
+        {
+            //print "L'objet \"$nom\" a bien été supprimé";
+            ?>
+            <div class="alert alert-success alert-dismissable fade in" >
+                <a href = "#" class="close" data-dismiss = "alert" aria-label = "close" >&times;</a >
+                L'objet <?php echo $nom; ?> a bien été supprimé.
+            </div >
+        <?php
+        }
         
         else
             if (!$pageWasRefreshed)
-                print "<strong > Erreur !</strong > L'objet \"$nom\" n'a pas été supprimé";
+            {
+                ?>
+                <div class="alert alert-danger alert-dismissable fade in" >
+                    <a href = "#" class="close" data-dismiss = "alert" aria-label = "close" >&times;</a >
+                    <strong > Erreur !</strong > L'objet <?php echo $nom; ?> n'a pas été supprimé.
+                </div >
+            <?php
+            }
         
         $_REQUEST['delete'] = NULL;
     }
     
     if (!empty($_SESSION['message'])) 
     {
-        echo $_SESSION['message'];
+        if (strpos($_SESSION['message'], "problème") === false)
+        {
+            ?>
+            <div class="alert alert-success alert-dismissable fade in" >
+                <a href = "#" class="close" data-dismiss = "alert" aria-label = "close" >&times;</a >
+                <?php echo $_SESSION['message']; ?>
+            </div >
+        <?php
+        }
+        else
+        {
+            ?>
+            <div class="alert alert-danger alert-dismissable fade in" >
+                <a href = "#" class="close" data-dismiss = "alert" aria-label = "close" >&times;</a >
+                <?php echo $_SESSION['message']; ?>
+            </div >
+            <?php
+        }
+
         $_SESSION['message'] = NULL;
     } 
     ?>
@@ -154,11 +187,9 @@ include "Models/mesObjetsGet.php";
                                 <h4 class="modal-title">Message d'avertissement</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Vous allez supprimer l'objet <?php echo $nom; ?>.</p>
-                                <p> êtes-vous sûr de vouloir continuer ?</p>
                             </div>
                             <div class="modal-footer">
-                                <a id="link-button" role="button" class="btn btn-defaul btn-danger">Supprimer l'objet</a>
+                                <a id="link-button" role="button" class="btn btn-default btn-danger">Supprimer l'objet</a>
                                 <button type="button" class="btn btn-default btn-success" data-dismiss="modal" id="dismiss-button">
                                     Annuler
                                 </button>
@@ -168,7 +199,7 @@ include "Models/mesObjetsGet.php";
                 </div>
 
 
-                <div class="modal fade" id="modifObj" role="dialog">
+                <div class="modal fade" id="modifObj" role="dialog" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -209,8 +240,6 @@ include "Models/mesObjetsGet.php";
                                                 <input type="text" class="form-control" readonly="" value="Aucun fichier choisi" />
                                             </div>
                                         </div>
-
-
                                     </div>
                                     </div>
 
@@ -224,7 +253,6 @@ include "Models/mesObjetsGet.php";
                                 </form>
                             </div>
                             <div class="modal-footer">
-                            <p>test</p>
                             </div>
                             </div>
                     </div>

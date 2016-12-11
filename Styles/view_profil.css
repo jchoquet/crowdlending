@@ -1,0 +1,35 @@
+.page-header {
+  margin-top: 15px;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+}
+
+body {
+    background: #F1F3FA;
+
+}
+
+.content {
+  padding: 20px 20px 20px 20px;
+  background: #fff;
+  display: table;
+  border-radius: 6px;
+}
+
+@media (min-height: 638px) {
+   .content {
+      margin-top: 90px;
+      width: 80%;
+      height: 70%;
+   }
+}

@@ -7,4 +7,4 @@ isAnswered TINYINT DEFAULT 0,
 description TEXT,
 CONSTRAINT check_object_isAnswered CHECK (isAnswered=0 OR isAnswered=1),
 CONSTRAINT fk_besoin_asker FOREIGN KEY (id_asker) REFERENCES utilisateur(id)
-);
+)ENGINE=InnoDB;

@@ -75,4 +75,17 @@ function verifUsername()
 	}
 	return 0;
 }
+
+function verifPhone()
+{
+	if (isset($_POST['phone']) && $_POST['phone'] != "")
+	{
+		$phone = htmlspecialchars($_POST['phone']);
+
+		return !(preg_match("#^0[1-79]([ ]?[0-9]{2}){4}$#", $phone));
+	}
+
+	else
+		return 0;
+}
 ?>
