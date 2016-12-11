@@ -25,12 +25,12 @@ if (!isset($_SESSION['login']))
         <li><a href="rechercheObjets.php"><span class="glyphicon glyphicon-search"></span> Rechercher un objet</a></li>
           
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-bell"></span>Besoins
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-bell"></span> Besoins
           <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
               <li><a href="rechercheBesoins.php">Consulter les besoins</a></li>
-              <li><a href="besoin.php">Exprimer un besoin/a></li>
+              <li><a href="besoin.php">Exprimer un besoin</a></li>
           </ul>
         </li>
 
