@@ -38,7 +38,7 @@ if (verifFullfill()==0 && verifTitre()==0 && verifDescription()==0 && verifPhoto
     //Redirection vers la page d'accueil si tout s'est bien passÃ©
     if($result)
     {
-	  		if (isset($_POST['categorie']))
+	  		if (isset($_POST['categorie']) && $_POST['categorie'] != 0)
 			{
 				$queryObjet = $DB->prepare("SELECT id FROM objet WHERE id_owner=:owned AND nom=:titre;");
 				$queryObjet->bindValue(':owned',$owned, PDO::PARAM_INT);
