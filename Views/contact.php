@@ -41,19 +41,19 @@
                 <div class="col-sm-4 col-xs-6 third-box">
                     <h1><span class="glyphicon glyphicon-send"></span></h1>
                     <h3>E-mail</h3>
-                    <p>info@yourdomain.com</p><br>
+                    <p>contact@lendit.com</p><br>
                 </div>
 
                 <div class="col-sm-4 col-xs-6 first-box">
                     <h1><span class="glyphicon glyphicon-earphone"></span></h1>
                     <h3>Téléphone</h3>
-                    <p>+880-1700-987654</p><br>
+                    <p>01 11 22 33 44</p><br>
                 </div>
 
                 <div class="col-sm-4 col-xs-6 second-box">
                     <h1><span class="glyphicon glyphicon-home"></span></h1>
                     <h3>Adresse</h3>
-                    <p>1036 Gulshan Road</p><br>
+                    <p>1 square de la Résistance, 91000 Evry</p><br>
                 </div>
             </div>
         </div>
