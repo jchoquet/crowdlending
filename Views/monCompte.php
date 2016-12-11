@@ -181,7 +181,6 @@ $code_postal = get_commune($id_commune);
                             <span class="errors" id="prenomerror"></span>
                         </div>
 
-
                         <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                             <label  for="omdp" >E-mail :</label>
                             <input type="email" name="email" id="email" class="form-control" Value="<?php echo $email; ?>" placeholder="Email" tabindex="4">
@@ -353,6 +352,7 @@ $code_postal = get_commune($id_commune);
 </div>
 
 <?php include("Views/footer.php"); ?>
+
 
 </body>
 </html>

@@ -92,7 +92,7 @@ include_once __DIR__ . "/affichage_etat.php";
                     print "</td>";
 
                     print "<td class='nomObj'>" . $nom . "</td>";
-
+                    
                     print "<td class='username_borrower'><a href='view_profil.php?username=$username_borrower'>" . $username_borrower . "</a></td>";
 
                     print "<td class='etat'>" . affichage_etat($etat, $isReturned) . "</td>";

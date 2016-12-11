@@ -16,7 +16,7 @@ function get_info()
 
 
 // Modifie les informations d'un utilisateur
-// Prend en argument les valeurs des attributs à modifie et l'id de l'utilisateur 
+// Prend en argument les valeurs des attributs à modifie et l'id de l'utilisateur
 function modif_utilisateur( $safemdp, $prenom, $nom, $email, $id_commune, $adresse, $path_photo, $id)
 {
     global $DB;

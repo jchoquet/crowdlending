@@ -84,6 +84,7 @@ if (verifFullfill() == 0  && verifEmail() == 0 ) {
 
     // Requête de modification des informations de l'utilisateur
     $result = modif_utilisateur( $safemdp, $prenom, $nom, $email, $id_commune, $adresse, $path_photo, $id);
+
     //Si des villes ont été trouvées, on stocke l'ID qui lui correspond dans $id_commune
     if ($result)
         header('Location:../monCompte.php');
@@ -98,12 +99,14 @@ else
 function verifFullfill()
 {
     global $DB;
+
     $nom = $DB->quote($_POST['nom']);
     $prenom = $DB->quote($_POST['prenom']);
     $email = $DB->quote($_POST['email']);
     $phone = $DB->quote($_POST['phone']);
     $adresse = $DB->quote($_POST['adresse']);
     $commune = $DB->quote($_POST['commune']);
+
     if( $nom == "" || $prenom == "" ||  $email == "" || $phone == "" || $adresse == "" || $commune == "")
     {
         return 1;

@@ -112,5 +112,31 @@ $(document).ready(function(){
 			});
 		}
 	});
+	
+	$("#modifBesoin").click(function() {
 
+		if( titre == "" )
+		{
+			$("#formerror").html("");
+		}
+		else{
+			$("#formerror").html("");
+			$.ajax({
+
+				type:'POST',
+				url:'../Controls/verificationBesoinM.php',
+				data:"titre="+titre+"&description="+description,
+				success:function(msg) {
+
+					if(msg == "OK"){
+						window.location.replace("../Views/mesBesoins.php");
+					}
+					else{
+
+						$("#formerror").html(msg);
+					}
+				}
+			});
+		}
+	});
 });
