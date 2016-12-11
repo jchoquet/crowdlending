@@ -1,6 +1,6 @@
 <!DOCTYPE html >
 <html lang="fr">
-  <head>
+<head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,26 +17,28 @@
     <!-- Source css pour la page -->
     <link rel="stylesheet" href="Styles/home.css">
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <?php include("header.php"); ?>
+<?php include("header.php"); ?>
 
-    <div class="container content">
-        <div class="row">
-            <div class="col-xs-12">
-                <img class="img-responsive" src="Images/home.png" alt="">
-            </div>
+<div class="container content">
+    <div class="row">
+        <div class="col-xs-12">
+            <img class="img-responsive" src="Images/1.jpg" alt="error404" >
+
+
         </div>
     </div>
+</div>
 
-    <?php include("footer.php"); ?>
+<?php include("footer.php"); ?>
 
-    <!-- Source jquery -->
-    <script src="Scripts/jquery_library.js"></script>
-    <!-- Source JavaScript Bootstrap -->
-    <script src="Scripts/bootstrap.js"></script>
+<!-- Source jquery -->
+<script src="Scripts/jquery_library.js"></script>
+<!-- Source JavaScript Bootstrap -->
+<script src="Scripts/bootstrap.js"></script>
 
-  </body>
+</body>
 </html>

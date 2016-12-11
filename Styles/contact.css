@@ -1,0 +1,49 @@
+/* Mise en page générale */
+
+.content {
+    padding-top: 30px;
+}
+
+
+/* Titres */
+
+.heading {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.heading:after {
+    left: 50%;
+    height: 3px;
+    width: 50px;
+    content: " ";
+    bottom: -35px;
+    margin-left: -25px;
+    position: absolute;
+    background: #444;
+}
+
+.heading h2 {
+    font-size: 35px;
+    font-weight: 500;
+    margin: 0 0 20px;
+    color: #444;
+}
+
+/* Texte */
+
+p {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Icones */
+
+.icones .glyphicon {
+  color: #31b0d5;
+}

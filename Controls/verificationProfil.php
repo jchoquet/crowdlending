@@ -8,7 +8,6 @@ session_start();
 //Récupération des données de post
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
-$username = $_POST['username'];
 $numero_telephone = $_POST['phone'];
 $adresse = $_POST['adresse'];
 $email = $_POST['email'];
@@ -62,7 +61,7 @@ else
 
 
 // Redirection vers la page d'accueil si tous les tests sont passés, ou vers la page d'inscription sinon
-if (verifFullfill() == 0  && verifEmail() == 0 && verifUsername() == 0) {
+if (verifFullfill() == 0  && verifEmail() == 0 ) {
     global $DB;
     // Enregistrement du nouvel utilisateur dans la BD
     $mdp=$_POST['nmdp'];
@@ -84,7 +83,7 @@ if (verifFullfill() == 0  && verifEmail() == 0 && verifUsername() == 0) {
     }
 
     // Requête de modification des informations de l'utilisateur
-    $result = modif_utilisateur($username, $safemdp, $prenom, $nom, $email, $id_commune, $adresse, $path_photo, $id);
+    $result = modif_utilisateur( $safemdp, $prenom, $nom, $email, $id_commune, $adresse, $path_photo, $id);
     //Si des villes ont été trouvées, on stocke l'ID qui lui correspond dans $id_commune
     if ($result)
         header('Location:../monCompte.php');
@@ -99,14 +98,13 @@ else
 function verifFullfill()
 {
     global $DB;
-    $username = $DB->quote($_POST['username']);
     $nom = $DB->quote($_POST['nom']);
     $prenom = $DB->quote($_POST['prenom']);
     $email = $DB->quote($_POST['email']);
     $phone = $DB->quote($_POST['phone']);
     $adresse = $DB->quote($_POST['adresse']);
     $commune = $DB->quote($_POST['commune']);
-    if( $username == "" || $nom == "" || $prenom == "" ||  $email == "" || $phone == "" || $adresse == "" || $commune == "")
+    if( $nom == "" || $prenom == "" ||  $email == "" || $phone == "" || $adresse == "" || $commune == "")
     {
         return 1;
     }
@@ -139,19 +137,5 @@ function verifEmail()
         return 1;
     }
 }
-//retourne 0 si jamais utilisé
-//retourn 1 si déjà présent dans la base
-function verifUsername()
-{
-    global $DB;
-    $username = $DB->quote(htmlspecialchars($_POST['username']));
-    $reponse = $DB->query('SELECT username FROM utilisateur');
-    while ($donnees = $reponse->fetch())
-    {
-        if ($username == $donnees['username']){
-            return 1;
-        }
-    }
-    return 0;
-}
+
 ?>

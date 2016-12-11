@@ -6,9 +6,8 @@
       </div>
       <div class="col-md-6">
         <ul>
-            <li><a href="#">A propos</a></li>
+            <li><a href="apropos.php">A propos</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="#">La fine équipe</a></li>
         </ul>
       </div>
     </div>

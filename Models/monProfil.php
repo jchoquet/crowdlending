@@ -17,10 +17,10 @@ function get_info()
 
 // Modifie les informations d'un utilisateur
 // Prend en argument les valeurs des attributs à modifie et l'id de l'utilisateur 
-function modif_utilisateur($username, $safemdp, $prenom, $nom, $email, $id_commune, $adresse, $path_photo, $id)
+function modif_utilisateur( $safemdp, $prenom, $nom, $email, $id_commune, $adresse, $path_photo, $id)
 {
     global $DB;
-    return $DB->exec("UPDATE utilisateur SET username=\"$username\" , hash_password =\"$safemdp\", prenom =\"$prenom\", nom =\"$nom\", email =\"$email\", id_commune = \"$id_commune\" , adresse=\"$adresse\" , path_photo=\"$path_photo\" WHERE id=\"$id\";");
+    return $DB->exec("UPDATE utilisateur SET  hash_password =\"$safemdp\", prenom =\"$prenom\", nom =\"$nom\", email =\"$email\", id_commune = \"$id_commune\" , adresse=\"$adresse\" , path_photo=\"$path_photo\" WHERE id=\"$id\";");
 }
 
 // on récupère le nom correspondant à une id_commune

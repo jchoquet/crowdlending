@@ -181,11 +181,6 @@ $code_postal = get_commune($id_commune);
                             <span class="errors" id="prenomerror"></span>
                         </div>
 
-                        <div class="col-xs-12 col-sm-6 col-md-4 form-group">
-                            <label  for="omdp" >Username :</label>
-                            <input type="text" name="username" id="username" class="form-control" Value="<?php echo $username; ?>" placeholder="username" tabindex="3" required/>
-                            <span class="errors" id="usernameerror"></span>
-                        </div>
 
                         <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                             <label  for="omdp" >E-mail :</label>
@@ -307,6 +302,7 @@ $code_postal = get_commune($id_commune);
                             <!-- <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal" id="dismiss-button2">Annuler</button> -->
                         </div>
                     </div>
+
                     <?php
                 }
 
@@ -348,12 +344,15 @@ $code_postal = get_commune($id_commune);
                     <?php
                 }
                 ?>
-            </div>
 
+            </div>
 
         </div> <!-- fermeture du row general -->
     </div> <!-- fermeture du content -->
 </div>
+</div>
+
+<?php include("Views/footer.php"); ?>
 
 </body>
 </html>

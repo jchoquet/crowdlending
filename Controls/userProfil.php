@@ -11,26 +11,13 @@
     }
     else
     {
-      header('location: acceuil.php');
+      header('location: NoUser.php');
     }
   }
   else
   {
     echo "pas ok";
   }
-
-
-/*if(isset($_GET['user'])) {
-    $username = $_GET['user'];
-} else {
-    $username = 'defaultUser';
-}*/
-
-/*function getUsername() {
-    $username = (isset($_GET['user'])) ? $_GET['user'] : 'defaultUser';
-    return $username;
-}
-  */
 
 
   ?>
