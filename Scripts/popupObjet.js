@@ -14,6 +14,15 @@ $(document).ready(function () {
             e.stopPropagation();
         });
     });
+    $('.boutonModif').click(function(e){
+        e.stopPropagation();
+        descriptionObjetModif(this.getAttribute("data-nom"));
+        nomObjetModif(this.getAttribute("data-nom"));
+        urlPhotoObjetModif(this.getAttribute("data-nom"));
+        $("#identifiantObjet").attr("value", this.getAttribute("data-nom"));
+        $("#modifObj").modal();
+    });
+
 });
 
 //Affiche dans le popup le nom de l'objet
@@ -83,4 +92,33 @@ $(document).keyup(function (e) {
     }
 });
 
+//Concernant le popup de modification
+
+
+//Affiche dans le popup le nom de l'objet
+function nomObjetModif(idObjet) {
+    var fun = "nom";
+    $.post(urlSite.concat("/Models/popupObjet.php"), {idObjet: idObjet, fun: fun}, function (str) {
+        console.log(str);
+        $("#nomObjetModifTitre").html(str);
+        $("#titreModif").attr("value", str);
+    });
+}
+
+//Affiche dans le popup la description de l'objet
+function urlPhotoObjetModif(idObjet) {
+    $pathImgsObjets = urlSite.concat("/Images/Objets/")
+    var fun = "urlPhoto";
+    $.post(urlSite.concat("/Models/popupObjet.php"), {idObjet: idObjet, fun: fun}, function (str) {
+        $("#imgModif").attr("src", $pathImgsObjets.concat(str));
+    });
+}
+
+//Affiche dans le popup la description de l'objet
+function descriptionObjetModif(idObjet) {
+    var fun = "description";
+    $.post(urlSite.concat("/Models/popupObjet.php"), {idObjet: idObjet, fun: fun}, function (str) {
+        $("#descriptionModif").attr("value", str);
+    });
+}
 

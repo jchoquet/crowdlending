@@ -84,10 +84,11 @@ $(document).ready(function(){
 			});
 		}
 	});
-
-
-	$("#modifObj").click(function() {
-
+	
+	
+	$("#modifObj").click(function(e) {
+		e.stopPropagation();
+		
 		if( titre == "" )
 		{
 			$("#formerror").html("");
