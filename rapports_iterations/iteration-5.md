@@ -6,8 +6,8 @@
 
 |  &nbsp;                 | Itération précédente     | Itération suivante    |
 | -------------           |-------------             |---------              |
-| **Product Owner**       | *Qiuhao*               |               |
-| **Product Owner N+1**   |                   |                       |
+| **Product Owner**       | *Qiuhao*               | *Mehdi*               |
+| **Product Owner N+1**   | *Mehdi*                  | *Julie*                      |
 | **Scrum Master**        | *Thibault*                 | *Anouar*            |
 
 > Il n'y a pas de Product Owner à l'itération suivante étant donné que le projet se termine le 12 décembre.
