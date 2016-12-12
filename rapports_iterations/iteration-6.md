@@ -6,7 +6,7 @@
 
 |  &nbsp;                 | Itération précédente     | Itération suivante    |
 | -------------           |-------------             |---------              |
-| **Product Owner**       | *Qiuhao*                 | *Julie*               |
+| **Product Owner**       | *Mehdi*                  | *Julie*               |
 | **Product Owner N+1**   | *Julie*                  | *Thibault*            |
 | **Scrum Master**        | *Anouar*                 | *Julien*              |
 
@@ -16,7 +16,7 @@
 ### Évènements 
 *Quels sont les évènements qui ont marqué l'itération précédente? Répertoriez ici les évènements qui ont eu un impact sur ce qui était prévu à l'itération précédente.*
 
-> L'Iteration précédente n'a pas eu d'évènement particulièrement marquant hormis en fin de semaine, où les tout dernier merges avant un premier rendu final du produit ont été fait. Tout s'est fait sans trop de problème, avec peu de conflit.
+> L'itération précédente n'a pas eu d'évènement particulièrement marquant hormis en fin de semaine, où les tous derniers merges avant un premier rendu final du produit ont été faits. Tout s'est fait sans trop de problème, avec peu de conflit.
 
 
 ### Taux de complétion de l'itération  
@@ -28,9 +28,9 @@
 ### Bilans des retours et des précédentes actions 
 *Quels sont les retours faits par l'équipe pendant la rétrospective? Quelles sont les actions qui ont apporté quelque chose ou non?*
 
-> Le fait de n'avoir fait qu'un daily le vendredi a porté ses fruits. Le daily était plus productif car les membres avait travaillé, etune présence accru sur slack a été observé.
+> Le fait de n'avoir fait qu'un daily le vendredi a porté ses fruits. Le daily était plus productif car les membres avaient travaillé, et une présence accrue sur Slack a été observée.
 
-> Le rythme de croisière atteint a satisfait tout le monde et personne n'a eu quelque chose a redire sur cette semaine, si ce n'est noté les améliorations des mesures prises la semaine dernière. 
+> Le rythme atteint (grâce à une vélocité mieux calculée depuis quelques sprints) a satisfait tout le monde et personne n'a eu quelque chose à redire sur cette semaine, si ce n'est noter les améliorations grâce aux mesures prises la semaine dernière. 
 
 
 ### Actions prises pour la prochaine itération
@@ -44,18 +44,18 @@
 ## Prévisions de l'itération suivante  
 ### Évènements prévus  
 *Quels sont les évènements qui vont peut être impacter l'itération? Répertoriez ici les évènements que vous anticipez comme ayant un impact potentiel pour l'itération (absences, changement de cap, difficultés, etc.).*
-> Rien à noter 
+> Rien à noter.
 
 ### Titre des éléments reportés  
 *Lister ici les éléments des itérations précédentes qui ont été reportés à l'itération suivante. Ces éléments ont dû être revus et corrigés par le PO N+1.*
-> Rien n'a été reporté pour l'itération suivante. Tout a été fait en temps et en heure pour livrer une première version finale.
+> Rien n'a été reporté pour l'itération suivante. Tout a été fait à temps pour livrer une première version finale.
     
 ### Titre des nouveaux éléments  
 *Lister ici les nouveaux éléments pour l'itération suivante. Ces éléments ont dû être revus et corrigés par le PO N+1.*
 
 > Nous allons travailler sur les stories suivantes :
 - Notification visuelle :  En tant qu'utilisateur, je souhaite voir un petit point rouge sur le dropdown menu lorsque quelqu'un me demande un objet ou accepte une demande. Lorsque je clique sur ce dropdown, ce point disparait. Il faut que le nombre de notifications apparaisse dans un autre point dans le menu dans le lien correspondant
-- Notification email :En tant qu'utilisateur, je souhaite recevoir un email lorsqu'un utilisateur me demande un objet ou en accepte un (email adéquat).
+- Notification email : En tant qu'utilisateur, je souhaite recevoir un email lorsqu'un utilisateur me demande un objet ou en accepte un (email adéquat).
 - Désactivation des notifications : En tant qu'utilisateur, je souhaite pouvoir désactiver les notifications de demande d'objet et d'acceptation d'objet grâce à l'onglet settings présent sur Mon compte. Les différents types de notifications sont représentés par des checkboxes
 - Laisser un avis post retour : En tant qu'utilisateur, au moment de la validation d'un rendu d'objet, je souhaite pouvoir mettre une note sur 5 étoiles (obligatoire), et laisser un avis optionnel
 - Consultation avis : En tant qu'utilisateur, lorsque je vais sur la page de profil d'un utilisateur, je souhaite pouvoir voir son nombre d'avis en-dessous de sa photo.
@@ -74,14 +74,14 @@
 
 |          	| :( 	| :&#124; 	| :) 	| :D 	|
 |:--------:	|:----:	|:----:	    |:----:	|:----:	|
-| Equipe 1 	|  *0* 	|  *0* 	    |  *1* 	|  *5* 	|
+| Equipe 1 	|  *0* 	|  *0* 	    |  *0* 	|  *6* 	|
 
 ### Taux de confiance de l'équipe pour la réalisation du projet 
 *Remplir le tableau sachant que :D est une confiance totale dans le fait de réaliser le projet. Mettre le nombre de votes dans chacune des cases. Expliquer en cas de besoin.*
 
 |          	| :( 	| :&#124; 	| :) 	| :D 	|
 |:--------:	|:----:	|:----:	    |:----:	|:----:	|
-| Equipe 1 	|  *0* 	|  *0* 	    |  *0* 	|  *4* 	|
+| Equipe 1 	|  *0* 	|  *0* 	    |  *0* 	|  *6* 	|
 
  
  
