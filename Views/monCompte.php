@@ -215,7 +215,7 @@ $code_postal = get_commune($id_commune);
                     <div class="row">
                         <div class="col-xs-12 col-md-6 form-group">
                             <label  for="omdp" >Ancien mot de passe :</label>
-                            <input class="form-control" type="password" name="Mot de passe" id="omdp"  tabindex="8"/>
+                            <input class="form-control" type="password" name="omdp" id="omdp" tabindex="8"/>
                             <div class="errors" id="oldMdperror"></div>
                         </div>
                     </div>
@@ -223,12 +223,12 @@ $code_postal = get_commune($id_commune);
                     <div class="row">
                         <div class="col-xs-12 col-md-6 form-group">
                             <label  for="nmdp" >Nouveau mot de passe :</label>
-                            <input class="form-control" id="nmdp" type="password" name="New mot de passe"  tabindex="9"/>
+                            <input class="form-control" id="nmdp" type="password" name="nmdp" tabindex="9"/>
                             <div class="errors" id="newMdperror"></div>
                         </div>
                         <div class="col-xs-12 col-md-6 form-group">
                             <label  for="mdpc" >Confirmez le nouveau mot de passe :</label>
-                            <input class="form-control" id="mdpc" type="password" name="Conf new mot de passe"  tabindex="10"/>
+                            <input class="form-control" id="mdpc" type="password" name="mdpc" tabindex="10"/>
                             <div class="errors" id="cnewMdperror"></div>
                         </div>
 

@@ -13,7 +13,7 @@ $adresse = $_POST['adresse'];
 $email = $_POST['email'];
 $commune = $_POST['commune'];
 $id = $_SESSION['login'];
-$pwd=$_SESSION['pwd'];
+$pwd = $_SESSION['pwd'];
 
 //get id_commune of this utilisateur
 $reqId = $DB -> prepare("SELECT id_commune FROM utilisateur WHERE id = :userid");
@@ -21,16 +21,6 @@ $reqId ->bindValue(':userid',$id);
 $reqId->execute();
 $id_commune = $reqId->fetch()['id_commune'];
 
-if(isset($_POST['oldmdp']) && !isset($_POST['nmdp']))
-{
-    if (password_verify($_POST['oldmdp'], $pwd))
-    {
-        echo "OK";
-    }
-    else{
-        echo "Mot de passe incorrect";
-    }
-}
 
 $ancien_path_photo = get_info()[0][4];
 //print($ancien_path_photo);
@@ -45,14 +35,10 @@ if($_FILES['photo']['name'] != "")
     // Suppression de l'ancien fichier de photo s'il ne s'agit pas de la photo par défaut
     if ($ancien_path_photo != "no_avatar.jpeg")
     {
-        print("\nok1");
         $path_to_delete = "../Images/Users/" . $ancien_path_photo;
-        print($path_to_delete);
-        print(is_writable($path_to_delete));
         if (is_writable($path_to_delete))
         {
             unlink($path_to_delete);
-            print("\nok2");
         }
     }
 }
@@ -60,12 +46,27 @@ else
     $path_photo = $ancien_path_photo;
 
 
+$omdp = $_POST['omdp'];
+$nmdp = $_POST['nmdp'];
+$mdpc = $_POST['mdpc'];
+$verifPassword = 0;
+
+if (isset($omdp) && isset($nmdp) && isset($mdpc) && password_verify($omdp, $pwd) && $nmdp == $mdpc)
+{
+    $safemdp = password_hash($nmdp, PASSWORD_DEFAULT);
+    $_SESSION['pwd'] = $safemdp;
+}
+
+else if (!isset($omdp) && !isset($nmdp) && !isset($mdpc))
+    $safemdp = $pwd;
+
+else
+    $verifPassword = 1;
+
+
 // Redirection vers la page d'accueil si tous les tests sont passés, ou vers la page d'inscription sinon
-if (verifFullfill() == 0  && verifEmail() == 0 ) {
+if (verifFullfill() == 0  && verifEmail() == 0 && $verifPassword == 0) {
     global $DB;
-    // Enregistrement du nouvel utilisateur dans la BD
-    $mdp=$_POST['nmdp'];
-    $safemdp = password_hash($mdp, PASSWORD_DEFAULT);
 
     //Préparation de la requête de recherche de l'id de la ville de l'utilisateur
     $reqId = $DB -> prepare("SELECT id FROM commune WHERE nom = :commune");
