@@ -4,7 +4,6 @@
 
 ### Composition de l'équipe
 
-*Remplir ce tableau avec les noms et prénoms des membres de l'équipe.*
 
 
 | Nom                     | Prénom                   | Email                   |
@@ -18,12 +17,15 @@
 
 ### Sujet : Exemple Outil de crowdlending
 
-Outil de crowdlending
+Dans un immeuble, une école, une association, une société, les niveaux d'équipement des foyers
+sont variés. Qui n'a jamais eu un besoin ponctuel d'une clé à molette pour réparer une fuite ? D'une
+visseuse pour monter un meuble Ikea ? D'un marteau pour fixer un cadre ?
+Le but de cet outil est de permettre la mise en commun de certains objets de la vie quotidienne entre les membres de la plateforme.
 
 ### Adresse du backlog
 
 https://trello.com/b/JihqisMV/groupe-1-tableau-du-projet
 
-## Partie libre
+## Principales fonctionnalités
 
-*Utilisez cet espace pour l'usage de l'équipe. Procédure d'installation, de test, guides divers...*
+Cet outil permet d'ajouter un objet (informations et photo), de rechercher un objet selon différents critères, d'envoyer une demande de prêt qui peut-être acceptée ou non. La section profil de l'utilisateur permet de valider les prêts, gérer ses objets et enregistrer les retours.
